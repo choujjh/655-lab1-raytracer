@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Lab_1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab_1">
+				<Option output="C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Lab_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_1"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab_1/fast">
+				<Option output="C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Lab_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_1/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/Lab_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Model.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Cam.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Cam.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Light/AmbientLight.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Light/AmbientLight.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Light/DirectionLight.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Light/DirectionLight.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Light/Light.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/Light/Light.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Object.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Object.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Plane.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Plane.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Sphere.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Sphere.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Triangle.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/Scene/RenderObj/Triangle.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/VecModel/OffVec.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/VecModel/OffVec.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/VecModel/Vec.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Model/VecModel/Vec.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Ops/LinAlgOp.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Ops/LinAlgOp.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Ops/Ops.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Ops/RenderOps.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Ops/RenderOps.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Scene.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/Scene.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/main.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/Lab_1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
