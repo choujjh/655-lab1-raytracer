@@ -6,11 +6,11 @@
 #define RAYTRACER_RENDEROP_H
 
 
-#include "../Model/VecModel/Vec.h"
+#include "../Model/VecModel/Vec3.h"
 
 class RenderOps {
 public:
-    static Vec reflectionRay(Vec normal, Vec initDir);
+    static Vec3 reflectionRay(Vec3 normal, Vec3 initDir);
 
 };
 

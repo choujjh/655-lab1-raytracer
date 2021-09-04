@@ -6,23 +6,23 @@
 #define RAYTRACER_OBJECT_H
 
 
-#include "../../VecModel/OffVec.h"
+#include "../../VecModel/Ray.h"
 
 class Object {
 protected:
     double kDiffuse;
     double kSpecular;
     double kAmbient;
-    Vec colorDiffuse;
-    Vec colorSpec;
+    Vec3 colorDiffuse;
+    Vec3 colorSpec;
     double kgls;
 public:
-    Object(double kDiffuse, double kSpecular, double ka, const Vec &colorDiffuse, const Vec &colorSpec, double kgls);
+    Object(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls);
 
     Object();
 
-    virtual Vec intersect(OffVec ray);
-    virtual Vec normal(Vec point) = 0;
+    virtual Vec3 intersect(Ray ray);
+    virtual Vec3 normal(Vec3 point) = 0;
 
     double getKDiffuse() const;
     void setKDiffuse(double kDiffuse);
@@ -30,10 +30,10 @@ public:
     void setKSpecular(double kSpecular);
     double getKAmbient() const;
     void setKAmbient(double kAmbient);
-    const Vec &getColorDiffuse() const;
-    void setColorDiffuse(const Vec &colorDiffuse);
-    const Vec &getColorSpec() const;
-    void setColorSpec(const Vec &colorSpec);
+    const Vec3 &getColorDiffuse() const;
+    void setColorDiffuse(const Vec3 &colorDiffuse);
+    const Vec3 &getColorSpec() const;
+    void setColorSpec(const Vec3 &colorSpec);
     double getKgls() const;
     void setKgls(double kgls);
 };

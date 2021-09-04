@@ -7,14 +7,14 @@
 #include <cmath>
 
 const double pi = acos(-1);
-Cam::Cam(const Vec &lookFrom, const Vec &lookAt, const Vec &up, double fov, double width, double height) : lookFrom(lookFrom),
+Cam::Cam(const Vec3 &lookFrom, const Vec3 &lookAt, const Vec3 &up, double fov, double width, double height) : lookFrom(lookFrom),
                                                                                                            lookAt(lookAt),
                                                                                                            up(up), fov(fov),
                                                                                                            width(width),
                                                                                                            height(height) {
-    Vec zPrime = this->lookAt - this->lookFrom;
-    Vec xPrime = LinAlgOp().cross(zPrime, up);
-    Vec yPrime = LinAlgOp().cross(xPrime, zPrime);
+    Vec3 zPrime = this->lookAt - this->lookFrom;
+    Vec3 xPrime = LinAlgOp().cross(zPrime, up);
+    Vec3 yPrime = LinAlgOp().cross(xPrime, zPrime);
 
     double zMag = zPrime.getMagnitude();
     double xMag = zMag * tan(fov * (pi/180.0));
@@ -29,51 +29,51 @@ Cam::Cam(const Vec &lookFrom, const Vec &lookAt, const Vec &up, double fov, doub
     this->start = this->lookAt - incrementX * (width/2.0 - 0.5) + incrementY * (height/2.0 - 0.5);
 }
 
-const Vec &Cam::getStart() const {
+const Vec3 &Cam::getStart() const {
     return start;
 }
 
-void Cam::setStart(const Vec &start) {
+void Cam::setStart(const Vec3 &start) {
     Cam::start = start;
 }
 
-const Vec &Cam::getIncrementX() const {
+const Vec3 &Cam::getIncrementX() const {
     return incrementX;
 }
 
-void Cam::setIncrementX(const Vec &incrementX) {
+void Cam::setIncrementX(const Vec3 &incrementX) {
     Cam::incrementX = incrementX;
 }
 
-const Vec &Cam::getIncrementY() const {
+const Vec3 &Cam::getIncrementY() const {
     return incrementY;
 }
 
-void Cam::setIncrementY(const Vec &incrementY) {
+void Cam::setIncrementY(const Vec3 &incrementY) {
     Cam::incrementY = incrementY;
 }
 
-const Vec &Cam::getLookFrom() const {
+const Vec3 &Cam::getLookFrom() const {
     return lookFrom;
 }
 
-void Cam::setLookFrom(const Vec &lookFrom) {
+void Cam::setLookFrom(const Vec3 &lookFrom) {
     Cam::lookFrom = lookFrom;
 }
 
-const Vec &Cam::getLookAt() const {
+const Vec3 &Cam::getLookAt() const {
     return lookAt;
 }
 
-void Cam::setLookAt(const Vec &lookAt) {
+void Cam::setLookAt(const Vec3 &lookAt) {
     Cam::lookAt = lookAt;
 }
 
-const Vec &Cam::getUp() const {
+const Vec3 &Cam::getUp() const {
     return up;
 }
 
-void Cam::setUp(const Vec &up) {
+void Cam::setUp(const Vec3 &up) {
     Cam::up = up;
 }
 

@@ -6,19 +6,19 @@
 #define RAYTRACER_PLANE_H
 
 
-#include "../../VecModel/Vec.h"
+#include "../../VecModel/Vec3.h"
 #include "Object.h"
 
 class Plane: public Object {
 protected:
-    Vec n;
+    Vec3 n;
     double d;
 public:
-    Plane(double kDiffuse, double kSpecular, double ka, const Vec &colorDiffuse, const Vec &colorSpec, double kgls,
-          const Vec &n, double d);
+    Plane(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls,
+          const Vec3 &n, double d);
 
-    Vec intersect(OffVec ray) override;
-    Vec normal(Vec point) override;
+    Vec3 intersect(Ray ray) override;
+    Vec3 normal(Vec3 point) override;
 
 };
 

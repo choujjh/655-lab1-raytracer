@@ -8,7 +8,7 @@
 #include<string>
 #include<vector>
 
-#include "Model/VecModel/Vec.h"
+#include "Model/VecModel/Vec3.h"
 #include "Model/Scene/RenderObj/Object.h"
 #include "Model/Scene/Light/Light.h"
 #include "Model/Scene/Cam.h"
@@ -23,20 +23,19 @@ private:
     vector<Object*>* objList;
     vector<Light*>* lightList;
 
-    Vec** image;
-    vector<vector<OffVec>> rays;
-    Vec backColor;
+    Vec3** image;
+    vector<vector<Ray>> rays;
+    Vec3 backColor;
 
-    int levReflect;
+    int levReflectRecursion;
 
     void writeToFileInt(int maxVal);
     void initializeRays();
-    Vec calcPixel(int row, int col);
-    Vec getIntersect(OffVec currRay, bool closest, int &objIndex);
-    Vec getColor(OffVec ray, int currLevel);
-    Vec clip(double min, double max, Vec clipVec);
+    Vec3 calcPixel(int row, int col);
+    Vec3 getIntersect(Ray currRay, bool closest, int &objIndex);
+    Vec3 getColor(Ray ray, int currLevel);
 public:
-    Scene(const string &fileName, Cam *renderCam, vector<Object *> *objList, vector<Light *> *lightList, Vec backColor, int levReflect = 1);
+    Scene(const string &fileName, Cam *renderCam, vector<Object *> *objList, vector<Light *> *lightList, Vec3 backColor, int levReflect = 1);
     ~Scene();
     void render();
 };

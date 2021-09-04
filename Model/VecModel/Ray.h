@@ -5,14 +5,14 @@
 #ifndef RAYTRACER_OFFVEC_H
 #define RAYTRACER_OFFVEC_H
 
-#include "Vec.h"
+#include "Vec3.h"
 
-class OffVec {
+class Ray {
 public:
-    Vec point;
-    Vec direction;
-    OffVec(const Vec &point, const Vec &direction);
-    OffVec();
+    Vec3 point;
+    Vec3 direction;
+    Ray(const Vec3 &point, const Vec3 &direction);
+    Ray();
 
 };
 

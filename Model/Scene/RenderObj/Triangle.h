@@ -10,16 +10,16 @@
 
 class Triangle: public Plane {
 public:
-    Vec a;
-    Vec b;
-    Vec c;
+    Vec3 a;
+    Vec3 b;
+    Vec3 c;
 
-    Triangle(double kDiffuse, double kSpecular, double ka, const Vec &colorDiffuse, const Vec &colorSpec,
-             double kgls, const Vec &a, const Vec &b, const Vec &c);
+    Triangle(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec,
+             double kgls, const Vec3 &a, const Vec3 &b, const Vec3 &c);
 
-    Vec intersect(OffVec ray) override;
+    Vec3 intersect(Ray ray) override;
 
-    Vec normal(Vec point) override;
+    Vec3 normal(Vec3 point) override;
 
 };
 

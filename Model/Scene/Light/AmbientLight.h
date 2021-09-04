@@ -6,15 +6,15 @@
 #define RAYTRACER_AMBIENTLIGHT_H
 
 
-#include "../../VecModel/vec.h"
+#include "../../VecModel/Vec3.h"
 #include "Light.h"
 
 class ambientLight: public Light {
-    Vec shadowRay(Vec point) override;
-    Vec illumination(Vec point, Vec rayDir, Object* surface, bool occluded) override;
+    Vec3 shadowRay(Vec3 point) override;
+    Vec3 illumination(Vec3 point, Vec3 rayDir, Object* surface, bool occluded) override;
 
 public:
-    ambientLight(const Vec &color);
+    ambientLight(const Vec3 &color);
 
 };
 

@@ -5,17 +5,17 @@
 #ifndef RAYTRACER_DIRECTIONLIGHT_H
 #define RAYTRACER_DIRECTIONLIGHT_H
 
-#include "../../VecModel/OffVec.h"
+#include "../../VecModel/Ray.h"
 #include "Light.h"
 
 class directionLight: public Light {
 public:
-    Vec dir;
-    Vec shadowRay(Vec point) override;
+    Vec3 dir;
+    Vec3 shadowRay(Vec3 point) override;
 
-    directionLight(const Vec &color, const Vec &dir);
+    directionLight(const Vec3 &color, const Vec3 &dir);
 
-    Vec illumination(Vec point, Vec rayDir, Object *surface, bool occluded) override;
+    Vec3 illumination(Vec3 point, Vec3 rayDir, Object *surface, bool occluded) override;
 };
 
 

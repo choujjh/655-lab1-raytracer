@@ -6,8 +6,8 @@
 #include "../../../Ops/LinAlgOp.h"
 #include <limits>
 
-Vec Triangle::intersect(OffVec ray) {
-    Vec planeIntersectPoint = Plane::intersect(ray);
+Vec3 Triangle::intersect(Ray ray) {
+    Vec3 planeIntersectPoint = Plane::intersect(ray);
     if(planeIntersectPoint.getMagnitude() == std::numeric_limits<double>::infinity()){
         return planeIntersectPoint;
     }
@@ -25,14 +25,14 @@ Vec Triangle::intersect(OffVec ray) {
     }
     return planeIntersectPoint;
 }
-Vec Triangle::normal(Vec point) {
+Vec3 Triangle::normal(Vec3 point) {
     return n;
 }
-Triangle::Triangle(double kDiffuse, double kSpecular, double ka, const Vec &colorDiffuse, const Vec &colorSpec,
-                   double kgls, const Vec &a, const Vec &b, const Vec &c):
-        Plane(kDiffuse, kSpecular, ka, colorDiffuse, colorSpec, kgls, Vec(), 0), a(a), b(b), c(c) {
-    Vec testA = this->b - this->a;
-    Vec testB = this->c - this->a;
+Triangle::Triangle(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec,
+                   double kgls, const Vec3 &a, const Vec3 &b, const Vec3 &c):
+        Plane(kDiffuse, kSpecular, ka, colorDiffuse, colorSpec, kgls, Vec3(), 0), a(a), b(b), c(c) {
+    Vec3 testA = this->b - this->a;
+    Vec3 testB = this->c - this->a;
     n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
     d = LinAlgOp().dot(n, a);
 }

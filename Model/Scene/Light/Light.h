@@ -6,25 +6,25 @@
 #define RAYTRACER_LIGHT_H
 
 
-#include "../../VecModel/Vec.h"
+#include "../../VecModel/Vec3.h"
 #include "../RenderObj/Object.h"
 
 class Light {
 private:
     double max(double a, double b);
 public:
-    Vec color;
+    Vec3 color;
 
-    Light(const Vec &color);
+    Light(const Vec3 &color);
 
-    virtual Vec shadowRay(Vec point) = 0;
-    virtual Vec illumination(Vec point, Vec rayDir, Object* surface, bool occluded) = 0;
+    virtual Vec3 shadowRay(Vec3 point) = 0;
+    virtual Vec3 illumination(Vec3 point, Vec3 rayDir, Object* surface, bool occluded) = 0;
 
-    Vec calcSpec(Object* surface, Vec interPoint, Vec rayDir);
-    Vec calcDiffuse(Object* surface, Vec interPoint, Vec rayDir);
-    Vec calcAmbient(Object* surface, Vec interPoint, Vec rayDir);
+    Vec3 calcSpec(Object* surface, Vec3 interPoint, Vec3 rayDir);
+    Vec3 calcDiffuse(Object* surface, Vec3 interPoint, Vec3 rayDir);
+    Vec3 calcAmbient(Object* surface, Vec3 interPoint, Vec3 rayDir);
 
-    bool checkNormal(Object *surface, Vec interPoint, Vec rayDir);
+    bool checkNormal(Object *surface, Vec3 interPoint, Vec3 rayDir);
 };
 
 

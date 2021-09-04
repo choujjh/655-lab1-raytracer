@@ -15,42 +15,42 @@ double Light::max(double a, double b){
     return a;
 }
 
-Vec Light::calcDiffuse(Object* surface, Vec interPoint, Vec rayDir) {
+Vec3 Light::calcDiffuse(Object* surface, Vec3 interPoint, Vec3 rayDir) {
     if(!checkNormal(surface, interPoint, rayDir)){
-        return Vec();
+        return Vec3();
     }
-    Vec od = surface->getColorDiffuse();
-    Vec l = shadowRay(interPoint).normalize();
-    Vec n = surface->normal(interPoint).normalize();
+    Vec3 od = surface->getColorDiffuse();
+    Vec3 l = shadowRay(interPoint).normalize();
+    Vec3 n = surface->normal(interPoint).normalize();
     double maxDiffuse = max(0, LinAlgOp().dot(n, l));
-    Vec retVec = od * maxDiffuse * color * surface->getKDiffuse();
+    Vec3 retVec = od * maxDiffuse * color * surface->getKDiffuse();
 
     return retVec;
 }
 
-Vec Light::calcSpec(Object* surface, Vec interPoint, Vec rayDir){
+Vec3 Light::calcSpec(Object* surface, Vec3 interPoint, Vec3 rayDir){
     if(!checkNormal(surface, interPoint, rayDir)){
-        return Vec();
+        return Vec3();
     }
-    Vec r = RenderOps().reflectionRay(surface->normal(interPoint).normalize(), shadowRay(interPoint).normalize());
+    Vec3 r = RenderOps().reflectionRay(surface->normal(interPoint).normalize(), shadowRay(interPoint).normalize());
     double ks = surface->getKSpecular();
     double maxSpec = max(0, LinAlgOp().dot(rayDir * -1, r));
-    Vec os = surface->getColorSpec();
+    Vec3 os = surface->getColorSpec();
     double kgls = surface->getKgls();
 
     return color * os * ks * pow(maxSpec, kgls);
 }
-Vec Light::calcAmbient(Object* surface, Vec interPoint, Vec rayDir) {
+Vec3 Light::calcAmbient(Object* surface, Vec3 interPoint, Vec3 rayDir) {
     if(!checkNormal(surface, interPoint, rayDir)){
-        return Vec();
+        return Vec3();
     }
     return color * surface->getColorDiffuse() * surface->getKAmbient();
 }
-bool Light::checkNormal(Object* surface, Vec interPoint, Vec rayDir) {
+bool Light::checkNormal(Object* surface, Vec3 interPoint, Vec3 rayDir) {
     if(LinAlgOp().dot(rayDir, surface->normal(interPoint)) > 0){
         return false;
     }
     return true;
 }
 
-Light::Light(const Vec &color) : color(color) {}
+Light::Light(const Vec3 &color) : color(color) {}

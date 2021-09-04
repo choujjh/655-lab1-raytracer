@@ -7,11 +7,11 @@
 
 #include <cmath>
 
-const Vec &Sphere::getCenter() const {
+const Vec3 &Sphere::getCenter() const {
     return center;
 }
 
-void Sphere::setCenter(const Vec &center) {
+void Sphere::setCenter(const Vec3 &center) {
     Sphere::center = center;
 }
 
@@ -23,16 +23,16 @@ void Sphere::setRadius(double radius) {
     Sphere::radius = radius;
 }
 
-Sphere::Sphere(double kDiffuse, double kSpecular, double ka, const Vec &colorDiffuse, const Vec &colorSpec, double kgls,
-               const Vec &center, double radius) : Object(kDiffuse, kSpecular, ka, colorDiffuse, colorSpec, kgls) {
+Sphere::Sphere(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls,
+               const Vec3 &center, double radius) : Object(kDiffuse, kSpecular, ka, colorDiffuse, colorSpec, kgls) {
     this->center = center;
     this->radius = radius;
 }
 
-Vec Sphere::intersect(OffVec ray) {
+Vec3 Sphere::intersect(Ray ray) {
     ray.direction.normalize();
 
-    Vec oc = center - ray.point;
+    Vec3 oc = center - ray.point;
     double tca = LinAlgOp().dot(ray.direction, oc);
     if(tca < 0.0){
         return Object::intersect(ray);
@@ -47,7 +47,7 @@ Vec Sphere::intersect(OffVec ray) {
     return ray.point + ray.direction * (tca - sqrt(thcSqr));
 }
 
-Vec Sphere::normal(Vec point) {
-    Vec normal = (point - center).normalize();
+Vec3 Sphere::normal(Vec3 point) {
+    Vec3 normal = (point - center).normalize();
     return normal;
 }

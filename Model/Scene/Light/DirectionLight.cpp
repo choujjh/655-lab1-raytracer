@@ -4,16 +4,16 @@
 
 #include "DirectionLight.h"
 
-Vec directionLight::shadowRay(Vec point){
+Vec3 directionLight::shadowRay(Vec3 point){
     return dir * -1;
 }
-Vec directionLight::illumination(Vec point, Vec rayDir, Object* surface, bool occluded) {
+Vec3 directionLight::illumination(Vec3 point, Vec3 rayDir, Object* surface, bool occluded) {
     if(occluded){
-        return Vec(0.0, 0.0, 0.0);
+        return Vec3(0.0, 0.0, 0.0);
     }
     return Light::calcDiffuse(surface, point, rayDir) + Light::calcSpec(surface, point, rayDir);
 }
 
-directionLight::directionLight(const Vec &color, const Vec &dir) : Light(color), dir(dir) {}
+directionLight::directionLight(const Vec3 &color, const Vec3 &dir) : Light(color), dir(dir) {}
 
 

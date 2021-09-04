@@ -5,46 +5,46 @@
 #ifndef RAYTRACER_CAM_H
 #define RAYTRACER_CAM_H
 
-#include "../VecModel/Vec.h"
+#include "../VecModel/Vec3.h"
 
 class Cam {
 private:
-    Vec start;
-    Vec incrementX;
-    Vec incrementY;
-    Vec lookFrom;
-    Vec lookAt;
-    Vec up;
+    Vec3 start;
+    Vec3 incrementX;
+    Vec3 incrementY;
+    Vec3 lookFrom;
+    Vec3 lookAt;
+    Vec3 up;
     double fov;
     double width;
     double height;
 
 public:
-    Cam(const Vec &lookFrom, const Vec &lookAt, const Vec &up, double fov, double width, double height);
+    Cam(const Vec3 &lookFrom, const Vec3 &lookAt, const Vec3 &up, double fov, double width, double height);
 
-    const Vec &getStart() const;
+    const Vec3 &getStart() const;
 
-    void setStart(const Vec &start);
+    void setStart(const Vec3 &start);
 
-    const Vec &getIncrementX() const;
+    const Vec3 &getIncrementX() const;
 
-    void setIncrementX(const Vec &incrementX);
+    void setIncrementX(const Vec3 &incrementX);
 
-    const Vec &getIncrementY() const;
+    const Vec3 &getIncrementY() const;
 
-    void setIncrementY(const Vec &incrementY);
+    void setIncrementY(const Vec3 &incrementY);
 
-    const Vec &getLookFrom() const;
+    const Vec3 &getLookFrom() const;
 
-    void setLookFrom(const Vec &lookFrom);
+    void setLookFrom(const Vec3 &lookFrom);
 
-    const Vec &getLookAt() const;
+    const Vec3 &getLookAt() const;
 
-    void setLookAt(const Vec &lookAt);
+    void setLookAt(const Vec3 &lookAt);
 
-    const Vec &getUp() const;
+    const Vec3 &getUp() const;
 
-    void setUp(const Vec &up);
+    void setUp(const Vec3 &up);
 
     double getFov() const;
 

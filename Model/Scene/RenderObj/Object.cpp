@@ -24,16 +24,16 @@ double Object::getKAmbient() const {
 void Object::setKAmbient(double kAmbient) {
     this->kAmbient = kAmbient;
 }
-const Vec &Object::getColorDiffuse() const {
+const Vec3 &Object::getColorDiffuse() const {
     return colorDiffuse;
 }
-void Object::setColorDiffuse(const Vec &colorDiffuse) {
+void Object::setColorDiffuse(const Vec3 &colorDiffuse) {
     Object::colorDiffuse = colorDiffuse;
 }
-const Vec &Object::getColorSpec() const {
+const Vec3 &Object::getColorSpec() const {
     return colorSpec;
 }
-void Object::setColorSpec(const Vec &colorSpec) {
+void Object::setColorSpec(const Vec3 &colorSpec) {
     Object::colorSpec = colorSpec;
 }
 double Object::getKgls() const {
@@ -43,7 +43,7 @@ void Object::setKgls(double kgls) {
     kgls = kgls;
 }
 
-Object::Object(double kDiffuse, double kSpecular, double ka, const Vec &colorDiffuse, const Vec &colorSpec, double kgls) {
+Object::Object(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls) {
     this->kDiffuse = kDiffuse;
     this->kSpecular = kSpecular;
     this->kAmbient = ka;
@@ -54,7 +54,7 @@ Object::Object(double kDiffuse, double kSpecular, double ka, const Vec &colorDif
 
 Object::Object() {}
 
-Vec Object::intersect(OffVec ray) {
+Vec3 Object::intersect(Ray ray) {
     double inf = std::numeric_limits<double>::infinity();
-    return Vec(inf, inf, inf);
+    return Vec3(inf, inf, inf);
 }

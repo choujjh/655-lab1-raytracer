@@ -4,25 +4,13 @@
 
 #include "linAlgOp.h"
 
-double LinAlgOp::dot(Vec a, Vec b) {
-    if(a.values.size() == b.values.size()){
-        double dotVal = 0;
-        for(int i = 0; i < a.values.size(); ++i){
-            dotVal += a.values.at(i) * b.values.at(i);
-        }
-        return dotVal;
-    }
-    throw "vector size mismatch";
+double LinAlgOp::dot(Vec3 a, Vec3 b) {
+    return a.x * b.x + a.y * b.y + a.z * b.z;
 }
 
-Vec LinAlgOp::cross(Vec a, Vec b) {
-    if(a.values.size() !=3 || b.values.size() != 3){
-        throw "vector size greater than 3";
-    }
-    double first = (a.values.at(1) * b.values.at(2)) - (b.values.at(1) * a.values.at(2));
-    double second = -((a.values.at(0) * b.values.at(2)) - (b.values.at(0) * a.values.at(2)));
-    double third = (a.values.at(0) * b.values.at(1)) - (b.values.at(0) * a.values.at(1));
-
-    return Vec(first, second, third);
+Vec3 LinAlgOp::cross(Vec3 a, Vec3 b) {
+    return Vec3((a.y * b.z - b.y * a.z),
+                (b.x * a.z - a.x * b.z),
+                (a.x * b.y - b.x * a.y));
 }
 

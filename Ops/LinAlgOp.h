@@ -6,12 +6,12 @@
 #define RAYTRACER_LINALGOP_H
 
 
-#include "../Model/VecModel/Vec.h"
+#include "../Model/VecModel/Vec3.h"
 
 class LinAlgOp {
 public:
-    double static dot(Vec a, Vec b);
-    Vec static cross(Vec a, Vec b);
+    double static dot(Vec3 a, Vec3 b);
+    Vec3 static cross(Vec3 a, Vec3 b);
 };
 
 

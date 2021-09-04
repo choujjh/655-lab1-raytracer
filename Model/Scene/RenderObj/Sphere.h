@@ -7,24 +7,24 @@
 
 
 #include "Object.h"
-#include "../../VecModel/Vec.h"
+#include "../../VecModel/Vec3.h"
 
 
 class Sphere: public Object {
 private:
-    Vec center;
+    Vec3 center;
     double radius;
 public:
-    Sphere(double kDiffuse, double kSpecular, double ka, const Vec &colorDiffuse, const Vec &colorSpec, double kgls,
-           const Vec &center, double radius);
+    Sphere(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls,
+           const Vec3 &center, double radius);
 
-    Vec intersect(OffVec ray) override;
+    Vec3 intersect(Ray ray) override;
 
-    Vec normal(Vec point) override;
+    Vec3 normal(Vec3 point) override;
 
-    const Vec &getCenter() const;
+    const Vec3 &getCenter() const;
 
-    void setCenter(const Vec &center);
+    void setCenter(const Vec3 &center);
 
     double getRadius() const;
 
