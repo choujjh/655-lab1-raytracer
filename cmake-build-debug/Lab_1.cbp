@@ -83,6 +83,18 @@
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Model.h">
 			<Option target="Lab_1"/>
 		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Render/Materials/Material.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Render/Materials/Material.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Render/RenderAlg.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Render/RenderAlg.h">
+			<Option target="Lab_1"/>
+		</Unit>
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Scene/Cam.cpp">
 			<Option target="Lab_1"/>
 		</Unit>

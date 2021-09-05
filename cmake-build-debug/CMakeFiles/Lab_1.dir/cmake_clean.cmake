@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj"
+  "CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj"
   "CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj"
   "CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj"
   "CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj"

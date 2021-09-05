@@ -141,6 +141,60 @@ Lab_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/build
 .PHONY : Lab_1/fast
 
+Model/Render/Materials/Material.obj: Model/Render/Materials/Material.cpp.obj
+
+.PHONY : Model/Render/Materials/Material.obj
+
+# target to build an object file
+Model/Render/Materials/Material.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj
+.PHONY : Model/Render/Materials/Material.cpp.obj
+
+Model/Render/Materials/Material.i: Model/Render/Materials/Material.cpp.i
+
+.PHONY : Model/Render/Materials/Material.i
+
+# target to preprocess a source file
+Model/Render/Materials/Material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.i
+.PHONY : Model/Render/Materials/Material.cpp.i
+
+Model/Render/Materials/Material.s: Model/Render/Materials/Material.cpp.s
+
+.PHONY : Model/Render/Materials/Material.s
+
+# target to generate assembly for a file
+Model/Render/Materials/Material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.s
+.PHONY : Model/Render/Materials/Material.cpp.s
+
+Model/Render/RenderAlg.obj: Model/Render/RenderAlg.cpp.obj
+
+.PHONY : Model/Render/RenderAlg.obj
+
+# target to build an object file
+Model/Render/RenderAlg.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj
+.PHONY : Model/Render/RenderAlg.cpp.obj
+
+Model/Render/RenderAlg.i: Model/Render/RenderAlg.cpp.i
+
+.PHONY : Model/Render/RenderAlg.i
+
+# target to preprocess a source file
+Model/Render/RenderAlg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.i
+.PHONY : Model/Render/RenderAlg.cpp.i
+
+Model/Render/RenderAlg.s: Model/Render/RenderAlg.cpp.s
+
+.PHONY : Model/Render/RenderAlg.s
+
+# target to generate assembly for a file
+Model/Render/RenderAlg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.s
+.PHONY : Model/Render/RenderAlg.cpp.s
+
 Model/Scene/Cam.obj: Model/Scene/Cam.cpp.obj
 
 .PHONY : Model/Scene/Cam.obj
@@ -528,6 +582,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Lab_1
+	@echo ... Model/Render/Materials/Material.obj
+	@echo ... Model/Render/Materials/Material.i
+	@echo ... Model/Render/Materials/Material.s
+	@echo ... Model/Render/RenderAlg.obj
+	@echo ... Model/Render/RenderAlg.i
+	@echo ... Model/Render/RenderAlg.s
 	@echo ... Model/Scene/Cam.obj
 	@echo ... Model/Scene/Cam.i
 	@echo ... Model/Scene/Cam.s

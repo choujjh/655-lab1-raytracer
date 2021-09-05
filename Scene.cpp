@@ -14,15 +14,17 @@ using std::endl;
 #include "Scene.h"
 #include "Ops/RenderOps.h"
 
+using std::cout, std::endl;
+
 void Scene::writeToFileInt(int maxVal){
     ofstream out;
     out.open(fileName);
 
     out << "P3" << endl;
-    out << renderCam->getHeight() << " " << renderCam->getWidth() << endl;
+    out << renderCam->getWidth() << " " << renderCam->getHeight() << endl;
     out << maxVal << endl;
-    for(int row = 0; row < renderCam->getWidth(); ++row){
-        for(int col = 0; col < renderCam->getHeight(); ++col){
+    for(int row = 0; row < renderCam->getHeight(); ++row){
+        for(int col = 0; col < renderCam->getWidth(); ++col){
             out << round(image[row][col].x * maxVal) << " " << round(image[row][col].y * maxVal) << " " << round(image[row][col].z * maxVal) << " ";
         }
         out << endl;
@@ -34,8 +36,8 @@ void Scene::render() {
     /**initialize rays**/
     initializeRays();
     /**get image color**/
-    for(int row = 0; row < renderCam->getWidth(); ++row){
-        for(int col = 0; col < renderCam->getHeight(); ++col){
+    for(int row = 0; row < renderCam->getHeight(); ++row){
+        for(int col = 0; col < renderCam->getWidth(); ++col){
             image[row][col] = calcPixel(row, col);
         }
     }
@@ -45,13 +47,20 @@ void Scene::render() {
 
 void Scene::initializeRays(){
     Vec3 currRow = this->renderCam->getStart();
-    for(int row = 0; row < renderCam->getWidth(); ++row){
+    int row = 0;
+    int col = 0;
+    for(row = 0; row < renderCam->getHeight(); ++row){
         Vec3 currCol = currRow;
-        for(int col = 0; col < renderCam->getHeight(); ++col){
-            Vec3 dirRay = (currCol - renderCam->getLookFrom()).normalize();
-            rays.at(row).at(col).direction = dirRay;
-            rays.at(row).at(col).point = renderCam->getLookFrom();
-            currCol = currCol + renderCam->getIncrementX();
+        for(col = 0; col < renderCam->getWidth(); ++col){
+            try {
+                    Vec3 dirRay = (currCol - renderCam->getLookFrom()).normalize();
+                    rays.at(row).at(col).direction = dirRay;
+                    rays.at(row).at(col).point = renderCam->getLookFrom();
+                    currCol = currCol + renderCam->getIncrementX();
+            }
+            catch(...){
+                cout << "row: " << row << " col: " << col << endl;
+            }
         }
         currRow = currRow - renderCam->getIncrementY();
     }
@@ -92,7 +101,8 @@ Vec3 Scene::getColor(Ray ray, int currLevel){
     }
     Vec3 refRay = RenderOps().reflectionRay(n, ray.direction * -1);
     Ray newRay(epsilonPoint, refRay);
-    color += getColor(newRay, currLevel + 1) * objList->at(objIndex)->getKSpecular() * objList->at(objIndex)->getKSpecular();
+    color += getColor(newRay, currLevel + 1) * objList->at(objIndex)->objMat.kSpecular * objList->at(objIndex)->objMat.kSpecular;
+    color.clip(0, 1);
 
     return color;
 }

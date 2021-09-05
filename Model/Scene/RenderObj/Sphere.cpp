@@ -23,11 +23,8 @@ void Sphere::setRadius(double radius) {
     Sphere::radius = radius;
 }
 
-Sphere::Sphere(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls,
-               const Vec3 &center, double radius) : Object(kDiffuse, kSpecular, ka, colorDiffuse, colorSpec, kgls) {
-    this->center = center;
-    this->radius = radius;
-}
+Sphere::Sphere(const Material &objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
+                                                                            radius(radius) {}
 
 Vec3 Sphere::intersect(Ray ray) {
     ray.direction.normalize();

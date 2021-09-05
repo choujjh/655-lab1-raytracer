@@ -15,8 +15,7 @@ private:
     Vec3 center;
     double radius;
 public:
-    Sphere(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls,
-           const Vec3 &center, double radius);
+    Sphere(const Material &objMat, const Vec3 &center, double radius);
 
     Vec3 intersect(Ray ray) override;
 

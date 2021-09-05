@@ -257,6 +257,32 @@ CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\VecModel\Vec3.cpp -o CMakeFiles\Lab_1.dir\Model\VecModel\Vec3.cpp.s
 
+CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj: ../Model/Render/Materials/Material.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Render\Materials\Material.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\Materials\Material.cpp
+
+CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\Materials\Material.cpp > CMakeFiles\Lab_1.dir\Model\Render\Materials\Material.cpp.i
+
+CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\Materials\Material.cpp -o CMakeFiles\Lab_1.dir\Model\Render\Materials\Material.cpp.s
+
+CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj: ../Model/Render/RenderAlg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Render\RenderAlg.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\RenderAlg.cpp
+
+CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\RenderAlg.cpp > CMakeFiles\Lab_1.dir\Model\Render\RenderAlg.cpp.i
+
+CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\RenderAlg.cpp -o CMakeFiles\Lab_1.dir\Model\Render\RenderAlg.cpp.s
+
 # Object files for target Lab_1
 Lab_1_OBJECTS = \
 "CMakeFiles/Lab_1.dir/main.cpp.obj" \
@@ -272,7 +298,9 @@ Lab_1_OBJECTS = \
 "CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj" \
 "CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj" \
 "CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj"
+"CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj"
 
 # External object files for target Lab_1
 Lab_1_EXTERNAL_OBJECTS =
@@ -291,11 +319,13 @@ Lab_1.exe: CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj
 Lab_1.exe: CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj
 Lab_1.exe: CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj
 Lab_1.exe: CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj
 Lab_1.exe: CMakeFiles/Lab_1.dir/build.make
 Lab_1.exe: CMakeFiles/Lab_1.dir/linklibs.rsp
 Lab_1.exe: CMakeFiles/Lab_1.dir/objects1.rsp
 Lab_1.exe: CMakeFiles/Lab_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Lab_1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Lab_1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Lab_1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

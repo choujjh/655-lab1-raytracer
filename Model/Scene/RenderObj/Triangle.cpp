@@ -6,6 +6,12 @@
 #include "../../../Ops/LinAlgOp.h"
 #include <limits>
 
+Triangle::Triangle(const Material &objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c)
+        : Plane(objMat, Vec3(), 0), a(a), b(b), c(c) {
+    n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
+    d = LinAlgOp().dot(n, a);
+}
+
 Vec3 Triangle::intersect(Ray ray) {
     Vec3 planeIntersectPoint = Plane::intersect(ray);
     if(planeIntersectPoint.getMagnitude() == std::numeric_limits<double>::infinity()){
@@ -25,14 +31,8 @@ Vec3 Triangle::intersect(Ray ray) {
     }
     return planeIntersectPoint;
 }
+
 Vec3 Triangle::normal(Vec3 point) {
     return n;
 }
-Triangle::Triangle(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec,
-                   double kgls, const Vec3 &a, const Vec3 &b, const Vec3 &c):
-        Plane(kDiffuse, kSpecular, ka, colorDiffuse, colorSpec, kgls, Vec3(), 0), a(a), b(b), c(c) {
-    Vec3 testA = this->b - this->a;
-    Vec3 testB = this->c - this->a;
-    n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
-    d = LinAlgOp().dot(n, a);
-}
+

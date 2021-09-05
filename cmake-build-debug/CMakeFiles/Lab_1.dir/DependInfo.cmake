@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Render/Materials/Material.cpp" "C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj"
+  "C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Render/RenderAlg.cpp" "C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj"
   "C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Scene/Cam.cpp" "C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj"
   "C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Scene/Light/AmbientLight.cpp" "C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj"
   "C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Scene/Light/DirectionLight.cpp" "C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj"

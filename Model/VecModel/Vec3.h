@@ -16,7 +16,7 @@ public:
     double x, y, z;
 
     Vec3();
-    Vec3(double first, double second, double third);
+    Vec3(double x, double y, double z);
     Vec3(const Vec3 &obj);
 
     Vec3 normalize();
@@ -24,9 +24,13 @@ public:
 
     double getMagnitude() const;
 
+    double dot(Vec3 b);
+    Vec3 cross(Vec3 b);
+
     Vec3 operator-(Vec3 b);
     Vec3 operator+(Vec3 b);
-    Vec3 operator+=(Vec3 b);
+    void operator+=(Vec3 b);
+    void operator-=(Vec3 b);
     Vec3 operator*(double val);
     Vec3 operator/(double val);
     Vec3 operator*(Vec3 b);

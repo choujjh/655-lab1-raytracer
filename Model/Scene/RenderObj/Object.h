@@ -7,35 +7,16 @@
 
 
 #include "../../VecModel/Ray.h"
+#include "../../Render/Materials/Material.h"
 
 class Object {
-protected:
-    double kDiffuse;
-    double kSpecular;
-    double kAmbient;
-    Vec3 colorDiffuse;
-    Vec3 colorSpec;
-    double kgls;
 public:
-    Object(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls);
+    Material objMat;
 
-    Object();
+    Object(const Material &objMat);
 
-    virtual Vec3 intersect(Ray ray);
+    virtual Vec3 intersect(Ray ray) = 0;
     virtual Vec3 normal(Vec3 point) = 0;
-
-    double getKDiffuse() const;
-    void setKDiffuse(double kDiffuse);
-    double getKSpecular() const;
-    void setKSpecular(double kSpecular);
-    double getKAmbient() const;
-    void setKAmbient(double kAmbient);
-    const Vec3 &getColorDiffuse() const;
-    void setColorDiffuse(const Vec3 &colorDiffuse);
-    const Vec3 &getColorSpec() const;
-    void setColorSpec(const Vec3 &colorSpec);
-    double getKgls() const;
-    void setKgls(double kgls);
 };
 
 

@@ -8,9 +8,6 @@
 
 
 /*TODO:
- * fix box resolution issue
- * make dot and cross and clip all part of Vec3
- * overload += and -=
  * sampling
  * multi- threading
  * lights as objects
@@ -49,17 +46,26 @@ void diffuse(string outFile){
     createScene(objectList, lightList);
 
     /**setting up objects**/
-    objectList->push_back(new Sphere(0.8, 0.1, 0.1, Vec3(1, 1, 1), Vec3(1.0, 1, 1.0), 4, Vec3(0.35, 0, -0.1), 0.05));
-    objectList->push_back(new Sphere(0.3, 0.6, 0.1, Vec3(1, 0, 0), Vec3(0.5, 1, 0.5), 32, Vec3(0.2, 0, -0.1), 0.075));
-    objectList->push_back(new Sphere(0.4, 0.5, 0.1, Vec3(0, 1, 0), Vec3(0.5, 1, 0.5), 32, Vec3(-0.6, 0, 0), 0.3));
+    Material MSphere1(0.8, 0.1, 0.1, 4, Vec3(1, 1, 1), Vec3(1.0, 1, 1.0), Vec3());
+    objectList->push_back(new Sphere(MSphere1, Vec3(0.35, 0, -0.1), 0.05));
+
+    Material MSphere2(0.3, 0.6, 0.1,  32,Vec3(1, 0, 0), Vec3(0.5, 1, 0.5), Vec3());
+    objectList->push_back(new Sphere(MSphere2, Vec3(0.2, 0, -0.1), 0.075));
+
+    Material MSphere3(0.4, 0.5, 0.1, 32, Vec3(0, 1, 0), Vec3(0.5, 1, 0.5), Vec3());
+    objectList->push_back(new Sphere(MSphere3, Vec3(-0.6, 0, 0), 0.3));
+
+    Material MTriangle1(0.7, 0.2, 1.0, 32, Vec3(0.0, 0.0, 1.0), Vec3(1.0, 1.0, 1.0), Vec3());
     Vec3 a(0.3, -0.3, -0.4);
     Vec3 b(0.0, 0.3, -0.1);
     Vec3 c(-0.3, -0.3, 0.2);
-    objectList->push_back(new Triangle(0.7, 0.2, 1.0, Vec3(0.0, 0.0, 1.0), Vec3(1.0, 1.0, 1.0), 32, a, b, c));
+    objectList->push_back(new Triangle(MTriangle1, a, b, c));
+
+    Material MTriangle2(0.9, 0.0, 0.1, 4, Vec3(1, 1, 0), Vec3(1, 1, 1), Vec3());
     a = Vec3(-0.2, 0.1, 0.1);
     b = Vec3(-0.2, -0.5, 0.2);
     c = Vec3(-0.2, 0.1, -0.3);
-    objectList->push_back((new Triangle(0.9, 0.0, 0.1, Vec3(1, 1, 0), Vec3(1, 1, 1), 4, a, b, c)));
+    objectList->push_back((new Triangle(MTriangle2, a, b, c)));
 
     /**lights**/
     lightList->push_back(new directionLight(Vec3(1.0, 1.0, 1.0), Vec3(-1.0, 0.0, 0.0)));
@@ -88,17 +94,26 @@ void fun(string outFile){
     createScene(objectList, lightList);
 
     /**setting up objects**/
-    objectList->push_back(new Sphere(0.2, 0.8, 0.1, Vec3(1, 1, 0), Vec3(1, 1, 0), 4, Vec3(0.35, 0, -0.1), 0.3));
-    objectList->push_back(new Sphere(0.8, 0.1, 0.1, Vec3(1, 1, 1), Vec3(1, 1, 1), 4, Vec3(-0.3, 0.3, -0.1), 0.1));
-    objectList->push_back(new Sphere(0.8, 0.2, 0.1, Vec3(1, 1, 1), Vec3(1, 1, 1), 4, Vec3(-0.3, -0.1, -0.1), 0.15));
+    Material MSphere1(0.2, 0.8, 0.1, 4, Vec3(1, 1, 0), Vec3(1, 1, 0), Vec3());
+    objectList->push_back(new Sphere(MSphere1, Vec3(0.35, 0, -0.1), 0.3));
 
-    objectList->push_back(new Sphere(0.8, 0.1, 0.1, Vec3(1, 1, 1), Vec3(1, 1, 1), 4, Vec3(0.0, 0.3, 0.0), 0.25));
-    objectList->push_back(new Plane(0.6, 0.3, 0.1, Vec3(0.5, 0.5, 0.5), Vec3(1, 1, 1), 4, Vec3(0.0, 1.0, 0.0), -0.5));
+    Material MSphere2(0.8, 0.1, 0.1, 4, Vec3(1, 1, 1), Vec3(1, 1, 1), Vec3());
+    objectList->push_back(new Sphere(MSphere2, Vec3(-0.3, 0.3, -0.1), 0.1));
 
+    Material MSphere3(0.8, 0.2, 0.1, 4, Vec3(1, 1, 1), Vec3(1, 1, 1), Vec3());
+    objectList->push_back(new Sphere(MSphere3, Vec3(-0.3, -0.1, -0.1), 0.15));
+
+    Material MSphere4(0.8, 0.1, 0.1, 4, Vec3(1, 1, 1), Vec3(1, 1, 1), Vec3());
+    objectList->push_back(new Sphere(MSphere4, Vec3(0.0, 0.3, 0.0), 0.25));
+
+    Material MPlane1(0.6, 0.3, 0.1, 4, Vec3(0.5, 0.5, 0.5), Vec3(1, 1, 1), Vec3());
+    objectList->push_back(new Plane(MPlane1, Vec3(0.0, 1.0, 0.0), -0.5));
+
+    Material MTriangle1(0.6, 0.3, 0.1, 4, Vec3(0.0, 0.5, 0.5), Vec3(1, 1, 1), Vec3());
     Vec3 a(0.0, 0.0, -2.5);
     Vec3 b(-0.5, 2.0, -0.5);
     Vec3 c(-0.5, 0.3, 0.5);
-    objectList->push_back(new Triangle(0.6, 0.3, 0.1, Vec3(0.0, 0.5, 0.5), Vec3(1, 1, 1), 4, a, b, c));
+    objectList->push_back(new Triangle(MTriangle1, a, b, c));
 
     /**lights**/
     lightList->push_back(new directionLight(Vec3(1.0, 0.0, 0.0), Vec3(-1.0, -1.0, 0.0)));
@@ -128,17 +143,20 @@ void reflection(string outFile){
     createScene(objectList, lightList);
 
     /**setting up objects**/
-    objectList->push_back(new Sphere(0.0, 0.9, 0.1, Vec3(0.75, 0.75, 0.75), Vec3(1, 1, 1), 10, Vec3(0.0, 0.3, 0.0), 0.2));
+    Material MSphere1(0.0, 0.9, 0.1, 4, Vec3(0.75, 0.75, 0.75), Vec3(1, 1, 1), Vec3());
+    objectList->push_back(new Sphere(MSphere1, Vec3(0.0, 0.3, 0.0), 0.2));
 
+    Material MTriangle1(0.4, 0.5, 0.1, 4, Vec3(0, 0, 1), Vec3(1, 1, 1), Vec3());
     Vec3 a(0.0, -0.5, 0.5);
     Vec3 b(1.0, 0.5, 0.0);
     Vec3 c(0.0, -0.5, -0.5);
-    objectList->push_back(new Triangle(0.4, 0.5, 0.1, Vec3(0, 0, 1), Vec3(1, 1, 1), 4, a, b, c));
+    objectList->push_back(new Triangle(MTriangle1, a, b, c));
 
+    Material MTriangle2(0.4, 0.5, 0.1, 4, Vec3(1, 1, 0), Vec3(1, 1, 1), Vec3());
     a = Vec3(0.0, -0.5, 0.5);
     b = Vec3(0.0, -0.5, -0.5);
     c = Vec3(-1.0, 0.5, 0.0);
-    objectList->push_back(new Triangle(0.4, 0.5, 0.1, Vec3(1, 1, 0), Vec3(1, 1, 1), 4, a, b, c));
+    objectList->push_back(new Triangle(MTriangle2, a, b, c));
 
     /**lights**/
     lightList->push_back(new directionLight(Vec3(1.0, 1.0, 1.0), Vec3(0.0, -1.0, 0.0)));
@@ -146,7 +164,7 @@ void reflection(string outFile){
     /**background color**/
     Vec3 backColor(0.2, 0.2, 0.2);
 
-    Scene currScene(outFile, renderCam, objectList, lightList, backColor, 2);
+    Scene currScene(outFile, renderCam, objectList, lightList, backColor, 3);
     currScene.render();
 
     delete renderCam;
@@ -154,7 +172,7 @@ void reflection(string outFile){
 }
 int main() {
     diffuse("diffuse.ppm");
-    reflection("reflection.ppm");
-    fun("personal.ppm");
+//    reflection("reflection.ppm");
+//    fun("personal.ppm");
     return 0;
 }

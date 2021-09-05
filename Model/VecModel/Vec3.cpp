@@ -3,19 +3,16 @@
 //
 
 #include "Vec3.h"
+#include "../../Ops/LinAlgOp.h"
 
 #import <cmath>
 
 using std::pow;
 using std::sqrt;
 
-Vec3::Vec3() {
-}
+Vec3::Vec3(): x(0), y(0), z(0), magnitude(0) {}
 
-Vec3::Vec3(double first, double second, double third) {
-    x = first;
-    y = second;
-    z = third;
+Vec3::Vec3(double x, double y, double z): x(x), y(y), z(z) {
     calcMagnitude();
 }
 Vec3::Vec3(const Vec3 &obj){
@@ -47,14 +44,28 @@ void Vec3::calcMagnitude() {
     magnitude = sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
 }
 
+double Vec3::dot(Vec3 b){
+    return LinAlgOp().dot(*this, b);
+}
+Vec3 Vec3::cross(Vec3 b){
+    return LinAlgOp().cross(*this, b);
+}
+
 Vec3 Vec3::operator-(Vec3 b) {
     return Vec3(this->x - b.x, this->y - b.y, this->z - b.z);
 }
 Vec3 Vec3::operator+(Vec3 b) {
     return Vec3(this->x + b.x, this->y + b.y, this->z + b.z);
 }
-Vec3 Vec3::operator+=(Vec3 b){
-    return *this + b;
+void Vec3::operator+=(Vec3 b){
+    x += b.x;
+    y += b.y;
+    z += b.z;
+}
+void Vec3::operator-=(Vec3 b){
+    x -= b.x;
+    y -= b.y;
+    z -= b.z;
 }
 Vec3 Vec3::operator*(double val) {
     return Vec3(this->x * val, this->y * val, this->z * val);

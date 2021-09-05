@@ -14,8 +14,7 @@ protected:
     Vec3 n;
     double d;
 public:
-    Plane(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec, double kgls,
-          const Vec3 &n, double d);
+    Plane(const Material &objMat, const Vec3 &n, double d);
 
     Vec3 intersect(Ray ray) override;
     Vec3 normal(Vec3 point) override;

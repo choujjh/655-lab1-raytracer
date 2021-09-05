@@ -2,7 +2,7 @@
 // Created by chouj on 3/6/2021.
 //
 
-#include "linAlgOp.h"
+#include "LinAlgOp.h"
 
 double LinAlgOp::dot(Vec3 a, Vec3 b) {
     return a.x * b.x + a.y * b.y + a.z * b.z;

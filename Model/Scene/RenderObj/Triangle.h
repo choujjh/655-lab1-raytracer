@@ -14,8 +14,7 @@ public:
     Vec3 b;
     Vec3 c;
 
-    Triangle(double kDiffuse, double kSpecular, double ka, const Vec3 &colorDiffuse, const Vec3 &colorSpec,
-             double kgls, const Vec3 &a, const Vec3 &b, const Vec3 &c);
+    Triangle(const Material &objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c);
 
     Vec3 intersect(Ray ray) override;
 
