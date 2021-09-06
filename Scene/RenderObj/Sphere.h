@@ -14,7 +14,7 @@ private:
     Vec3 center;
     double radius;
 public:
-    Sphere(Material* objMat, const Vec3 &center, double radius);
+    Sphere(const Material &objMat, const Vec3 &center, double radius);
 
     Vec3 intersect(Ray ray) override;
 

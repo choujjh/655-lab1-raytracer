@@ -2,8 +2,8 @@
 // Created by chouj on 9/6/2021.
 //
 
-#ifndef LAB_1_MATCOMPONENT_H
-#define LAB_1_MATCOMPONENT_H
+#ifndef RAYTRACER_MATCOMPONENT_H
+#define RAYTRACER_MATCOMPONENT_H
 
 template <class T>
 class MatComponent {
@@ -13,4 +13,4 @@ public:
 };
 
 
-#endif //LAB_1_MATCOMPONENT_H
+#endif //RAYTRACER_MATCOMPONENT_H

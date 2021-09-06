@@ -116,22 +116,16 @@
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Vec/Vec3.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/Materials/Material.cpp">
-			<Option target="Lab_1"/>
-		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/Materials/Material.h">
-			<Option target="Lab_1"/>
-		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/Materials/MaterialSolid.cpp">
-			<Option target="Lab_1"/>
-		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/Materials/MaterialSolid.h">
-			<Option target="Lab_1"/>
-		</Unit>
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/RenderAlg.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/RenderAlg.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/RenderCompCreator.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/RenderCompCreator.h">
 			<Option target="Lab_1"/>
 		</Unit>
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene.cpp">
@@ -162,6 +156,12 @@
 			<Option target="Lab_1"/>
 		</Unit>
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Light/Light.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Materials/Material.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Materials/Material.h">
 			<Option target="Lab_1"/>
 		</Unit>
 		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Object.cpp">

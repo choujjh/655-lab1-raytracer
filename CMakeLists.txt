@@ -3,4 +3,48 @@ project(Lab_1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Lab_1 main.cpp Scene/Light/AmbientLight.cpp Scene/Light/AmbientLight.h Scene/Light/DirectionLight.cpp Scene/Light/DirectionLight.h Scene/Light/Light.cpp Scene/Light/Light.h Scene/RenderObj/Object.cpp Scene/RenderObj/Object.h Scene/RenderObj/Plane.cpp Scene/RenderObj/Plane.h Scene/RenderObj/Sphere.cpp Scene/RenderObj/Sphere.h Scene/RenderObj/Triangle.cpp Scene/RenderObj/Triangle.h Scene/Cam.cpp Scene/Cam.h Scene.cpp Scene.h Model/Ops/RenderOps.cpp Model/Ops/RenderOps.h Model/Ops/LinAlgOp.cpp Model/Ops/LinAlgOp.h Model/Vec/Ray.cpp Model/Vec/Ray.h Model/Vec/Vec3.cpp Model/Vec/Vec3.h Render/Materials/Material.cpp Render/Materials/Material.h Render/RenderAlg.cpp Render/RenderAlg.h Render/Materials/MaterialSolid.cpp Render/Materials/MaterialSolid.h Model/Material/MatComponent.cpp Model/Material/MatComponent.h Model/Material/MatCompSolid.cpp Model/Material/MatCompSolid.h)
+add_executable(Lab_1
+        main.cpp
+        Scene/Light/AmbientLight.cpp
+        Scene/Light/AmbientLight.h
+        Scene/Light/DirectionLight.cpp
+        Scene/Light/DirectionLight.h
+        Scene/Light/Light.cpp
+        Scene/Light/Light.h
+
+        Scene/RenderObj/Object.cpp
+        Scene/RenderObj/Object.h
+        Scene/RenderObj/Plane.cpp
+        Scene/RenderObj/Plane.h
+        Scene/RenderObj/Sphere.cpp
+        Scene/RenderObj/Sphere.h
+        Scene/RenderObj/Triangle.cpp
+        Scene/RenderObj/Triangle.h
+
+        Scene/Materials/Material.cpp
+        Scene/Materials/Material.h
+
+        Scene/Cam.cpp
+        Scene/Cam.h
+        Scene.cpp
+        Scene.h
+        RenderCompCreator.cpp
+        RenderCompCreator.h
+
+        Model/Ops/RenderOps.cpp
+        Model/Ops/RenderOps.h
+        Model/Ops/LinAlgOp.cpp
+        Model/Ops/LinAlgOp.h
+        Model/Vec/Ray.cpp
+        Model/Vec/Ray.h
+        Model/Vec/Vec3.cpp
+        Model/Vec/Vec3.h
+
+        Model/Material/MatComponent.cpp
+        Model/Material/MatComponent.h
+        Model/Material/MatCompSolid.cpp
+        Model/Material/MatCompSolid.h
+
+        Render/RenderAlg.cpp
+        Render/RenderAlg.h
+        )

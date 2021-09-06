@@ -25,96 +25,117 @@ CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj: ../Model/Ops/LinAlgOp.h
 CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj: ../Model/Vec/Vec3.cpp
 CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj: ../Model/Vec/Vec3.h
 
-CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj: ../Render/Materials/Material.cpp
-CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj: ../Render/Materials/Material.h
-
-CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj: ../Render/Materials/Material.h
-CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj: ../Render/Materials/MaterialSolid.cpp
-CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj: ../Render/Materials/MaterialSolid.h
-
 CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj: ../Model/Vec/Vec3.h
 CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj: ../Render/RenderAlg.cpp
 CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj: ../Render/RenderAlg.h
 
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Model/Material/MatCompSolid.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Model/Material/MatComponent.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Model/Vec/Ray.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Model/Vec/Vec3.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../RenderCompCreator.cpp
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../RenderCompCreator.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/Light/AmbientLight.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/Light/DirectionLight.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/Light/Light.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/Materials/Material.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/RenderObj/Object.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/RenderObj/Plane.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/RenderObj/Sphere.h
+CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj: ../Scene/RenderObj/Triangle.h
+
+CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Model/Ops/RenderOps.h
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Render/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Scene.cpp
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Scene.h
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Scene/Cam.h
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Scene/Light/Light.h
+CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Scene/RenderObj/Object.h
 
 CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj: ../Model/Vec/Vec3.h
 CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj: ../Scene/Cam.cpp
 CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj: ../Scene/Cam.h
 
+CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Render/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Scene/Light/AmbientLight.cpp
 CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Scene/Light/AmbientLight.h
 CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Scene/Light/Light.h
+CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Scene/RenderObj/Object.h
 
+CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Render/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Scene/Light/DirectionLight.cpp
 CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Scene/Light/DirectionLight.h
 CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Scene/Light/Light.h
+CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Scene/RenderObj/Object.h
 
+CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Model/Ops/RenderOps.h
 CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Render/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Scene/Light/Light.cpp
 CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Scene/Light/Light.h
+CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Scene/RenderObj/Object.h
 
+CMakeFiles/Lab_1.dir/Scene/Materials/Material.cpp.obj: ../Model/Material/MatComponent.h
+CMakeFiles/Lab_1.dir/Scene/Materials/Material.cpp.obj: ../Model/Vec/Vec3.h
+CMakeFiles/Lab_1.dir/Scene/Materials/Material.cpp.obj: ../Scene/Materials/Material.cpp
+CMakeFiles/Lab_1.dir/Scene/Materials/Material.cpp.obj: ../Scene/Materials/Material.h
+
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Render/Materials/Material.h
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Scene/RenderObj/Object.cpp
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Scene/RenderObj/Object.h
 
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Render/Materials/Material.h
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Scene/RenderObj/Object.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Scene/RenderObj/Plane.cpp
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Scene/RenderObj/Plane.h
 
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Render/Materials/Material.h
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Scene/RenderObj/Object.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Scene/RenderObj/Sphere.cpp
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Scene/RenderObj/Sphere.h
 
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Model/Ops/LinAlgOp.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Render/Materials/Material.h
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Scene/RenderObj/Object.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Scene/RenderObj/Plane.h
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Scene/RenderObj/Triangle.cpp
 CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Scene/RenderObj/Triangle.h
 
+CMakeFiles/Lab_1.dir/main.cpp.obj: ../Model/Material/MatCompSolid.h
+CMakeFiles/Lab_1.dir/main.cpp.obj: ../Model/Material/MatComponent.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Model/Vec/Ray.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Model/Vec/Vec3.h
-CMakeFiles/Lab_1.dir/main.cpp.obj: ../Render/Materials/Material.h
-CMakeFiles/Lab_1.dir/main.cpp.obj: ../Render/Materials/MaterialSolid.h
+CMakeFiles/Lab_1.dir/main.cpp.obj: ../RenderCompCreator.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/Cam.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/Light/AmbientLight.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/Light/DirectionLight.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/Light/Light.h
+CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/Materials/Material.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/RenderObj/Object.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/RenderObj/Plane.h
 CMakeFiles/Lab_1.dir/main.cpp.obj: ../Scene/RenderObj/Sphere.h

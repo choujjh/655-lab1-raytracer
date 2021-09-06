@@ -8,16 +8,20 @@
 
 #include "MatComponent.h"
 
-template <class T>
+template <typename T>
 class MatCompSolid: public MatComponent<T>{
 public:
-    T getColor(double u, double v) override;
+    T getColor(double u, double v) override {
+        return val;
+    }
 
-    T getColor() override;
+    T getColor() override {
+        return val;
+    }
 
-    MatCompSolid(T solid);
+    MatCompSolid(T val): val(val){}
 private:
-    T solid;
+    T val;
 };
 
 

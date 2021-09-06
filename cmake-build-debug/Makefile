@@ -303,60 +303,6 @@ Model/Vec/Vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.s
 .PHONY : Model/Vec/Vec3.cpp.s
 
-Render/Materials/Material.obj: Render/Materials/Material.cpp.obj
-
-.PHONY : Render/Materials/Material.obj
-
-# target to build an object file
-Render/Materials/Material.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj
-.PHONY : Render/Materials/Material.cpp.obj
-
-Render/Materials/Material.i: Render/Materials/Material.cpp.i
-
-.PHONY : Render/Materials/Material.i
-
-# target to preprocess a source file
-Render/Materials/Material.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.i
-.PHONY : Render/Materials/Material.cpp.i
-
-Render/Materials/Material.s: Render/Materials/Material.cpp.s
-
-.PHONY : Render/Materials/Material.s
-
-# target to generate assembly for a file
-Render/Materials/Material.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.s
-.PHONY : Render/Materials/Material.cpp.s
-
-Render/Materials/MaterialSolid.obj: Render/Materials/MaterialSolid.cpp.obj
-
-.PHONY : Render/Materials/MaterialSolid.obj
-
-# target to build an object file
-Render/Materials/MaterialSolid.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj
-.PHONY : Render/Materials/MaterialSolid.cpp.obj
-
-Render/Materials/MaterialSolid.i: Render/Materials/MaterialSolid.cpp.i
-
-.PHONY : Render/Materials/MaterialSolid.i
-
-# target to preprocess a source file
-Render/Materials/MaterialSolid.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.i
-.PHONY : Render/Materials/MaterialSolid.cpp.i
-
-Render/Materials/MaterialSolid.s: Render/Materials/MaterialSolid.cpp.s
-
-.PHONY : Render/Materials/MaterialSolid.s
-
-# target to generate assembly for a file
-Render/Materials/MaterialSolid.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.s
-.PHONY : Render/Materials/MaterialSolid.cpp.s
-
 Render/RenderAlg.obj: Render/RenderAlg.cpp.obj
 
 .PHONY : Render/RenderAlg.obj
@@ -383,6 +329,33 @@ Render/RenderAlg.s: Render/RenderAlg.cpp.s
 Render/RenderAlg.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.s
 .PHONY : Render/RenderAlg.cpp.s
+
+RenderCompCreator.obj: RenderCompCreator.cpp.obj
+
+.PHONY : RenderCompCreator.obj
+
+# target to build an object file
+RenderCompCreator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.obj
+.PHONY : RenderCompCreator.cpp.obj
+
+RenderCompCreator.i: RenderCompCreator.cpp.i
+
+.PHONY : RenderCompCreator.i
+
+# target to preprocess a source file
+RenderCompCreator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.i
+.PHONY : RenderCompCreator.cpp.i
+
+RenderCompCreator.s: RenderCompCreator.cpp.s
+
+.PHONY : RenderCompCreator.s
+
+# target to generate assembly for a file
+RenderCompCreator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/RenderCompCreator.cpp.s
+.PHONY : RenderCompCreator.cpp.s
 
 Scene.obj: Scene.cpp.obj
 
@@ -518,6 +491,33 @@ Scene/Light/Light.s: Scene/Light/Light.cpp.s
 Scene/Light/Light.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.s
 .PHONY : Scene/Light/Light.cpp.s
+
+Scene/Materials/Material.obj: Scene/Materials/Material.cpp.obj
+
+.PHONY : Scene/Materials/Material.obj
+
+# target to build an object file
+Scene/Materials/Material.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Materials/Material.cpp.obj
+.PHONY : Scene/Materials/Material.cpp.obj
+
+Scene/Materials/Material.i: Scene/Materials/Material.cpp.i
+
+.PHONY : Scene/Materials/Material.i
+
+# target to preprocess a source file
+Scene/Materials/Material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Materials/Material.cpp.i
+.PHONY : Scene/Materials/Material.cpp.i
+
+Scene/Materials/Material.s: Scene/Materials/Material.cpp.s
+
+.PHONY : Scene/Materials/Material.s
+
+# target to generate assembly for a file
+Scene/Materials/Material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Materials/Material.cpp.s
+.PHONY : Scene/Materials/Material.cpp.s
 
 Scene/RenderObj/Object.obj: Scene/RenderObj/Object.cpp.obj
 
@@ -681,15 +681,12 @@ help:
 	@echo ... Model/Vec/Vec3.obj
 	@echo ... Model/Vec/Vec3.i
 	@echo ... Model/Vec/Vec3.s
-	@echo ... Render/Materials/Material.obj
-	@echo ... Render/Materials/Material.i
-	@echo ... Render/Materials/Material.s
-	@echo ... Render/Materials/MaterialSolid.obj
-	@echo ... Render/Materials/MaterialSolid.i
-	@echo ... Render/Materials/MaterialSolid.s
 	@echo ... Render/RenderAlg.obj
 	@echo ... Render/RenderAlg.i
 	@echo ... Render/RenderAlg.s
+	@echo ... RenderCompCreator.obj
+	@echo ... RenderCompCreator.i
+	@echo ... RenderCompCreator.s
 	@echo ... Scene.obj
 	@echo ... Scene.i
 	@echo ... Scene.s
@@ -705,6 +702,9 @@ help:
 	@echo ... Scene/Light/Light.obj
 	@echo ... Scene/Light/Light.i
 	@echo ... Scene/Light/Light.s
+	@echo ... Scene/Materials/Material.obj
+	@echo ... Scene/Materials/Material.i
+	@echo ... Scene/Materials/Material.s
 	@echo ... Scene/RenderObj/Object.obj
 	@echo ... Scene/RenderObj/Object.i
 	@echo ... Scene/RenderObj/Object.s

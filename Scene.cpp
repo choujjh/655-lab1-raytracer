@@ -101,7 +101,7 @@ Vec3 Scene::getColor(Ray ray, int currLevel){
     }
     Vec3 refRay = RenderOps().reflectionRay(n, ray.direction * -1);
     Ray newRay(epsilonPoint, refRay);
-    color += getColor(newRay, currLevel + 1) * objList->at(objIndex)->objMat->kSpecular * objList->at(objIndex)->objMat->kSpecular;
+    color += getColor(newRay, currLevel + 1) * objList->at(objIndex)->objMat.kSpecular->getColor() * objList->at(objIndex)->objMat.kSpecular->getColor();
     color.clip(0, 1);
 
     return color;

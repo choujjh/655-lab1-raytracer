@@ -22,7 +22,7 @@ void Sphere::setRadius(double radius) {
     Sphere::radius = radius;
 }
 
-Sphere::Sphere(Material* objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
+Sphere::Sphere(const Material &objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
                                                                             radius(radius) {}
 
 Vec3 Sphere::intersect(Ray ray) {

@@ -9,12 +9,12 @@
 
 #include "Light.h"
 
-class ambientLight: public Light {
+class AmbientLight: public Light {
     Vec3 shadowRay(Vec3 point) override;
     Vec3 illumination(Vec3 point, Vec3 rayDir, Object* surface, bool occluded) override;
 
 public:
-    ambientLight(const Vec3 &color);
+    AmbientLight(const Vec3 &color);
 
 };
 

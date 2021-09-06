@@ -7,12 +7,12 @@
 
 #include "Light.h"
 
-class directionLight: public Light {
+class DirectionLight: public Light {
 public:
     Vec3 dir;
     Vec3 shadowRay(Vec3 point) override;
 
-    directionLight(const Vec3 &color, const Vec3 &dir);
+    DirectionLight(const Vec3 &color, const Vec3 &dir);
 
     Vec3 illumination(Vec3 point, Vec3 rayDir, Object *surface, bool occluded) override;
 };
