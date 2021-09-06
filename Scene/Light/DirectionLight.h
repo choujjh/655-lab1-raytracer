@@ -5,7 +5,6 @@
 #ifndef RAYTRACER_DIRECTIONLIGHT_H
 #define RAYTRACER_DIRECTIONLIGHT_H
 
-#include "../../VecModel/Ray.h"
 #include "Light.h"
 
 class directionLight: public Light {

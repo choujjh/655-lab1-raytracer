@@ -5,7 +5,7 @@
 #ifndef RAYTRACER_CAM_H
 #define RAYTRACER_CAM_H
 
-#include "../VecModel/Vec3.h"
+#include "../Model/Vec/Vec3.h"
 
 class Cam {
 private:

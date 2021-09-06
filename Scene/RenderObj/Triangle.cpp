@@ -3,13 +3,13 @@
 //
 
 #include "Triangle.h"
-#include "../../../Ops/LinAlgOp.h"
+#include "../../Model/Ops/LinAlgOp.h"
 #include <limits>
 
-Triangle::Triangle(const Material &objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c)
+Triangle::Triangle(Material* objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c)
         : Plane(objMat, Vec3(), 0), a(a), b(b), c(c) {
     n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
-    d = LinAlgOp().dot(n, a);
+    d = n.dot(a);
 }
 
 Vec3 Triangle::intersect(Ray ray) {

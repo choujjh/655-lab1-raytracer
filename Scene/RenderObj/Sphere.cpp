@@ -3,7 +3,6 @@
 //
 
 #include "Sphere.h"
-#include "../../../Ops/LinAlgOp.h"
 
 #include <cmath>
 
@@ -23,14 +22,14 @@ void Sphere::setRadius(double radius) {
     Sphere::radius = radius;
 }
 
-Sphere::Sphere(const Material &objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
+Sphere::Sphere(Material* objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
                                                                             radius(radius) {}
 
 Vec3 Sphere::intersect(Ray ray) {
     ray.direction.normalize();
 
     Vec3 oc = center - ray.point;
-    double tca = LinAlgOp().dot(ray.direction, oc);
+    double tca = ray.direction.dot(oc);
     if(tca < 0.0){
         return Object::intersect(ray);
     }

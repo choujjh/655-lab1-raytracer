@@ -13,4 +13,4 @@ Vec3 Object::intersect(Ray ray) {
     return Vec3(inf, inf, inf);
 }
 
-Object::Object(const Material &objMat) : objMat(objMat) {}
+Object::Object(Material* objMat) : objMat(objMat) {}

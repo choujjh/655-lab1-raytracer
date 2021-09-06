@@ -6,8 +6,9 @@
 #define RAYTRACER_LIGHT_H
 
 
-#include "../../VecModel/Vec3.h"
+
 #include "../RenderObj/Object.h"
+#include "../../Model/Vec/Vec3.h"
 
 class Light {
 private:

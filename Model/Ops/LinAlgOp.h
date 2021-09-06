@@ -6,7 +6,7 @@
 #define RAYTRACER_LINALGOP_H
 
 
-#include "../Model/VecModel/Vec3.h"
+#include "../Vec/Vec3.h"
 
 class LinAlgOp {
 public:

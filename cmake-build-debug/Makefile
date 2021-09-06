@@ -141,383 +141,248 @@ Lab_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/build
 .PHONY : Lab_1/fast
 
-Model/Render/Materials/Material.obj: Model/Render/Materials/Material.cpp.obj
+Model/Material/MatCompSolid.obj: Model/Material/MatCompSolid.cpp.obj
 
-.PHONY : Model/Render/Materials/Material.obj
-
-# target to build an object file
-Model/Render/Materials/Material.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj
-.PHONY : Model/Render/Materials/Material.cpp.obj
-
-Model/Render/Materials/Material.i: Model/Render/Materials/Material.cpp.i
-
-.PHONY : Model/Render/Materials/Material.i
-
-# target to preprocess a source file
-Model/Render/Materials/Material.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.i
-.PHONY : Model/Render/Materials/Material.cpp.i
-
-Model/Render/Materials/Material.s: Model/Render/Materials/Material.cpp.s
-
-.PHONY : Model/Render/Materials/Material.s
-
-# target to generate assembly for a file
-Model/Render/Materials/Material.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.s
-.PHONY : Model/Render/Materials/Material.cpp.s
-
-Model/Render/RenderAlg.obj: Model/Render/RenderAlg.cpp.obj
-
-.PHONY : Model/Render/RenderAlg.obj
+.PHONY : Model/Material/MatCompSolid.obj
 
 # target to build an object file
-Model/Render/RenderAlg.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj
-.PHONY : Model/Render/RenderAlg.cpp.obj
+Model/Material/MatCompSolid.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.obj
+.PHONY : Model/Material/MatCompSolid.cpp.obj
 
-Model/Render/RenderAlg.i: Model/Render/RenderAlg.cpp.i
+Model/Material/MatCompSolid.i: Model/Material/MatCompSolid.cpp.i
 
-.PHONY : Model/Render/RenderAlg.i
+.PHONY : Model/Material/MatCompSolid.i
 
 # target to preprocess a source file
-Model/Render/RenderAlg.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.i
-.PHONY : Model/Render/RenderAlg.cpp.i
+Model/Material/MatCompSolid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.i
+.PHONY : Model/Material/MatCompSolid.cpp.i
 
-Model/Render/RenderAlg.s: Model/Render/RenderAlg.cpp.s
+Model/Material/MatCompSolid.s: Model/Material/MatCompSolid.cpp.s
 
-.PHONY : Model/Render/RenderAlg.s
+.PHONY : Model/Material/MatCompSolid.s
 
 # target to generate assembly for a file
-Model/Render/RenderAlg.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.s
-.PHONY : Model/Render/RenderAlg.cpp.s
+Model/Material/MatCompSolid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.s
+.PHONY : Model/Material/MatCompSolid.cpp.s
 
-Model/Scene/Cam.obj: Model/Scene/Cam.cpp.obj
+Model/Material/MatComponent.obj: Model/Material/MatComponent.cpp.obj
 
-.PHONY : Model/Scene/Cam.obj
+.PHONY : Model/Material/MatComponent.obj
 
 # target to build an object file
-Model/Scene/Cam.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj
-.PHONY : Model/Scene/Cam.cpp.obj
+Model/Material/MatComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.obj
+.PHONY : Model/Material/MatComponent.cpp.obj
 
-Model/Scene/Cam.i: Model/Scene/Cam.cpp.i
+Model/Material/MatComponent.i: Model/Material/MatComponent.cpp.i
 
-.PHONY : Model/Scene/Cam.i
+.PHONY : Model/Material/MatComponent.i
 
 # target to preprocess a source file
-Model/Scene/Cam.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.i
-.PHONY : Model/Scene/Cam.cpp.i
+Model/Material/MatComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.i
+.PHONY : Model/Material/MatComponent.cpp.i
 
-Model/Scene/Cam.s: Model/Scene/Cam.cpp.s
+Model/Material/MatComponent.s: Model/Material/MatComponent.cpp.s
 
-.PHONY : Model/Scene/Cam.s
+.PHONY : Model/Material/MatComponent.s
 
 # target to generate assembly for a file
-Model/Scene/Cam.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.s
-.PHONY : Model/Scene/Cam.cpp.s
+Model/Material/MatComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.s
+.PHONY : Model/Material/MatComponent.cpp.s
 
-Model/Scene/Light/AmbientLight.obj: Model/Scene/Light/AmbientLight.cpp.obj
+Model/Ops/LinAlgOp.obj: Model/Ops/LinAlgOp.cpp.obj
 
-.PHONY : Model/Scene/Light/AmbientLight.obj
+.PHONY : Model/Ops/LinAlgOp.obj
 
 # target to build an object file
-Model/Scene/Light/AmbientLight.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj
-.PHONY : Model/Scene/Light/AmbientLight.cpp.obj
+Model/Ops/LinAlgOp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.obj
+.PHONY : Model/Ops/LinAlgOp.cpp.obj
 
-Model/Scene/Light/AmbientLight.i: Model/Scene/Light/AmbientLight.cpp.i
+Model/Ops/LinAlgOp.i: Model/Ops/LinAlgOp.cpp.i
 
-.PHONY : Model/Scene/Light/AmbientLight.i
+.PHONY : Model/Ops/LinAlgOp.i
 
 # target to preprocess a source file
-Model/Scene/Light/AmbientLight.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.i
-.PHONY : Model/Scene/Light/AmbientLight.cpp.i
+Model/Ops/LinAlgOp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.i
+.PHONY : Model/Ops/LinAlgOp.cpp.i
 
-Model/Scene/Light/AmbientLight.s: Model/Scene/Light/AmbientLight.cpp.s
+Model/Ops/LinAlgOp.s: Model/Ops/LinAlgOp.cpp.s
 
-.PHONY : Model/Scene/Light/AmbientLight.s
+.PHONY : Model/Ops/LinAlgOp.s
 
 # target to generate assembly for a file
-Model/Scene/Light/AmbientLight.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.s
-.PHONY : Model/Scene/Light/AmbientLight.cpp.s
+Model/Ops/LinAlgOp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.s
+.PHONY : Model/Ops/LinAlgOp.cpp.s
 
-Model/Scene/Light/DirectionLight.obj: Model/Scene/Light/DirectionLight.cpp.obj
+Model/Ops/RenderOps.obj: Model/Ops/RenderOps.cpp.obj
 
-.PHONY : Model/Scene/Light/DirectionLight.obj
+.PHONY : Model/Ops/RenderOps.obj
 
 # target to build an object file
-Model/Scene/Light/DirectionLight.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj
-.PHONY : Model/Scene/Light/DirectionLight.cpp.obj
+Model/Ops/RenderOps.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.obj
+.PHONY : Model/Ops/RenderOps.cpp.obj
 
-Model/Scene/Light/DirectionLight.i: Model/Scene/Light/DirectionLight.cpp.i
+Model/Ops/RenderOps.i: Model/Ops/RenderOps.cpp.i
 
-.PHONY : Model/Scene/Light/DirectionLight.i
+.PHONY : Model/Ops/RenderOps.i
 
 # target to preprocess a source file
-Model/Scene/Light/DirectionLight.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.i
-.PHONY : Model/Scene/Light/DirectionLight.cpp.i
+Model/Ops/RenderOps.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.i
+.PHONY : Model/Ops/RenderOps.cpp.i
 
-Model/Scene/Light/DirectionLight.s: Model/Scene/Light/DirectionLight.cpp.s
+Model/Ops/RenderOps.s: Model/Ops/RenderOps.cpp.s
 
-.PHONY : Model/Scene/Light/DirectionLight.s
+.PHONY : Model/Ops/RenderOps.s
 
 # target to generate assembly for a file
-Model/Scene/Light/DirectionLight.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.s
-.PHONY : Model/Scene/Light/DirectionLight.cpp.s
+Model/Ops/RenderOps.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.s
+.PHONY : Model/Ops/RenderOps.cpp.s
 
-Model/Scene/Light/Light.obj: Model/Scene/Light/Light.cpp.obj
+Model/Vec/Ray.obj: Model/Vec/Ray.cpp.obj
 
-.PHONY : Model/Scene/Light/Light.obj
+.PHONY : Model/Vec/Ray.obj
 
 # target to build an object file
-Model/Scene/Light/Light.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.obj
-.PHONY : Model/Scene/Light/Light.cpp.obj
+Model/Vec/Ray.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.obj
+.PHONY : Model/Vec/Ray.cpp.obj
 
-Model/Scene/Light/Light.i: Model/Scene/Light/Light.cpp.i
+Model/Vec/Ray.i: Model/Vec/Ray.cpp.i
 
-.PHONY : Model/Scene/Light/Light.i
+.PHONY : Model/Vec/Ray.i
 
 # target to preprocess a source file
-Model/Scene/Light/Light.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.i
-.PHONY : Model/Scene/Light/Light.cpp.i
+Model/Vec/Ray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.i
+.PHONY : Model/Vec/Ray.cpp.i
 
-Model/Scene/Light/Light.s: Model/Scene/Light/Light.cpp.s
+Model/Vec/Ray.s: Model/Vec/Ray.cpp.s
 
-.PHONY : Model/Scene/Light/Light.s
+.PHONY : Model/Vec/Ray.s
 
 # target to generate assembly for a file
-Model/Scene/Light/Light.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.s
-.PHONY : Model/Scene/Light/Light.cpp.s
+Model/Vec/Ray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.s
+.PHONY : Model/Vec/Ray.cpp.s
 
-Model/Scene/RenderObj/Object.obj: Model/Scene/RenderObj/Object.cpp.obj
+Model/Vec/Vec3.obj: Model/Vec/Vec3.cpp.obj
 
-.PHONY : Model/Scene/RenderObj/Object.obj
+.PHONY : Model/Vec/Vec3.obj
 
 # target to build an object file
-Model/Scene/RenderObj/Object.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.obj
-.PHONY : Model/Scene/RenderObj/Object.cpp.obj
+Model/Vec/Vec3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj
+.PHONY : Model/Vec/Vec3.cpp.obj
 
-Model/Scene/RenderObj/Object.i: Model/Scene/RenderObj/Object.cpp.i
+Model/Vec/Vec3.i: Model/Vec/Vec3.cpp.i
 
-.PHONY : Model/Scene/RenderObj/Object.i
+.PHONY : Model/Vec/Vec3.i
 
 # target to preprocess a source file
-Model/Scene/RenderObj/Object.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.i
-.PHONY : Model/Scene/RenderObj/Object.cpp.i
+Model/Vec/Vec3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.i
+.PHONY : Model/Vec/Vec3.cpp.i
 
-Model/Scene/RenderObj/Object.s: Model/Scene/RenderObj/Object.cpp.s
+Model/Vec/Vec3.s: Model/Vec/Vec3.cpp.s
 
-.PHONY : Model/Scene/RenderObj/Object.s
+.PHONY : Model/Vec/Vec3.s
 
 # target to generate assembly for a file
-Model/Scene/RenderObj/Object.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.s
-.PHONY : Model/Scene/RenderObj/Object.cpp.s
+Model/Vec/Vec3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.s
+.PHONY : Model/Vec/Vec3.cpp.s
 
-Model/Scene/RenderObj/Plane.obj: Model/Scene/RenderObj/Plane.cpp.obj
+Render/Materials/Material.obj: Render/Materials/Material.cpp.obj
 
-.PHONY : Model/Scene/RenderObj/Plane.obj
+.PHONY : Render/Materials/Material.obj
 
 # target to build an object file
-Model/Scene/RenderObj/Plane.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.obj
-.PHONY : Model/Scene/RenderObj/Plane.cpp.obj
+Render/Materials/Material.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj
+.PHONY : Render/Materials/Material.cpp.obj
 
-Model/Scene/RenderObj/Plane.i: Model/Scene/RenderObj/Plane.cpp.i
+Render/Materials/Material.i: Render/Materials/Material.cpp.i
 
-.PHONY : Model/Scene/RenderObj/Plane.i
+.PHONY : Render/Materials/Material.i
 
 # target to preprocess a source file
-Model/Scene/RenderObj/Plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.i
-.PHONY : Model/Scene/RenderObj/Plane.cpp.i
+Render/Materials/Material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.i
+.PHONY : Render/Materials/Material.cpp.i
 
-Model/Scene/RenderObj/Plane.s: Model/Scene/RenderObj/Plane.cpp.s
+Render/Materials/Material.s: Render/Materials/Material.cpp.s
 
-.PHONY : Model/Scene/RenderObj/Plane.s
+.PHONY : Render/Materials/Material.s
 
 # target to generate assembly for a file
-Model/Scene/RenderObj/Plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.s
-.PHONY : Model/Scene/RenderObj/Plane.cpp.s
+Render/Materials/Material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.s
+.PHONY : Render/Materials/Material.cpp.s
 
-Model/Scene/RenderObj/Sphere.obj: Model/Scene/RenderObj/Sphere.cpp.obj
+Render/Materials/MaterialSolid.obj: Render/Materials/MaterialSolid.cpp.obj
 
-.PHONY : Model/Scene/RenderObj/Sphere.obj
+.PHONY : Render/Materials/MaterialSolid.obj
 
 # target to build an object file
-Model/Scene/RenderObj/Sphere.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.obj
-.PHONY : Model/Scene/RenderObj/Sphere.cpp.obj
+Render/Materials/MaterialSolid.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj
+.PHONY : Render/Materials/MaterialSolid.cpp.obj
 
-Model/Scene/RenderObj/Sphere.i: Model/Scene/RenderObj/Sphere.cpp.i
+Render/Materials/MaterialSolid.i: Render/Materials/MaterialSolid.cpp.i
 
-.PHONY : Model/Scene/RenderObj/Sphere.i
+.PHONY : Render/Materials/MaterialSolid.i
 
 # target to preprocess a source file
-Model/Scene/RenderObj/Sphere.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.i
-.PHONY : Model/Scene/RenderObj/Sphere.cpp.i
+Render/Materials/MaterialSolid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.i
+.PHONY : Render/Materials/MaterialSolid.cpp.i
 
-Model/Scene/RenderObj/Sphere.s: Model/Scene/RenderObj/Sphere.cpp.s
+Render/Materials/MaterialSolid.s: Render/Materials/MaterialSolid.cpp.s
 
-.PHONY : Model/Scene/RenderObj/Sphere.s
+.PHONY : Render/Materials/MaterialSolid.s
 
 # target to generate assembly for a file
-Model/Scene/RenderObj/Sphere.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.s
-.PHONY : Model/Scene/RenderObj/Sphere.cpp.s
+Render/Materials/MaterialSolid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.s
+.PHONY : Render/Materials/MaterialSolid.cpp.s
 
-Model/Scene/RenderObj/Triangle.obj: Model/Scene/RenderObj/Triangle.cpp.obj
+Render/RenderAlg.obj: Render/RenderAlg.cpp.obj
 
-.PHONY : Model/Scene/RenderObj/Triangle.obj
+.PHONY : Render/RenderAlg.obj
 
 # target to build an object file
-Model/Scene/RenderObj/Triangle.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.obj
-.PHONY : Model/Scene/RenderObj/Triangle.cpp.obj
+Render/RenderAlg.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj
+.PHONY : Render/RenderAlg.cpp.obj
 
-Model/Scene/RenderObj/Triangle.i: Model/Scene/RenderObj/Triangle.cpp.i
+Render/RenderAlg.i: Render/RenderAlg.cpp.i
 
-.PHONY : Model/Scene/RenderObj/Triangle.i
-
-# target to preprocess a source file
-Model/Scene/RenderObj/Triangle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.i
-.PHONY : Model/Scene/RenderObj/Triangle.cpp.i
-
-Model/Scene/RenderObj/Triangle.s: Model/Scene/RenderObj/Triangle.cpp.s
-
-.PHONY : Model/Scene/RenderObj/Triangle.s
-
-# target to generate assembly for a file
-Model/Scene/RenderObj/Triangle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.s
-.PHONY : Model/Scene/RenderObj/Triangle.cpp.s
-
-Model/VecModel/Ray.obj: Model/VecModel/Ray.cpp.obj
-
-.PHONY : Model/VecModel/Ray.obj
-
-# target to build an object file
-Model/VecModel/Ray.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj
-.PHONY : Model/VecModel/Ray.cpp.obj
-
-Model/VecModel/Ray.i: Model/VecModel/Ray.cpp.i
-
-.PHONY : Model/VecModel/Ray.i
+.PHONY : Render/RenderAlg.i
 
 # target to preprocess a source file
-Model/VecModel/Ray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.i
-.PHONY : Model/VecModel/Ray.cpp.i
+Render/RenderAlg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.i
+.PHONY : Render/RenderAlg.cpp.i
 
-Model/VecModel/Ray.s: Model/VecModel/Ray.cpp.s
+Render/RenderAlg.s: Render/RenderAlg.cpp.s
 
-.PHONY : Model/VecModel/Ray.s
-
-# target to generate assembly for a file
-Model/VecModel/Ray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.s
-.PHONY : Model/VecModel/Ray.cpp.s
-
-Model/VecModel/Vec3.obj: Model/VecModel/Vec3.cpp.obj
-
-.PHONY : Model/VecModel/Vec3.obj
-
-# target to build an object file
-Model/VecModel/Vec3.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj
-.PHONY : Model/VecModel/Vec3.cpp.obj
-
-Model/VecModel/Vec3.i: Model/VecModel/Vec3.cpp.i
-
-.PHONY : Model/VecModel/Vec3.i
-
-# target to preprocess a source file
-Model/VecModel/Vec3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.i
-.PHONY : Model/VecModel/Vec3.cpp.i
-
-Model/VecModel/Vec3.s: Model/VecModel/Vec3.cpp.s
-
-.PHONY : Model/VecModel/Vec3.s
+.PHONY : Render/RenderAlg.s
 
 # target to generate assembly for a file
-Model/VecModel/Vec3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.s
-.PHONY : Model/VecModel/Vec3.cpp.s
-
-Ops/LinAlgOp.obj: Ops/LinAlgOp.cpp.obj
-
-.PHONY : Ops/LinAlgOp.obj
-
-# target to build an object file
-Ops/LinAlgOp.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj
-.PHONY : Ops/LinAlgOp.cpp.obj
-
-Ops/LinAlgOp.i: Ops/LinAlgOp.cpp.i
-
-.PHONY : Ops/LinAlgOp.i
-
-# target to preprocess a source file
-Ops/LinAlgOp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.i
-.PHONY : Ops/LinAlgOp.cpp.i
-
-Ops/LinAlgOp.s: Ops/LinAlgOp.cpp.s
-
-.PHONY : Ops/LinAlgOp.s
-
-# target to generate assembly for a file
-Ops/LinAlgOp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.s
-.PHONY : Ops/LinAlgOp.cpp.s
-
-Ops/RenderOps.obj: Ops/RenderOps.cpp.obj
-
-.PHONY : Ops/RenderOps.obj
-
-# target to build an object file
-Ops/RenderOps.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj
-.PHONY : Ops/RenderOps.cpp.obj
-
-Ops/RenderOps.i: Ops/RenderOps.cpp.i
-
-.PHONY : Ops/RenderOps.i
-
-# target to preprocess a source file
-Ops/RenderOps.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.i
-.PHONY : Ops/RenderOps.cpp.i
-
-Ops/RenderOps.s: Ops/RenderOps.cpp.s
-
-.PHONY : Ops/RenderOps.s
-
-# target to generate assembly for a file
-Ops/RenderOps.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.s
-.PHONY : Ops/RenderOps.cpp.s
+Render/RenderAlg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.s
+.PHONY : Render/RenderAlg.cpp.s
 
 Scene.obj: Scene.cpp.obj
 
@@ -545,6 +410,222 @@ Scene.s: Scene.cpp.s
 Scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene.cpp.s
 .PHONY : Scene.cpp.s
+
+Scene/Cam.obj: Scene/Cam.cpp.obj
+
+.PHONY : Scene/Cam.obj
+
+# target to build an object file
+Scene/Cam.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj
+.PHONY : Scene/Cam.cpp.obj
+
+Scene/Cam.i: Scene/Cam.cpp.i
+
+.PHONY : Scene/Cam.i
+
+# target to preprocess a source file
+Scene/Cam.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Cam.cpp.i
+.PHONY : Scene/Cam.cpp.i
+
+Scene/Cam.s: Scene/Cam.cpp.s
+
+.PHONY : Scene/Cam.s
+
+# target to generate assembly for a file
+Scene/Cam.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Cam.cpp.s
+.PHONY : Scene/Cam.cpp.s
+
+Scene/Light/AmbientLight.obj: Scene/Light/AmbientLight.cpp.obj
+
+.PHONY : Scene/Light/AmbientLight.obj
+
+# target to build an object file
+Scene/Light/AmbientLight.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj
+.PHONY : Scene/Light/AmbientLight.cpp.obj
+
+Scene/Light/AmbientLight.i: Scene/Light/AmbientLight.cpp.i
+
+.PHONY : Scene/Light/AmbientLight.i
+
+# target to preprocess a source file
+Scene/Light/AmbientLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.i
+.PHONY : Scene/Light/AmbientLight.cpp.i
+
+Scene/Light/AmbientLight.s: Scene/Light/AmbientLight.cpp.s
+
+.PHONY : Scene/Light/AmbientLight.s
+
+# target to generate assembly for a file
+Scene/Light/AmbientLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.s
+.PHONY : Scene/Light/AmbientLight.cpp.s
+
+Scene/Light/DirectionLight.obj: Scene/Light/DirectionLight.cpp.obj
+
+.PHONY : Scene/Light/DirectionLight.obj
+
+# target to build an object file
+Scene/Light/DirectionLight.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj
+.PHONY : Scene/Light/DirectionLight.cpp.obj
+
+Scene/Light/DirectionLight.i: Scene/Light/DirectionLight.cpp.i
+
+.PHONY : Scene/Light/DirectionLight.i
+
+# target to preprocess a source file
+Scene/Light/DirectionLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.i
+.PHONY : Scene/Light/DirectionLight.cpp.i
+
+Scene/Light/DirectionLight.s: Scene/Light/DirectionLight.cpp.s
+
+.PHONY : Scene/Light/DirectionLight.s
+
+# target to generate assembly for a file
+Scene/Light/DirectionLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.s
+.PHONY : Scene/Light/DirectionLight.cpp.s
+
+Scene/Light/Light.obj: Scene/Light/Light.cpp.obj
+
+.PHONY : Scene/Light/Light.obj
+
+# target to build an object file
+Scene/Light/Light.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj
+.PHONY : Scene/Light/Light.cpp.obj
+
+Scene/Light/Light.i: Scene/Light/Light.cpp.i
+
+.PHONY : Scene/Light/Light.i
+
+# target to preprocess a source file
+Scene/Light/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.i
+.PHONY : Scene/Light/Light.cpp.i
+
+Scene/Light/Light.s: Scene/Light/Light.cpp.s
+
+.PHONY : Scene/Light/Light.s
+
+# target to generate assembly for a file
+Scene/Light/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.s
+.PHONY : Scene/Light/Light.cpp.s
+
+Scene/RenderObj/Object.obj: Scene/RenderObj/Object.cpp.obj
+
+.PHONY : Scene/RenderObj/Object.obj
+
+# target to build an object file
+Scene/RenderObj/Object.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj
+.PHONY : Scene/RenderObj/Object.cpp.obj
+
+Scene/RenderObj/Object.i: Scene/RenderObj/Object.cpp.i
+
+.PHONY : Scene/RenderObj/Object.i
+
+# target to preprocess a source file
+Scene/RenderObj/Object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.i
+.PHONY : Scene/RenderObj/Object.cpp.i
+
+Scene/RenderObj/Object.s: Scene/RenderObj/Object.cpp.s
+
+.PHONY : Scene/RenderObj/Object.s
+
+# target to generate assembly for a file
+Scene/RenderObj/Object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.s
+.PHONY : Scene/RenderObj/Object.cpp.s
+
+Scene/RenderObj/Plane.obj: Scene/RenderObj/Plane.cpp.obj
+
+.PHONY : Scene/RenderObj/Plane.obj
+
+# target to build an object file
+Scene/RenderObj/Plane.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj
+.PHONY : Scene/RenderObj/Plane.cpp.obj
+
+Scene/RenderObj/Plane.i: Scene/RenderObj/Plane.cpp.i
+
+.PHONY : Scene/RenderObj/Plane.i
+
+# target to preprocess a source file
+Scene/RenderObj/Plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.i
+.PHONY : Scene/RenderObj/Plane.cpp.i
+
+Scene/RenderObj/Plane.s: Scene/RenderObj/Plane.cpp.s
+
+.PHONY : Scene/RenderObj/Plane.s
+
+# target to generate assembly for a file
+Scene/RenderObj/Plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.s
+.PHONY : Scene/RenderObj/Plane.cpp.s
+
+Scene/RenderObj/Sphere.obj: Scene/RenderObj/Sphere.cpp.obj
+
+.PHONY : Scene/RenderObj/Sphere.obj
+
+# target to build an object file
+Scene/RenderObj/Sphere.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj
+.PHONY : Scene/RenderObj/Sphere.cpp.obj
+
+Scene/RenderObj/Sphere.i: Scene/RenderObj/Sphere.cpp.i
+
+.PHONY : Scene/RenderObj/Sphere.i
+
+# target to preprocess a source file
+Scene/RenderObj/Sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.i
+.PHONY : Scene/RenderObj/Sphere.cpp.i
+
+Scene/RenderObj/Sphere.s: Scene/RenderObj/Sphere.cpp.s
+
+.PHONY : Scene/RenderObj/Sphere.s
+
+# target to generate assembly for a file
+Scene/RenderObj/Sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.s
+.PHONY : Scene/RenderObj/Sphere.cpp.s
+
+Scene/RenderObj/Triangle.obj: Scene/RenderObj/Triangle.cpp.obj
+
+.PHONY : Scene/RenderObj/Triangle.obj
+
+# target to build an object file
+Scene/RenderObj/Triangle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj
+.PHONY : Scene/RenderObj/Triangle.cpp.obj
+
+Scene/RenderObj/Triangle.i: Scene/RenderObj/Triangle.cpp.i
+
+.PHONY : Scene/RenderObj/Triangle.i
+
+# target to preprocess a source file
+Scene/RenderObj/Triangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.i
+.PHONY : Scene/RenderObj/Triangle.cpp.i
+
+Scene/RenderObj/Triangle.s: Scene/RenderObj/Triangle.cpp.s
+
+.PHONY : Scene/RenderObj/Triangle.s
+
+# target to generate assembly for a file
+Scene/RenderObj/Triangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab_1.dir\build.make CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.s
+.PHONY : Scene/RenderObj/Triangle.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -582,51 +663,60 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Lab_1
-	@echo ... Model/Render/Materials/Material.obj
-	@echo ... Model/Render/Materials/Material.i
-	@echo ... Model/Render/Materials/Material.s
-	@echo ... Model/Render/RenderAlg.obj
-	@echo ... Model/Render/RenderAlg.i
-	@echo ... Model/Render/RenderAlg.s
-	@echo ... Model/Scene/Cam.obj
-	@echo ... Model/Scene/Cam.i
-	@echo ... Model/Scene/Cam.s
-	@echo ... Model/Scene/Light/AmbientLight.obj
-	@echo ... Model/Scene/Light/AmbientLight.i
-	@echo ... Model/Scene/Light/AmbientLight.s
-	@echo ... Model/Scene/Light/DirectionLight.obj
-	@echo ... Model/Scene/Light/DirectionLight.i
-	@echo ... Model/Scene/Light/DirectionLight.s
-	@echo ... Model/Scene/Light/Light.obj
-	@echo ... Model/Scene/Light/Light.i
-	@echo ... Model/Scene/Light/Light.s
-	@echo ... Model/Scene/RenderObj/Object.obj
-	@echo ... Model/Scene/RenderObj/Object.i
-	@echo ... Model/Scene/RenderObj/Object.s
-	@echo ... Model/Scene/RenderObj/Plane.obj
-	@echo ... Model/Scene/RenderObj/Plane.i
-	@echo ... Model/Scene/RenderObj/Plane.s
-	@echo ... Model/Scene/RenderObj/Sphere.obj
-	@echo ... Model/Scene/RenderObj/Sphere.i
-	@echo ... Model/Scene/RenderObj/Sphere.s
-	@echo ... Model/Scene/RenderObj/Triangle.obj
-	@echo ... Model/Scene/RenderObj/Triangle.i
-	@echo ... Model/Scene/RenderObj/Triangle.s
-	@echo ... Model/VecModel/Ray.obj
-	@echo ... Model/VecModel/Ray.i
-	@echo ... Model/VecModel/Ray.s
-	@echo ... Model/VecModel/Vec3.obj
-	@echo ... Model/VecModel/Vec3.i
-	@echo ... Model/VecModel/Vec3.s
-	@echo ... Ops/LinAlgOp.obj
-	@echo ... Ops/LinAlgOp.i
-	@echo ... Ops/LinAlgOp.s
-	@echo ... Ops/RenderOps.obj
-	@echo ... Ops/RenderOps.i
-	@echo ... Ops/RenderOps.s
+	@echo ... Model/Material/MatCompSolid.obj
+	@echo ... Model/Material/MatCompSolid.i
+	@echo ... Model/Material/MatCompSolid.s
+	@echo ... Model/Material/MatComponent.obj
+	@echo ... Model/Material/MatComponent.i
+	@echo ... Model/Material/MatComponent.s
+	@echo ... Model/Ops/LinAlgOp.obj
+	@echo ... Model/Ops/LinAlgOp.i
+	@echo ... Model/Ops/LinAlgOp.s
+	@echo ... Model/Ops/RenderOps.obj
+	@echo ... Model/Ops/RenderOps.i
+	@echo ... Model/Ops/RenderOps.s
+	@echo ... Model/Vec/Ray.obj
+	@echo ... Model/Vec/Ray.i
+	@echo ... Model/Vec/Ray.s
+	@echo ... Model/Vec/Vec3.obj
+	@echo ... Model/Vec/Vec3.i
+	@echo ... Model/Vec/Vec3.s
+	@echo ... Render/Materials/Material.obj
+	@echo ... Render/Materials/Material.i
+	@echo ... Render/Materials/Material.s
+	@echo ... Render/Materials/MaterialSolid.obj
+	@echo ... Render/Materials/MaterialSolid.i
+	@echo ... Render/Materials/MaterialSolid.s
+	@echo ... Render/RenderAlg.obj
+	@echo ... Render/RenderAlg.i
+	@echo ... Render/RenderAlg.s
 	@echo ... Scene.obj
 	@echo ... Scene.i
 	@echo ... Scene.s
+	@echo ... Scene/Cam.obj
+	@echo ... Scene/Cam.i
+	@echo ... Scene/Cam.s
+	@echo ... Scene/Light/AmbientLight.obj
+	@echo ... Scene/Light/AmbientLight.i
+	@echo ... Scene/Light/AmbientLight.s
+	@echo ... Scene/Light/DirectionLight.obj
+	@echo ... Scene/Light/DirectionLight.i
+	@echo ... Scene/Light/DirectionLight.s
+	@echo ... Scene/Light/Light.obj
+	@echo ... Scene/Light/Light.i
+	@echo ... Scene/Light/Light.s
+	@echo ... Scene/RenderObj/Object.obj
+	@echo ... Scene/RenderObj/Object.i
+	@echo ... Scene/RenderObj/Object.s
+	@echo ... Scene/RenderObj/Plane.obj
+	@echo ... Scene/RenderObj/Plane.i
+	@echo ... Scene/RenderObj/Plane.s
+	@echo ... Scene/RenderObj/Sphere.obj
+	@echo ... Scene/RenderObj/Sphere.i
+	@echo ... Scene/RenderObj/Sphere.s
+	@echo ... Scene/RenderObj/Triangle.obj
+	@echo ... Scene/RenderObj/Triangle.i
+	@echo ... Scene/RenderObj/Triangle.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

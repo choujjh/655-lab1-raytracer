@@ -6,7 +6,7 @@
 #define RAYTRACER_RENDEROP_H
 
 
-#include "../Model/VecModel/Vec3.h"
+#include "../Vec/Vec3.h"
 
 class RenderOps {
 public:

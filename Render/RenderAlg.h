@@ -6,7 +6,8 @@
 #define RAYTRACER_RENDERALG_H
 
 
-#include "../VecModel/Ray.h"
+#include "../Model/Vec/Vec3.h"
+#include "../Model/Vec/Ray.h"
 
 class RenderAlg {
     virtual Vec3 radiance(Ray ray, int depth) = 0;

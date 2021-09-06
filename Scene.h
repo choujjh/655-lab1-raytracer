@@ -7,11 +7,10 @@
 
 #include<string>
 #include<vector>
+#include "Scene/Cam.h"
+#include "Scene/RenderObj/Object.h"
+#include "Scene/Light/Light.h"
 
-#include "Model/VecModel/Vec3.h"
-#include "Model/Scene/RenderObj/Object.h"
-#include "Model/Scene/Light/Light.h"
-#include "Model/Scene/Cam.h"
 
 using std::vector;
 using std::string;

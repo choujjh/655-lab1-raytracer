@@ -88,109 +88,109 @@ CMakeFiles/Lab_1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/main.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\main.cpp -o CMakeFiles\Lab_1.dir\main.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj: ../Model/Scene/Light/AmbientLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\Light\AmbientLight.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\AmbientLight.cpp
+CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj: ../Scene/Light/AmbientLight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\Light\AmbientLight.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\AmbientLight.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\AmbientLight.cpp > CMakeFiles\Lab_1.dir\Model\Scene\Light\AmbientLight.cpp.i
+CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\AmbientLight.cpp > CMakeFiles\Lab_1.dir\Scene\Light\AmbientLight.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\AmbientLight.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\Light\AmbientLight.cpp.s
+CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\AmbientLight.cpp -o CMakeFiles\Lab_1.dir\Scene\Light\AmbientLight.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj: ../Model/Scene/Light/DirectionLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\Light\DirectionLight.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\DirectionLight.cpp
+CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj: ../Scene/Light/DirectionLight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\Light\DirectionLight.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\DirectionLight.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\DirectionLight.cpp > CMakeFiles\Lab_1.dir\Model\Scene\Light\DirectionLight.cpp.i
+CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\DirectionLight.cpp > CMakeFiles\Lab_1.dir\Scene\Light\DirectionLight.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\DirectionLight.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\Light\DirectionLight.cpp.s
+CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\DirectionLight.cpp -o CMakeFiles\Lab_1.dir\Scene\Light\DirectionLight.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.obj: ../Model/Scene/Light/Light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\Light\Light.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\Light.cpp
+CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj: ../Scene/Light/Light.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\Light\Light.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\Light.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\Light.cpp > CMakeFiles\Lab_1.dir\Model\Scene\Light\Light.cpp.i
+CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\Light.cpp > CMakeFiles\Lab_1.dir\Scene\Light\Light.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Light\Light.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\Light\Light.cpp.s
+CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Light\Light.cpp -o CMakeFiles\Lab_1.dir\Scene\Light\Light.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.obj: ../Model/Scene/RenderObj/Object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Object.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Object.cpp
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj: ../Scene/RenderObj/Object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Object.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Object.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Object.cpp > CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Object.cpp.i
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Object.cpp > CMakeFiles\Lab_1.dir\Scene\RenderObj\Object.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Object.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Object.cpp.s
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Object.cpp -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Object.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.obj: ../Model/Scene/RenderObj/Plane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Plane.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Plane.cpp
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj: ../Scene/RenderObj/Plane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Plane.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Plane.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Plane.cpp > CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Plane.cpp.i
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Plane.cpp > CMakeFiles\Lab_1.dir\Scene\RenderObj\Plane.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Plane.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Plane.cpp.s
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Plane.cpp -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Plane.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.obj: ../Model/Scene/RenderObj/Sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Sphere.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Sphere.cpp
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj: ../Scene/RenderObj/Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Sphere.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Sphere.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Sphere.cpp > CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Sphere.cpp.i
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Sphere.cpp > CMakeFiles\Lab_1.dir\Scene\RenderObj\Sphere.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Sphere.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Sphere.cpp.s
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Sphere.cpp -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Sphere.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.obj: ../Model/Scene/RenderObj/Triangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Triangle.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Triangle.cpp
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj: ../Scene/RenderObj/Triangle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Triangle.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Triangle.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Triangle.cpp > CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Triangle.cpp.i
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Triangle.cpp > CMakeFiles\Lab_1.dir\Scene\RenderObj\Triangle.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\RenderObj\Triangle.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\RenderObj\Triangle.cpp.s
+CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\RenderObj\Triangle.cpp -o CMakeFiles\Lab_1.dir\Scene\RenderObj\Triangle.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj: ../Model/Scene/Cam.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Scene\Cam.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Cam.cpp
+CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj: ../Scene/Cam.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Scene\Cam.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Cam.cpp
 
-CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Cam.cpp > CMakeFiles\Lab_1.dir\Model\Scene\Cam.cpp.i
+CMakeFiles/Lab_1.dir/Scene/Cam.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Scene/Cam.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Cam.cpp > CMakeFiles\Lab_1.dir\Scene\Cam.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Scene\Cam.cpp -o CMakeFiles\Lab_1.dir\Model\Scene\Cam.cpp.s
+CMakeFiles/Lab_1.dir/Scene/Cam.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene/Cam.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene\Cam.cpp -o CMakeFiles\Lab_1.dir\Scene\Cam.cpp.s
 
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
 CMakeFiles/Lab_1.dir/Scene.cpp.obj: ../Scene.cpp
@@ -205,127 +205,172 @@ CMakeFiles/Lab_1.dir/Scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Scene.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Scene.cpp -o CMakeFiles\Lab_1.dir\Scene.cpp.s
 
-CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj: ../Ops/RenderOps.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Ops\RenderOps.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Ops\RenderOps.cpp
+CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.obj: ../Model/Ops/RenderOps.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Ops\RenderOps.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Ops\RenderOps.cpp
 
-CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Ops\RenderOps.cpp > CMakeFiles\Lab_1.dir\Ops\RenderOps.cpp.i
+CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Ops\RenderOps.cpp > CMakeFiles\Lab_1.dir\Model\Ops\RenderOps.cpp.i
 
-CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Ops\RenderOps.cpp -o CMakeFiles\Lab_1.dir\Ops\RenderOps.cpp.s
+CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Ops\RenderOps.cpp -o CMakeFiles\Lab_1.dir\Model\Ops\RenderOps.cpp.s
 
-CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj: ../Ops/LinAlgOp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Ops\LinAlgOp.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Ops\LinAlgOp.cpp
+CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.obj: ../Model/Ops/LinAlgOp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Ops\LinAlgOp.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Ops\LinAlgOp.cpp
 
-CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Ops\LinAlgOp.cpp > CMakeFiles\Lab_1.dir\Ops\LinAlgOp.cpp.i
+CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Ops\LinAlgOp.cpp > CMakeFiles\Lab_1.dir\Model\Ops\LinAlgOp.cpp.i
 
-CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Ops\LinAlgOp.cpp -o CMakeFiles\Lab_1.dir\Ops\LinAlgOp.cpp.s
+CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Ops\LinAlgOp.cpp -o CMakeFiles\Lab_1.dir\Model\Ops\LinAlgOp.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj: ../Model/VecModel/Ray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\VecModel\Ray.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\VecModel\Ray.cpp
+CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.obj: ../Model/Vec/Ray.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Vec\Ray.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Vec\Ray.cpp
 
-CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\VecModel\Ray.cpp > CMakeFiles\Lab_1.dir\Model\VecModel\Ray.cpp.i
+CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Vec\Ray.cpp > CMakeFiles\Lab_1.dir\Model\Vec\Ray.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\VecModel\Ray.cpp -o CMakeFiles\Lab_1.dir\Model\VecModel\Ray.cpp.s
+CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Vec\Ray.cpp -o CMakeFiles\Lab_1.dir\Model\Vec\Ray.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj: ../Model/VecModel/Vec3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\VecModel\Vec3.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\VecModel\Vec3.cpp
+CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj: ../Model/Vec/Vec3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Vec\Vec3.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Vec\Vec3.cpp
 
-CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\VecModel\Vec3.cpp > CMakeFiles\Lab_1.dir\Model\VecModel\Vec3.cpp.i
+CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Vec\Vec3.cpp > CMakeFiles\Lab_1.dir\Model\Vec\Vec3.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\VecModel\Vec3.cpp -o CMakeFiles\Lab_1.dir\Model\VecModel\Vec3.cpp.s
+CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Vec\Vec3.cpp -o CMakeFiles\Lab_1.dir\Model\Vec\Vec3.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj: ../Model/Render/Materials/Material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Render\Materials\Material.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\Materials\Material.cpp
+CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj: ../Render/Materials/Material.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Render\Materials\Material.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\Materials\Material.cpp
 
-CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\Materials\Material.cpp > CMakeFiles\Lab_1.dir\Model\Render\Materials\Material.cpp.i
+CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\Materials\Material.cpp > CMakeFiles\Lab_1.dir\Render\Materials\Material.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\Materials\Material.cpp -o CMakeFiles\Lab_1.dir\Model\Render\Materials\Material.cpp.s
+CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\Materials\Material.cpp -o CMakeFiles\Lab_1.dir\Render\Materials\Material.cpp.s
 
-CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
-CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj: ../Model/Render/RenderAlg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Render\RenderAlg.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\RenderAlg.cpp
+CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj: ../Render/RenderAlg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Render\RenderAlg.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\RenderAlg.cpp
 
-CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\RenderAlg.cpp > CMakeFiles\Lab_1.dir\Model\Render\RenderAlg.cpp.i
+CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\RenderAlg.cpp > CMakeFiles\Lab_1.dir\Render\RenderAlg.cpp.i
 
-CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Render\RenderAlg.cpp -o CMakeFiles\Lab_1.dir\Model\Render\RenderAlg.cpp.s
+CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\RenderAlg.cpp -o CMakeFiles\Lab_1.dir\Render\RenderAlg.cpp.s
+
+CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj: ../Render/Materials/MaterialSolid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Render\Materials\MaterialSolid.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\Materials\MaterialSolid.cpp
+
+CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\Materials\MaterialSolid.cpp > CMakeFiles\Lab_1.dir\Render\Materials\MaterialSolid.cpp.i
+
+CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Render\Materials\MaterialSolid.cpp -o CMakeFiles\Lab_1.dir\Render\Materials\MaterialSolid.cpp.s
+
+CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.obj: ../Model/Material/MatComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Material\MatComponent.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Material\MatComponent.cpp
+
+CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Material\MatComponent.cpp > CMakeFiles\Lab_1.dir\Model\Material\MatComponent.cpp.i
+
+CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Material\MatComponent.cpp -o CMakeFiles\Lab_1.dir\Model\Material\MatComponent.cpp.s
+
+CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.obj: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.obj: ../Model/Material/MatCompSolid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_1.dir\Model\Material\MatCompSolid.cpp.obj -c C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Material\MatCompSolid.cpp
+
+CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Material\MatCompSolid.cpp > CMakeFiles\Lab_1.dir\Model\Material\MatCompSolid.cpp.i
+
+CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\chouj\CLionProjects\CS_655\raytracer\Model\Material\MatCompSolid.cpp -o CMakeFiles\Lab_1.dir\Model\Material\MatCompSolid.cpp.s
 
 # Object files for target Lab_1
 Lab_1_OBJECTS = \
 "CMakeFiles/Lab_1.dir/main.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj" \
 "CMakeFiles/Lab_1.dir/Scene.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj" \
-"CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj"
+"CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.obj" \
+"CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.obj"
 
 # External object files for target Lab_1
 Lab_1_EXTERNAL_OBJECTS =
 
 Lab_1.exe: CMakeFiles/Lab_1.dir/main.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/Light/AmbientLight.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/Light/DirectionLight.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/Light/Light.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Object.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Plane.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Sphere.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/RenderObj/Triangle.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Scene/Cam.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/Light/AmbientLight.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/Light/DirectionLight.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/Light/Light.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/RenderObj/Object.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/RenderObj/Plane.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/RenderObj/Sphere.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/RenderObj/Triangle.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Scene/Cam.cpp.obj
 Lab_1.exe: CMakeFiles/Lab_1.dir/Scene.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Ops/RenderOps.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Ops/LinAlgOp.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/VecModel/Ray.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/VecModel/Vec3.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Render/Materials/Material.cpp.obj
-Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Render/RenderAlg.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Ops/RenderOps.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Ops/LinAlgOp.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Vec/Ray.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Vec/Vec3.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Render/Materials/Material.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Render/RenderAlg.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Render/Materials/MaterialSolid.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Material/MatComponent.cpp.obj
+Lab_1.exe: CMakeFiles/Lab_1.dir/Model/Material/MatCompSolid.cpp.obj
 Lab_1.exe: CMakeFiles/Lab_1.dir/build.make
 Lab_1.exe: CMakeFiles/Lab_1.dir/linklibs.rsp
 Lab_1.exe: CMakeFiles/Lab_1.dir/objects1.rsp
 Lab_1.exe: CMakeFiles/Lab_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Lab_1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\chouj\CLionProjects\CS_655\raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Lab_1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Lab_1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

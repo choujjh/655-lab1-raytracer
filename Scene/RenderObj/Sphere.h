@@ -7,7 +7,6 @@
 
 
 #include "Object.h"
-#include "../../VecModel/Vec3.h"
 
 
 class Sphere: public Object {
@@ -15,7 +14,7 @@ private:
     Vec3 center;
     double radius;
 public:
-    Sphere(const Material &objMat, const Vec3 &center, double radius);
+    Sphere(Material* objMat, const Vec3 &center, double radius);
 
     Vec3 intersect(Ray ray) override;
 

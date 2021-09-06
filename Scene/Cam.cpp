@@ -2,8 +2,7 @@
 // Created by chouj on 3/8/2021.
 //
 
-#include "cam.h"
-#include "../../Ops/LinAlgOp.h"
+#include "Cam.h"
 #include <cmath>
 
 const double pi = acos(-1);
@@ -13,8 +12,8 @@ Cam::Cam(const Vec3 &lookFrom, const Vec3 &lookAt, const Vec3 &up, double fov, d
                                                                                                            width(width),
                                                                                                            height(height) {
     Vec3 zPrime = this->lookAt - this->lookFrom;
-    Vec3 xPrime = LinAlgOp().cross(zPrime, up);
-    Vec3 yPrime = LinAlgOp().cross(xPrime, zPrime);
+    Vec3 xPrime = zPrime.cross(up);
+    Vec3 yPrime = xPrime.cross(zPrime);
 
     double zMag = zPrime.getMagnitude();
     double xMag = zMag * tan(fov * (pi/180.0));

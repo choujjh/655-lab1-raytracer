@@ -3,7 +3,7 @@
 //
 
 #include "Vec3.h"
-#include "../../Ops/LinAlgOp.h"
+#include "../Ops/LinAlgOp.h"
 
 #import <cmath>
 

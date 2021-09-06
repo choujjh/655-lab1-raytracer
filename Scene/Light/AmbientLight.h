@@ -6,7 +6,7 @@
 #define RAYTRACER_AMBIENTLIGHT_H
 
 
-#include "../../VecModel/Vec3.h"
+
 #include "Light.h"
 
 class ambientLight: public Light {
