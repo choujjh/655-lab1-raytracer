@@ -5,8 +5,13 @@
 #ifndef RAYTRACER_VEC_H
 #define RAYTRACER_VEC_H
 #include <vector>
-using std::vector;
+#include <limits>
 
+#ifndef VAL_INFINITY
+#define VAL_INFINITY std::numeric_limits<double>::infinity()
+#endif
+
+using std::vector;
 
 class Vec3 {
 private:

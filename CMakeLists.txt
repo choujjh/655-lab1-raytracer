@@ -45,6 +45,6 @@ add_executable(Lab_1
         Model/Material/MatCompSolid.cpp
         Model/Material/MatCompSolid.h
 
-        Render/RenderAlg.cpp
-        Render/RenderAlg.h
+        Render/Integrator.cpp
+        Render/Integrator.h
         )

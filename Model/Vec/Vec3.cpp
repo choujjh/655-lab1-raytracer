@@ -34,6 +34,7 @@ Vec3 Vec3::clip(double min, double max){
     x = x > max ? max : x < min ? min : x;
     y = y > max ? max : y < min ? min : y;
     z = z > max ? max : z < min ? min : z;
+    calcMagnitude();
     return *this;
 }
 
@@ -48,7 +49,7 @@ double Vec3::dot(Vec3 b){
     return LinAlgOp().dot(*this, b);
 }
 Vec3 Vec3::cross(Vec3 b){
-    return LinAlgOp().cross(*this, b);
+    return Vec3(LinAlgOp().cross(*this, b));
 }
 
 Vec3 Vec3::operator-(Vec3 b) {
@@ -61,11 +62,13 @@ void Vec3::operator+=(Vec3 b){
     x += b.x;
     y += b.y;
     z += b.z;
+    calcMagnitude();
 }
 void Vec3::operator-=(Vec3 b){
     x -= b.x;
     y -= b.y;
     z -= b.z;
+    calcMagnitude();
 }
 Vec3 Vec3::operator*(double val) {
     return Vec3(this->x * val, this->y * val, this->z * val);

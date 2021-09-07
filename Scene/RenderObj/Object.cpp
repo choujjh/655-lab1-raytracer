@@ -5,11 +5,9 @@
 
 #include "Object.h"
 
-#include <limits>
-
 
 Vec3 Object::intersect(Ray ray) {
-    double inf = std::numeric_limits<double>::infinity();
+    double inf = VAL_INFINITY;
     return Vec3(inf, inf, inf);
 }
 

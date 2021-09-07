@@ -9,9 +9,8 @@
 #include "../Model/Vec/Vec3.h"
 #include "../Model/Vec/Ray.h"
 
-class RenderAlg {
+class Integrator {
     virtual Vec3 radiance(Ray ray, int depth) = 0;
-
 };
 
 
