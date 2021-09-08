@@ -24,12 +24,16 @@ add_executable(Lab_1
         Scene/Materials/Material.cpp
         Scene/Materials/Material.h
 
+        Scene/Scene.cpp
+        Scene/Scene.h
+
         Scene/Cam.cpp
         Scene/Cam.h
-        Scene.cpp
-        Scene.h
-        RenderCompCreator.cpp
-        RenderCompCreator.h
+        Render/RenderController.cpp
+        Render/RenderController.h
+
+        Model/RenderCompCreator.cpp
+        Model/RenderCompCreator.h
 
         Model/Ops/RenderOps.cpp
         Model/Ops/RenderOps.h
@@ -45,6 +49,14 @@ add_executable(Lab_1
         Model/Material/MatCompSolid.cpp
         Model/Material/MatCompSolid.h
 
+        Model/File/ImageFileManager.cpp
+        Model/File/ImageFileManager.h
+        Model/File/PPMFileManager.cpp
+        Model/File/PPMFileManager.h
+
+        Render/RenderController.cpp
+        Render/RenderController.h
         Render/Integrator.cpp
         Render/Integrator.h
+
         )
