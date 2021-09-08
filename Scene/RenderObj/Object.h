@@ -12,9 +12,9 @@
 
 class Object {
 public:
-    Material objMat;
+    Material* objMat;
 
-    Object(Material objMat);
+    Object(Material* objMat);
 
     virtual Vec3 intersect(Ray ray) = 0;
     virtual Vec3 normal(Vec3 point) = 0;

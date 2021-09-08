@@ -6,16 +6,18 @@
 #define RAYTRACER_CLASSCREATOR_H
 
 #include <vector>
-#include "Model/Material/MatComponent.h"
-#include "Model/Material/MatCompSolid.h"
+#include "Material/MatComponent.h"
+#include "Material/MatCompSolid.h"
 
-#include "Scene/RenderObj/Object.h"
-#include "Scene/RenderObj/Triangle.h"
-#include "Scene/RenderObj/Sphere.h"
+#include "../Scene/RenderObj/Object.h"
+#include "../Scene/RenderObj/Triangle.h"
+#include "../Scene/RenderObj/Sphere.h"
 
-#include "Scene/Light/Light.h"
-#include "Scene/Light/AmbientLight.h"
-#include "Scene/Light/DirectionLight.h"
+#include "../Scene/Light/Light.h"
+#include "../Scene/Light/AmbientLight.h"
+#include "../Scene/Light/DirectionLight.h"
+#include "File/ImageFileManager.h"
+#include "File/PPMFileManager.h"
 
 
 using std::vector;
@@ -23,6 +25,7 @@ class RenderCompCreator {
 private:
     vector<MatComponent<double>*> matCompDoubles;
     vector<MatComponent<Vec3>*> matCompVec3;
+    vector<ImageFileManager*> fileManagers;
 public:
     vector<Object*> objects;
     vector<Light*> lights;
@@ -46,17 +49,17 @@ public:
         matCompVec3.push_back(tempMatComp);
         return tempMatComp;
     }
-    Object* makeTriangle(const Material &objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c){
+    Object* makeTriangle(Material *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c){
         Object* tempObject = new Triangle(objMat, a, b, c);
         objects.push_back(tempObject);
         return tempObject;
     }
-    Object* makeSphere(const Material &objMat, const Vec3 &center, double radius){
+    Object* makeSphere(Material *objMat, const Vec3 &center, double radius){
         Object* tempObject = new Sphere(objMat, center, radius);
         objects.push_back(tempObject);
         return tempObject;
     }
-    Object* makePlane(const Material &objMat, const Vec3 &n, double d){
+    Object* makePlane(Material *objMat, const Vec3 &n, double d){
         Object* tempObject = new Plane(objMat, n, d);
         objects.push_back(tempObject);
         return tempObject;
@@ -70,6 +73,11 @@ public:
         Light* tempLight = new DirectionLight(color, dir);
         lights.push_back(tempLight);
         return tempLight;
+    }
+    ImageFileManager* makePPMFileManager(const string &fileName, unsigned int height, unsigned int width){
+        ImageFileManager* tempManager = new PPMFileManager(fileName, height, width);
+        fileManagers.push_back(tempManager);
+        return tempManager;
     }
 
 

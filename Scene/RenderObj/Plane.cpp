@@ -5,7 +5,7 @@
 #include "Plane.h"
 
 
-Plane::Plane(const Material &objMat, const Vec3 &n, double d) : Object(objMat), n(n), d(d) {}
+Plane::Plane(Material *objMat, const Vec3 &n, double d) : Object(objMat), n(n), d(d) {}
 Vec3 Plane::intersect(Ray ray) {
     ray.direction.normalize();
     double den = n.dot(ray.direction);

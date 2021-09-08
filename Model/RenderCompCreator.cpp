@@ -6,6 +6,8 @@
 
 RenderCompCreator::RenderCompCreator() {}
 
+
+
 RenderCompCreator::~RenderCompCreator() {
     for(auto curr: objects){
         delete curr;
@@ -17,6 +19,9 @@ RenderCompCreator::~RenderCompCreator() {
         delete curr;
     }
     for( auto curr: matCompVec3){
+        delete curr;
+    }
+    for( auto curr: fileManagers){
         delete curr;
     }
 }
