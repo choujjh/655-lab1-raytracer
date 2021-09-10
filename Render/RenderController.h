@@ -26,7 +26,7 @@ private:
     ImageFileManager* file;
     Scene currScene;
 
-    int samplingDensity;
+    int sampleDensity;
     int levReflectRecursion;
 
     void initializeRays();
@@ -34,7 +34,7 @@ private:
     Vec3 getIntersect(Ray currRay, bool closest, int &objIndex);
     Vec3 getColor(Ray ray, int currLevel);
 public:
-    RenderController(ImageFileManager *file, const Scene &currScene, int samplingDensity, int levReflectRecursion);
+    RenderController(ImageFileManager *file, const Scene &currScene, int sampleDensity, int levReflectRecursion);
 
     void render();
 };

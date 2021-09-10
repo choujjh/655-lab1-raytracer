@@ -1,12 +1,10 @@
 //
 // Created by chouj on 3/8/2021.
 //
-#include<fstream>
 
+#include<fstream>
 #include<iostream>
 #include<iomanip>
-#include<cmath>
-#include<limits>
 
 using std::ofstream;
 using std::endl;
@@ -14,9 +12,19 @@ using std::endl;
 #include "RenderController.h"
 #include "../Model/Ops/RenderOps.h"
 
-#include <iostream>
-
 using std::cout, std::endl;
+
+RenderController::RenderController(ImageFileManager *file, const Scene &currScene, int sampleDensity,
+                                   int levReflectRecursion) : file(file), currScene(currScene),
+                                                              sampleDensity(sampleDensity),
+                                                              levReflectRecursion(levReflectRecursion) {
+    int height = currScene.getRenderCam()->getHeight();
+    int width = currScene.getRenderCam()->getWidth();
+    rays.resize(height * sampleDensity);
+    for(int i = 0; i < rays.size(); ++i){
+        rays.at(i).resize(width * sampleDensity);
+    }
+}
 
 void RenderController::render() {
     /**initialize rays**/
@@ -27,31 +35,36 @@ void RenderController::render() {
             file->getImage()[row][col] = calcPixel(row, col);
         }
     }
-    /**write image array to file**/
-    file->writeToFileInt();
 }
 
 void RenderController::initializeRays(){
-    Vec3 currRow = this->currScene.getRenderCam()->getStart();
-    int row = 0;
-    int col = 0;
-    for(row = 0; row < currScene.getRenderCam()->getHeight(); ++row){
-        Vec3 currCol = currRow;
-        for(col = 0; col < currScene.getRenderCam()->getWidth(); ++col){
-            Vec3 dirRay = (currCol - currScene.getRenderCam()->getLookFrom()).normalize();
-            rays.at(row).at(col).direction = dirRay;
-            rays.at(row).at(col).point = currScene.getRenderCam()->getLookFrom();
-            currCol = currCol + currScene.getRenderCam()->getIncrementX();
+    Vec3 newIncrX = Vec3(currScene.getRenderCam()->getIncrementX()) / sampleDensity;
+    Vec3 newIncrY = Vec3(currScene.getRenderCam()->getIncrementY()) / sampleDensity;
+    Vec3 currRow = Vec3(currScene.getRenderCam()->getStart())
+                   - newIncrX * ((sampleDensity - 1))
+                   + newIncrY * ((sampleDensity - 1));
 
+    for(int row = 0; row < currScene.getRenderCam()->getHeight() * sampleDensity; ++row){
+        Vec3 currCol = currRow;
+        for(int col = 0; col < currScene.getRenderCam()->getWidth() * sampleDensity; ++col){
+            rays.at(row).at(col).direction = (currCol - currScene.getRenderCam()->getLookFrom()).normalize();
+            rays.at(row).at(col).point = currScene.getRenderCam()->getLookFrom();
+            currCol += newIncrX;
         }
-        currRow = currRow - currScene.getRenderCam()->getIncrementY();
+        currRow -= newIncrY;
     }
 }
 
 Vec3 RenderController::calcPixel(int row, int col){
-    Ray currRay = rays.at(row).at(col);
+    Vec3 color(0, 0, 0);
+    for(int subRow = 0; subRow < sampleDensity; ++ subRow){
+        for(int subCol = 0; subCol < sampleDensity; ++subCol){
+            Ray currRay = rays.at(row * sampleDensity + subRow).at(col * sampleDensity + subCol);
+            color += getColor(currRay, 0);
+        }
+    }
 
-    return getColor(currRay, 0);
+    return color / (sampleDensity * sampleDensity);
 }
 
 Vec3 RenderController::getColor(Ray ray, int currLevel){
@@ -106,19 +119,3 @@ Vec3 RenderController::getIntersect(Ray currRay, bool closest, int &objIndex) {
     }
     return minInterVec;
 }
-
-RenderController::RenderController(ImageFileManager *file, const Scene &currScene, int samplingDensity,
-                                   int levReflectRecursion) : file(file), currScene(currScene),
-                                                              samplingDensity(samplingDensity),
-                                                              levReflectRecursion(levReflectRecursion) {
-    int height = currScene.getRenderCam()->getHeight();
-    int width = currScene.getRenderCam()->getWidth();
-    rays.resize(height);
-    for(int i = 0; i < rays.size(); ++i){
-        rays.at(i).resize(width);
-    }
-}
-
-
-
-

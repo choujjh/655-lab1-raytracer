@@ -7,7 +7,6 @@
 
 
 /*TODO:
- * sampling
  * multi- threading
  * lights as objects
  * different illumination model
@@ -26,7 +25,7 @@ void diffuse(string outFile){
     Vec3 cameraLookFrom(0, 0, 1);
     Vec3 up(0, 1, 0);
     double fov = 28.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 100, 100);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
@@ -95,12 +94,12 @@ void diffuse(string outFile){
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
 
-    RenderController controller(fManager, currScene, 2, 1);
+    RenderController controller(fManager, currScene, 1, 1);
     controller.render();
+    fManager->writeToFileInt();
 
     delete renderCam;
 }
-
 
 void fun(string outFile){
     RenderCompCreator sceneComp;
@@ -184,6 +183,7 @@ void fun(string outFile){
 
     RenderController controller(fManager, currScene, 2, 1);
     controller.render();
+    fManager->writeToFileInt();
 
     delete renderCam;
 }
@@ -196,7 +196,7 @@ void reflection(string outFile){
     Vec3 cameraLookFrom(0, 0, 1.2);
     Vec3 up(0, 1, 0);
     double fov = 55.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 100, 100);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
@@ -240,10 +240,11 @@ void reflection(string outFile){
     currScene.addLight(sceneComp.makeDirectionLight(Vec3(1.0, 1.0, 1.0), Vec3(0.0, -1.0, 0.0)));
 
     /**File**/
-    ImageFileManager* fmanager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
+    ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fmanager, currScene, 2, 1);
+    RenderController controller(fManager, currScene, 1, 1);
     controller.render();
+    fManager->writeToFileInt();
 
     delete renderCam;
 }
