@@ -10,12 +10,15 @@ Vec3 Plane::intersect(Ray ray) {
     ray.direction.normalize();
     double den = n.dot(ray.direction);
     if(den == 0.0){
-        return Object::intersect(ray);
+        return infiniteVec3();
+    }
+    if(den == NEG_INFINITY){
+        return infiniteVec3() * -1;
     }
 
     double t = -(n.dot(ray.point) - d) / den;
     if(t <= 0) {
-        return Object::intersect(ray);
+        return infiniteVec3();
     }
     return ray.point + ray.direction * t;
 }

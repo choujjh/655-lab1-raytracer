@@ -6,12 +6,12 @@
 
 Vec3 SceneIntersect::getIntersect(Ray currRay, bool closest, Object *&object) const {
     Vec3 minInterVec = objList.at(0)->intersect(currRay);
-    if(minInterVec.getMagnitude() < VAL_INFINITY){
+    if(minInterVec.getMagnitude() < VAL_INFINITY && minInterVec.getMagnitude() > NEG_INFINITY){
         object = objList.at(0);
     }
     for(int i = 1; i < objList.size(); ++i){
         Vec3 interPoint = objList.at(i)->intersect(currRay);
-        if (!closest && interPoint.getMagnitude() != VAL_INFINITY) {
+        if (!closest && interPoint.getMagnitude() != VAL_INFINITY && interPoint.getMagnitude() != NEG_INFINITY) {
             object = objList.at(i);
             return interPoint;
         }

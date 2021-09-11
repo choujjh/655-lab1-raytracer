@@ -12,3 +12,7 @@ Vec3 Object::intersect(Ray ray) {
 }
 
 Object::Object(Material* objMat) : objMat(objMat) {}
+
+Vec3 Object::infiniteVec3() {
+    return Object::intersect(Ray());
+}

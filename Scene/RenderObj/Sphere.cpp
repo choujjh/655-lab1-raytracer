@@ -28,16 +28,25 @@ Sphere::Sphere(Material *objMat, const Vec3 &center, double radius) : Object(obj
 Vec3 Sphere::intersect(Ray ray) {
     ray.direction.normalize();
 
+    //inside sphere
+    bool isInsideSphere = false;
+    if((ray.point - center).getMagnitude() < radius){
+        isInsideSphere = true;
+    }
+
+    //check to see if direction points the same way as towards the center of the sphere
     Vec3 oc = center - ray.point;
     double tca = ray.direction.dot(oc);
-    if(tca < 0.0){
-        return Object::intersect(ray);
+    if(tca < 0.0 && !isInsideSphere){
+        return infiniteVec3();
     }
+
+    //calc Thc^2
     double thcSqr = radius * radius - oc.getMagnitude() * oc.getMagnitude() + tca * tca;
     if(thcSqr < 0.0){
-        return Object::intersect(ray);
+        return infiniteVec3();
     }
-    else if((center - ray.point).getMagnitude() < radius) {
+    else if(isInsideSphere) {
         return ray.point + ray.direction * (tca + sqrt(thcSqr));
     }
     return ray.point + ray.direction * (tca - sqrt(thcSqr));

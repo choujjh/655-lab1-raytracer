@@ -16,7 +16,8 @@ public:
 
     Object(Material* objMat);
 
-    virtual Vec3 intersect(Ray ray) = 0;
+    virtual Vec3 intersect(Ray ray);
+    Vec3 infiniteVec3();
     virtual Vec3 normal(Vec3 point) = 0;
 };
 

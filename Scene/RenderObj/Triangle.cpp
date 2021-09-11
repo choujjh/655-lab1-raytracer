@@ -14,22 +14,16 @@ Triangle::Triangle(Material *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c
 
 Vec3 Triangle::intersect(Ray ray) {
     Vec3 planeIntersectPoint = Plane::intersect(ray);
-    if(planeIntersectPoint.getMagnitude() == std::numeric_limits<double>::infinity()){
+    if(planeIntersectPoint.getMagnitude() == VAL_INFINITY || planeIntersectPoint.getMagnitude() == NEG_INFINITY){
         return planeIntersectPoint;
     }
     double aSide = LinAlgOp().dot(LinAlgOp().cross(b - a, planeIntersectPoint - a).normalize(), n);
-    if(aSide < 0){
-        return Object::intersect(ray);
-    }
     double bSide = LinAlgOp().dot(LinAlgOp().cross(c - b, planeIntersectPoint - b).normalize(), n);
-    if(bSide < 0){
-        return Object::intersect(ray);
-    }
     double cSide = LinAlgOp().dot(LinAlgOp().cross(a - c, planeIntersectPoint - c).normalize(), n);
-    if(cSide < 0){
-        return Object::intersect(ray);
+    if((aSide < 0 && bSide < 0 && cSide < 0) || (aSide > 0 && bSide > 0 && cSide > 0)) {
+        return planeIntersectPoint;
     }
-    return planeIntersectPoint;
+    return infiniteVec3();
 }
 
 Vec3 Triangle::normal(Vec3 point) {

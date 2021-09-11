@@ -230,7 +230,7 @@ void reflection(string outFile){
                         sceneComp.makeMatSolidD(4),
                         sceneComp.makeMatSolidV3(1, 1, 0),
                         sceneComp.makeMatSolidV3(1, 1, 1),
-                        sceneComp.makeMatSolidV3(Vec3()));
+                        sceneComp.makeMatSolidV3(Vec3(1, 1, 0)));
     a = Vec3(0.0, -0.5, 0.5);
     b = Vec3(0.0, -0.5, -0.5);
     c = Vec3(-1.0, 0.5, 0.0);
@@ -242,7 +242,7 @@ void reflection(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene) ,1, 1);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene) , 1, 2);
     controller.render();
     fManager->writeToFileInt();
 
@@ -256,19 +256,19 @@ int main() {
     using std::chrono::milliseconds;
 
     auto t1 = std::chrono::high_resolution_clock::now();
-    diffuse("diffuse.ppm");
+//    diffuse("diffuse.ppm");
     auto t2 = std::chrono::high_resolution_clock::now();
-    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
+//    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
 
     t1 = std::chrono::high_resolution_clock::now();
     reflection("reflection.ppm");
     t2 = std::chrono::high_resolution_clock::now();
     std::cout << "reflection took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
-    t1 = std::chrono::high_resolution_clock::now();
-    fun("personal.ppm");
-    t2 = std::chrono::high_resolution_clock::now();
-    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
+//    t1 = std::chrono::high_resolution_clock::now();
+//    fun("personal.ppm");
+//    t2 = std::chrono::high_resolution_clock::now();
+//    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
     return 0;
 }

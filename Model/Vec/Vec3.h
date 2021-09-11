@@ -7,9 +7,8 @@
 #include <vector>
 #include <limits>
 
-#ifndef VAL_INFINITY
 #define VAL_INFINITY std::numeric_limits<double>::infinity()
-#endif
+#define NEG_INFINITY -std::numeric_limits<double>::infinity()
 
 using std::vector;
 
