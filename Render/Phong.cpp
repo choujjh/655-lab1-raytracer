@@ -11,7 +11,7 @@ Phong::Phong(Scene *renderScene) : Integrator(renderScene) {}
 
 Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion) {
     //return if recursion limit is reached
-    if(depth > levReflectRecursion){
+    if(depth >= levReflectRecursion){
         return renderScene->getBackColor();
     }
 

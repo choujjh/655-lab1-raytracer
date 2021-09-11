@@ -9,9 +9,14 @@
 #include "Light.h"
 
 class PointLight: public Light {
+private:
+    Vec3 position;
 public:
+    PointLight(const Vec3 &color, const Vec3 &position);
+
     Vec3 shadowRay(Vec3 point) override;
     bool isAmbient() override;
+
 
 };
 

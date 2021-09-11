@@ -20,6 +20,7 @@
 #include "File/PPMFileManager.h"
 #include "../Render/Integrator.h"
 #include "../Render/Phong.h"
+#include "../Scene/Light/PointLight.h"
 
 
 using std::vector;
@@ -77,6 +78,11 @@ public:
     }
     Light* makeDirectionLight(const Vec3 &color, const Vec3 &dir){
         Light* tempLight = new DirectionLight(color, dir);
+        lights.push_back(tempLight);
+        return tempLight;
+    }
+    Light* makePointLight(const Vec3 &color, const Vec3 &position){
+        Light* tempLight = new PointLight(color, position);
         lights.push_back(tempLight);
         return tempLight;
     }
