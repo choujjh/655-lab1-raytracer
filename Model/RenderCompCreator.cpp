@@ -24,4 +24,9 @@ RenderCompCreator::~RenderCompCreator() {
     for( auto curr: fileManagers){
         delete curr;
     }
+    for(auto curr: integrators){
+        delete curr;
+    }for(auto curr: sceneIntersects){
+        delete curr;
+    }
 }

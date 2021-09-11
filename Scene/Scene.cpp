@@ -4,14 +4,8 @@
 
 #include "Scene.h"
 
-Scene::Scene(Cam *renderCam, const Vec3 &backColor, vector<Object*> objList, vector<Light*> lightList) : renderCam(
-        renderCam), backColor(backColor), objList(objList), lightList(lightList) {}
-
-Scene::Scene(Cam *renderCam, const Vec3 &backColor) : renderCam(
-        renderCam), backColor(backColor) {}
-
 void Scene::addObject(Object* newObject){
-    objList.push_back(newObject);
+    objTracker->addObject(newObject);
 }
 void Scene::addLight(Light* newLight){
     lightList.push_back(newLight);
@@ -33,14 +27,6 @@ void Scene::setBackColor(const Vec3 &backColor) {
     Scene::backColor = backColor;
 }
 
-const vector<Object *> &Scene::getObjList() const {
-    return objList;
-}
-
-void Scene::setObjList(const vector<Object *> &objList) {
-    Scene::objList = objList;
-}
-
 const vector<Light *> &Scene::getLightList() const {
     return lightList;
 }
@@ -48,3 +34,15 @@ const vector<Light *> &Scene::getLightList() const {
 void Scene::setLightList(const vector<Light *> &lightList) {
     Scene::lightList = lightList;
 }
+
+SceneIntersect* Scene::getObjTracker() {
+    return objTracker;
+}
+
+void Scene::setObjTracker(SceneIntersect* objTracker) {
+    Scene::objTracker = objTracker;
+}
+
+Scene::Scene(Cam *renderCam, const Vec3 &backColor, SceneIntersect* objTracker) : renderCam(renderCam),
+                                                                                        backColor(backColor),
+                                                                                        objTracker(objTracker) {}

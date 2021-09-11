@@ -1,10 +1,10 @@
 #include <limits>
 #include <iostream>
-
+#include <chrono>
 
 #include "Render/RenderController.h"
 #include "Model/RenderCompCreator.h"
-
+#include "Model/Ops/RenderOps.h"
 
 /*TODO:
  * multi- threading
@@ -30,7 +30,7 @@ void diffuse(string outFile){
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
 
-    Scene currScene(renderCam, backColor);
+    Scene currScene(renderCam, backColor, sceneComp.makeSceneIntersect());
 
     /**objects**/
     Material MSphere1(sceneComp.makeMatSolidD(0.8),
@@ -94,7 +94,7 @@ void diffuse(string outFile){
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
 
-    RenderController controller(fManager, currScene, 1, 1);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 1, 1);
     controller.render();
     fManager->writeToFileInt();
 
@@ -109,11 +109,11 @@ void fun(string outFile){
     Vec3 cameraLookFrom(0.1, 0.1, 1.2);
     Vec3 up(0, 1, 0);
     double fov = 55.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 100, 100);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
-    Scene currScene(renderCam, backColor);
+    Scene currScene(renderCam, backColor, sceneComp.makeSceneIntersect());
 
     /**objects**/
     Material MSphere1(sceneComp.makeMatSolidD(0.2),
@@ -181,7 +181,7 @@ void fun(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, 2, 1);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 2, 1);
     controller.render();
     fManager->writeToFileInt();
 
@@ -200,7 +200,7 @@ void reflection(string outFile){
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
-    Scene currScene(renderCam, backColor);
+    Scene currScene(renderCam, backColor, sceneComp.makeSceneIntersect());
 
     /**setting up objects**/
     Material MSphere1(sceneComp.makeMatSolidD(0.0),
@@ -242,15 +242,33 @@ void reflection(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, 1, 1);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene) ,1, 1);
     controller.render();
     fManager->writeToFileInt();
 
     delete renderCam;
 }
 int main() {
+
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+
+    auto t1 = std::chrono::high_resolution_clock::now();
     diffuse("diffuse.ppm");
+    auto t2 = std::chrono::high_resolution_clock::now();
+    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
+
+    t1 = std::chrono::high_resolution_clock::now();
     reflection("reflection.ppm");
+    t2 = std::chrono::high_resolution_clock::now();
+    std::cout << "reflection took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
+
+    t1 = std::chrono::high_resolution_clock::now();
     fun("personal.ppm");
+    t2 = std::chrono::high_resolution_clock::now();
+    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
+
     return 0;
 }

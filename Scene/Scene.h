@@ -9,17 +9,19 @@
 #include "Cam.h"
 #include "RenderObj/Object.h"
 #include "Light/Light.h"
+#include "IntersectMethods/SceneIntersect.h"
 
 class Scene {
 private:
     Cam* renderCam;
     Vec3 backColor;
-    vector<Object*> objList;
     vector<Light*> lightList;
+    SceneIntersect* objTracker;
 public:
+    Scene(Cam *renderCam, const Vec3 &backColor, SceneIntersect* objTracker);
 
-    Scene(Cam *renderCam, const Vec3 &backColor, vector<Object*> objList, vector<Light*> lightList);
-    Scene(Cam *renderCam, const Vec3 &backColor);
+    SceneIntersect* getObjTracker();
+    void setObjTracker(SceneIntersect* objTracker);
 
     void addObject(Object* newObject);
     void addLight(Light* newLight);
@@ -29,9 +31,6 @@ public:
 
     const Vec3 &getBackColor() const;
     void setBackColor(const Vec3 &backColor);
-
-    const vector<Object *> &getObjList() const;
-    void setObjList(const vector<Object *> &objList);
 
     const vector<Light *> &getLightList() const;
     void setLightList(const vector<Light *> &lightList);

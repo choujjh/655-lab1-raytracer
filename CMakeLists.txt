@@ -11,6 +11,8 @@ add_executable(Lab_1
         Scene/Light/DirectionLight.h
         Scene/Light/Light.cpp
         Scene/Light/Light.h
+        Scene/Light/PointLight.cpp
+        Scene/Light/PointLight.h
 
         Scene/RenderObj/Object.cpp
         Scene/RenderObj/Object.h
@@ -26,6 +28,8 @@ add_executable(Lab_1
 
         Scene/Scene.cpp
         Scene/Scene.h
+        Scene/IntersectMethods/SceneIntersect.cpp
+        Scene/IntersectMethods/SceneIntersect.h
 
         Scene/Cam.cpp
         Scene/Cam.h
@@ -58,5 +62,11 @@ add_executable(Lab_1
         Render/RenderController.h
         Render/Integrator.cpp
         Render/Integrator.h
+        Render/Phong.cpp
+        Render/Phong.h
+
+
+
+
 
         )

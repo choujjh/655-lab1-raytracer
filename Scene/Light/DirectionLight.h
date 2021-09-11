@@ -14,7 +14,7 @@ public:
 
     DirectionLight(const Vec3 &color, const Vec3 &dir);
 
-    Vec3 illumination(Vec3 point, Vec3 rayDir, Object *surface, bool occluded) override;
+    bool isAmbient() override;
 };
 
 

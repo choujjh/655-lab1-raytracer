@@ -11,10 +11,11 @@
 
 class AmbientLight: public Light {
     Vec3 shadowRay(Vec3 point) override;
-    Vec3 illumination(Vec3 point, Vec3 rayDir, Object* surface, bool occluded) override;
 
 public:
     AmbientLight(const Vec3 &color);
+
+    bool isAmbient() override;
 
 };
 

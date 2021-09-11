@@ -11,7 +11,7 @@
 class RenderOps {
 public:
     static Vec3 reflectionRay(Vec3 normal, Vec3 initDir);
-
+    static double max(double a, double b);
 };
 
 

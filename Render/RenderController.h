@@ -12,6 +12,7 @@
 #include "../Scene/Light/Light.h"
 #include "../Scene/Scene.h"
 #include "../Model/File/ImageFileManager.h"
+#include "Integrator.h"
 
 
 using std::vector;
@@ -25,16 +26,17 @@ private:
     vector<vector<Ray>> rays;
     ImageFileManager* file;
     Scene currScene;
+    Integrator* integrator;
 
     int sampleDensity;
     int levReflectRecursion;
 
     void initializeRays();
     Vec3 calcPixel(int row, int col);
-    Vec3 getIntersect(Ray currRay, bool closest, int &objIndex);
     Vec3 getColor(Ray ray, int currLevel);
 public:
-    RenderController(ImageFileManager *file, const Scene &currScene, int sampleDensity, int levReflectRecursion);
+    RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator, int sampleDensity,
+                     int levReflectRecursion);
 
     void render();
 };

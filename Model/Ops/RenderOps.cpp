@@ -6,5 +6,8 @@
 #include "LinAlgOp.h"
 
 Vec3 RenderOps::reflectionRay(Vec3 normal, Vec3 initDir) {
-    return normal * 2 * LinAlgOp().dot(normal, initDir) - initDir;
+    return initDir - (normal * 2 * normal.dot(initDir));
+}
+double RenderOps::max(double a, double b) {
+    return a > b ? a : b;
 }

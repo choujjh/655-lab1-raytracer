@@ -3,3 +3,5 @@
 //
 
 #include "Integrator.h"
+
+Integrator::Integrator(Scene *renderScene) : renderScene(renderScene) {}

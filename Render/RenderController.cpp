@@ -14,17 +14,21 @@ using std::endl;
 
 using std::cout, std::endl;
 
-RenderController::RenderController(ImageFileManager *file, const Scene &currScene, int sampleDensity,
-                                   int levReflectRecursion) : file(file), currScene(currScene),
-                                                              sampleDensity(sampleDensity),
-                                                              levReflectRecursion(levReflectRecursion) {
+RenderController::RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator,
+                                   int sampleDensity, int levReflectRecursion) :
+                                   file(file),
+                                   currScene(currScene),
+                                   integrator(integrator),
+                                   sampleDensity(sampleDensity),
+                                   levReflectRecursion(levReflectRecursion) {
     int height = currScene.getRenderCam()->getHeight();
     int width = currScene.getRenderCam()->getWidth();
     rays.resize(height * sampleDensity);
-    for(int i = 0; i < rays.size(); ++i){
+    for(int i = 0; i < rays.size(); ++i) {
         rays.at(i).resize(width * sampleDensity);
     }
 }
+
 
 void RenderController::render() {
     /**initialize rays**/
@@ -68,54 +72,7 @@ Vec3 RenderController::calcPixel(int row, int col){
 }
 
 Vec3 RenderController::getColor(Ray ray, int currLevel){
-    if(currLevel > this->levReflectRecursion){
-        return Vec3();
-    }
-    int objIndex = -1;
-    Vec3 interVec = getIntersect(ray, true, objIndex);
-    if (interVec.getMagnitude() == std::numeric_limits<double>::infinity()) {
-        return currScene.getBackColor();
-    }
-
-    Vec3 n = currScene.getObjList().at(objIndex)->normal(interVec);
-    Vec3 epsilonPoint = interVec + n * 0.001;
-    Vec3 color(0.0, 0.0, 0.0);
-
-    for(int i = 0; i < currScene.getLightList().size(); ++i) {
-        Ray shadowRay = Ray(epsilonPoint, currScene.getLightList().at(i)->shadowRay(interVec));
-        int shadowIndex = -1;
-        Vec3 shadowIntersect = getIntersect(shadowRay, false, shadowIndex);
-        bool occluded = true;
-        if (shadowIntersect.getMagnitude() == std::numeric_limits<double>::infinity()) {
-            occluded = false;
-        }
-        Vec3 addColor = currScene.getLightList().at(i)->illumination(interVec, ray.direction, currScene.getObjList().at(objIndex), occluded) + color;
-        addColor.clip(0, 1);
-
-        color = addColor;
-    }
-    Vec3 refRay = RenderOps().reflectionRay(n, ray.direction * -1);
-    Ray newRay(epsilonPoint, refRay);
-    color += getColor(newRay, currLevel + 1) * currScene.getObjList().at(objIndex)->objMat->kSpecular->getColor() * currScene.getObjList().at(objIndex)->objMat->kSpecular->getColor();
-    color.clip(0, 1);
-
-    return color;
+    return integrator->radiance(ray, currLevel, levReflectRecursion);
 }
 
-Vec3 RenderController::getIntersect(Ray currRay, bool closest, int &objIndex) {
-    Vec3 minInterVec = currScene.getObjList().at(0)->intersect(currRay);
-    if(minInterVec.getMagnitude() < std::numeric_limits<double>::infinity()){
-        objIndex = 0;
-    }
-    for(int i = 1; i < currScene.getObjList().size(); ++i){
-        Vec3 interPoint = currScene.getObjList().at(i)->intersect(currRay);
-        if (!closest && interPoint.getMagnitude() != std::numeric_limits<double>::infinity()) {
-            return interPoint;
-        }
-        if ((interPoint - currRay.point).getMagnitude() < (minInterVec - currRay.point).getMagnitude()) {
-            minInterVec = interPoint;
-            objIndex = i;
-        }
-    }
-    return minInterVec;
-}
+

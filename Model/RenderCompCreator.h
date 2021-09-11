@@ -18,6 +18,8 @@
 #include "../Scene/Light/DirectionLight.h"
 #include "File/ImageFileManager.h"
 #include "File/PPMFileManager.h"
+#include "../Render/Integrator.h"
+#include "../Render/Phong.h"
 
 
 using std::vector;
@@ -26,6 +28,8 @@ private:
     vector<MatComponent<double>*> matCompDoubles;
     vector<MatComponent<Vec3>*> matCompVec3;
     vector<ImageFileManager*> fileManagers;
+    vector<Integrator*> integrators;
+    vector<SceneIntersect*> sceneIntersects;
 public:
     vector<Object*> objects;
     vector<Light*> lights;
@@ -49,6 +53,7 @@ public:
         matCompVec3.push_back(tempMatComp);
         return tempMatComp;
     }
+
     Object* makeTriangle(Material *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c){
         Object* tempObject = new Triangle(objMat, a, b, c);
         objects.push_back(tempObject);
@@ -64,6 +69,7 @@ public:
         objects.push_back(tempObject);
         return tempObject;
     }
+
     Light* makeAmbientLight(const Vec3 &color){
         Light* tempLight = new AmbientLight(color);
         lights.push_back(tempLight);
@@ -74,12 +80,23 @@ public:
         lights.push_back(tempLight);
         return tempLight;
     }
+
     ImageFileManager* makePPMFileManager(const string &fileName, unsigned int height, unsigned int width){
         ImageFileManager* tempManager = new PPMFileManager(fileName, height, width);
         fileManagers.push_back(tempManager);
         return tempManager;
     }
+    Integrator* makePhongIntegrator(Scene* scene){
+        Integrator* tempIntegrator = new Phong(scene);
+        integrators.push_back(tempIntegrator);
+        return tempIntegrator;
+    }
+    SceneIntersect* makeSceneIntersect(){
+        SceneIntersect* tempSceneIntersect = new SceneIntersect();
+        sceneIntersects.push_back(tempSceneIntersect);
+        return tempSceneIntersect;
 
+    }
 
 };
 
