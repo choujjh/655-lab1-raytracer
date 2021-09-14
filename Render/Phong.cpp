@@ -10,6 +10,7 @@
 Phong::Phong(Scene *renderScene) : Integrator(renderScene) {}
 
 Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion) {
+
     //return if recursion limit is reached
     if(depth >= levReflectRecursion){
         return renderScene->getBackColor();
@@ -41,18 +42,15 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion) {
 
     //refr color
     Vec3 refrColor(0.0, 0.0, 0.0);
-    //calculate refractive color
 
-    if (opacity > 0.0) {
-        Ray transmRay = RenderOps().calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject);
-        if((transmRay.direction - ray.direction).getMagnitude() < 0.001){
-            return Vec3();
-        }
-//        if(transmRay.d)
-        refrColor = radiance(transmRay, depth + 1, levReflectRecursion);
+    if(opacity > 0) {
+
+        Ray transRay = RenderOps().calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject);
+        Vec3 transDir = transRay.direction;
+        transDir.normalize();
+
+        refrColor = radiance(transRay, depth + 1, levReflectRecursion);
     }
-
-
     return ((surfColor + reflColor) * (1.0 - opacity) + refrColor * opacity).clip(0, 1);
 }
 Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, double normalScalar) {
@@ -60,7 +58,8 @@ Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, doubl
     Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
     for (int i = 0; i < renderScene->getLightList().size(); ++i) {
         Ray shadowRay = Ray(epsilonPoint, renderScene->getLightList().at(i)->shadowRay(interVec));
-        Vec3 shadowIntersect = renderScene->getObjTracker()->getIntersect(shadowRay, false);
+        Object* shadowObject = nullptr;
+        Vec3 shadowIntersect = renderScene->getObjTracker()->getIntersect(shadowRay, false, shadowObject);
         bool occluded = true;
         if (shadowIntersect.getMagnitude() == VAL_INFINITY || shadowIntersect.getMagnitude() == NEG_INFINITY) {
             occluded = false;
@@ -70,8 +69,13 @@ Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, doubl
             Vec3 addColor = calcLighting(intersectObject, renderScene->getLightList().at(i), interVec,
                                          ray.direction, normalScalar);
             addColor.clip(0, 1);
-
             surfColor += addColor;
+        }
+        else if(shadowObject->material->opacity->getColor() > 0.0){
+            Vec3 addColor = calcLighting(intersectObject, renderScene->getLightList().at(i), interVec,
+                                         ray.direction, normalScalar);
+            addColor.clip(0, 1);
+            surfColor += addColor * (1.0 - shadowObject->material->opacity->getColor());
         }
     }
     return surfColor;

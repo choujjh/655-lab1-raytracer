@@ -39,6 +39,7 @@ void RenderController::render() {
             file->getImage()[row][col] = calcPixel(row, col);
         }
     }
+//    file->getImage()[179][254] = calcPixel(203, 248);
 }
 
 void RenderController::initializeRays(){
