@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-Vec3 RenderOps::reflectionRay(Vec3 normal, Vec3 initDir) {
+Vec3 RenderOps::reflectionDirection(Vec3 normal, Vec3 initDir) {
     return initDir - (normal * 2 * normal.dot(initDir));
 }
 double RenderOps::max(double a, double b) {
@@ -15,12 +15,20 @@ double RenderOps::max(double a, double b) {
 }
 
 Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject){
+    //initial things
+    Vec3 refDir = reflectionDirection(intersectObject->normal(interVec), I);
+    double epsilon = 0.001;
+    double ior = intersectObject->material->IOR->getColor();
+    if(!isInsideObject) ior = 1/ior;
+
+
+
     I.normalize();
     Vec3 n = intersectObject->normal(interVec).normalize();
     double normalScalar = isInsideObject ? -1: 1;
 
     double nit = 0;
-    !isInsideObject ? nit = 1/intersectObject->objMat->IOR->getColor(): intersectObject->objMat->IOR->getColor();
+    !isInsideObject ? nit = 1/intersectObject->material->IOR->getColor() : intersectObject->material->IOR->getColor();
     double theta = acos((I*-1).dot(n * normalScalar));
     Vec3 T = I*nit;
     double a = nit*cos(theta);

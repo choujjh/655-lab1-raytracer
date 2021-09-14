@@ -66,4 +66,7 @@ add_executable(Lab_1
         Render/Phong.h
 
 
-        Model/MaterialComponent/MatComponent.cpp Model/MaterialComponent/MatCompSolid.cpp)
+
+
+
+        )

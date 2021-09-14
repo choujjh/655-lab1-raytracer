@@ -12,7 +12,7 @@
 
 class Object {
 public:
-    Material* objMat;
+    Material* material;
 
     Object(Material* objMat);
 

@@ -5,6 +5,7 @@
 #include "Render/RenderController.h"
 #include "Model/RenderCompCreator.h"
 #include "Model/Ops/RenderOps.h"
+#include "Scene/Materials/Material.h"
 
 /*TODO:
  * multi- threading
