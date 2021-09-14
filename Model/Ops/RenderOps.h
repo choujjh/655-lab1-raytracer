@@ -7,11 +7,14 @@
 
 
 #include "../Vec/Vec3.h"
+#include "../Vec/Ray.h"
+#include "../../Scene/RenderObj/Object.h"
 
 class RenderOps {
 public:
     static Vec3 reflectionRay(Vec3 normal, Vec3 initDir);
     static double max(double a, double b);
+    static Ray calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject);
 };
 
 

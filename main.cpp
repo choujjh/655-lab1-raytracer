@@ -37,6 +37,8 @@ void diffuse(string outFile){
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(1.0, 1, 1.0),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -47,6 +49,8 @@ void diffuse(string outFile){
                       sceneComp.makeMatSolidD(0.6),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(32),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(1, 0, 0),
                       sceneComp.makeMatSolidV3(0.5, 1, 0.5),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -56,6 +60,8 @@ void diffuse(string outFile){
                       sceneComp.makeMatSolidD(0.5),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(32),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(0, 1, 0),
                       sceneComp.makeMatSolidV3(0.5, 1, 0.5),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -65,6 +71,8 @@ void diffuse(string outFile){
                       sceneComp.makeMatSolidD(0.2),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(32),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(0, 0, 1.0),
                       sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -77,6 +85,8 @@ void diffuse(string outFile){
                         sceneComp.makeMatSolidD(0.0),
                         sceneComp.makeMatSolidD(0.1),
                         sceneComp.makeMatSolidD(4),
+                        sceneComp.makeMatSolidD(1.0),
+                        sceneComp.makeMatSolidD(0.0),
                         sceneComp.makeMatSolidV3(1, 1, 0),
                         sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
                         sceneComp.makeMatSolidV3(Vec3()));
@@ -120,6 +130,8 @@ void fun(string outFile){
                       sceneComp.makeMatSolidD(0.8),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(1, 1, 0),
                       sceneComp.makeMatSolidV3(1.0, 1, 0.0),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -129,6 +141,8 @@ void fun(string outFile){
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(1.0, 1, 1),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -138,6 +152,8 @@ void fun(string outFile){
                       sceneComp.makeMatSolidD(0.2),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(1.0, 1, 1.0),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -147,6 +163,8 @@ void fun(string outFile){
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -156,6 +174,8 @@ void fun(string outFile){
                       sceneComp.makeMatSolidD(0.3),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(0.5, 0.5, 0.5),
                       sceneComp.makeMatSolidV3(1.0, 1, 1.0),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -165,6 +185,8 @@ void fun(string outFile){
                      sceneComp.makeMatSolidD(0.3),
                      sceneComp.makeMatSolidD(0.1),
                      sceneComp.makeMatSolidD(4),
+                     sceneComp.makeMatSolidD(1.0),
+                     sceneComp.makeMatSolidD(0.0),
                      sceneComp.makeMatSolidV3(0, 0.5, 0.5),
                      sceneComp.makeMatSolidV3(1.0, 1, 1.0),
                      sceneComp.makeMatSolidV3(Vec3()));
@@ -207,6 +229,8 @@ void reflection(string outFile){
                         sceneComp.makeMatSolidD(0.9),
                         sceneComp.makeMatSolidD(0.1),
                         sceneComp.makeMatSolidD(4),
+                        sceneComp.makeMatSolidD(1.0),
+                        sceneComp.makeMatSolidD(1.0),
                         sceneComp.makeMatSolidV3(0.75, 0.75, 0.75),
                         sceneComp.makeMatSolidV3(1.0, 1, 1.0),
                         sceneComp.makeMatSolidV3(Vec3()));
@@ -216,6 +240,8 @@ void reflection(string outFile){
                       sceneComp.makeMatSolidD(0.5),
                       sceneComp.makeMatSolidD(0.1),
                       sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
                       sceneComp.makeMatSolidV3(0, 0, 1),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(Vec3()));
@@ -228,12 +254,14 @@ void reflection(string outFile){
                         sceneComp.makeMatSolidD(0.5),
                         sceneComp.makeMatSolidD(0.1),
                         sceneComp.makeMatSolidD(4),
+                        sceneComp.makeMatSolidD(1.0),
+                        sceneComp.makeMatSolidD(0.0),
                         sceneComp.makeMatSolidV3(1, 1, 0),
                         sceneComp.makeMatSolidV3(1, 1, 1),
                         sceneComp.makeMatSolidV3(Vec3(1, 1, 0)));
-    a = Vec3(0.0, -0.5, 0.5);
+    c = Vec3(0.0, -0.5, 0.5);
     b = Vec3(0.0, -0.5, -0.5);
-    c = Vec3(-1.0, 0.5, 0.0);
+    a = Vec3(-1.0, 0.5, 0.0);
     currScene.addObject(sceneComp.makeTriangle(&MTriangle2, a, b, c));
 
     /**lights**/
@@ -242,7 +270,7 @@ void reflection(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene) , 1, 2);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene) , 1, 7);
     controller.render();
     fManager->writeToFileInt();
 
@@ -269,6 +297,23 @@ int main() {
 //    fun("personal.ppm");
 //    t2 = std::chrono::high_resolution_clock::now();
 //    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
+
+//    #define PI 3.14159265
+//
+//    Vec3 I(1, -1, 0);
+//    I.normalize();
+//    Vec3 n(0, 1, 0);
+//    n.normalize();
+//
+//    double nit = 1.0/1.5;
+//    double theta = acos((I*-1).dot(n));
+//    std::cout << "theta:" << theta * 180.0 / PI << endl;
+//    Vec3 T = I*nit;
+//    double a = nit*cos(theta);
+//    double b = sqrt(1 + pow(nit, 2)* (pow(cos(theta), 2) - 1));
+//    T += n * (a - b);
+//    std::cout << T.x << " " << T.y << " " << T.z << endl;
+//    Vec3 tRayDir =
 
     return 0;
 }

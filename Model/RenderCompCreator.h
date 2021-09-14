@@ -6,8 +6,8 @@
 #define RAYTRACER_CLASSCREATOR_H
 
 #include <vector>
-#include "Material/MatComponent.h"
-#include "Material/MatCompSolid.h"
+#include "MaterialComponent/MatComponent.h"
+#include "MaterialComponent/MatCompSolid.h"
 
 #include "../Scene/RenderObj/Object.h"
 #include "../Scene/RenderObj/Triangle.h"

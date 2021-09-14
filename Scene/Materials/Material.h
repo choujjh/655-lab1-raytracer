@@ -7,7 +7,7 @@
 
 
 #include "../../Model/Vec/Vec3.h"
-#include "../../Model/Material/MatComponent.h"
+#include "../../Model/MaterialComponent/MatComponent.h"
 
 class Material {
 public:
@@ -16,13 +16,15 @@ public:
     MatComponent<double>* kSpecular;
     MatComponent<double>* kAmbient;
     MatComponent<double>* kgls;
+    MatComponent<double>* IOR;
+    MatComponent<double>* opacity;
 
     MatComponent<Vec3>* colorDiffuse;
     MatComponent<Vec3>* colorSpec;
     MatComponent<Vec3>* colorEmission;
 
     Material(MatComponent<double> *kDiffuse, MatComponent<double> *kSpecular, MatComponent<double> *kAmbient,
-             MatComponent<double> *kgls, MatComponent<Vec3> *colorDiffuse, MatComponent<Vec3> *colorSpec,
+             MatComponent<double> *kgls, MatComponent<double>* IOR, MatComponent<double>* opacity, MatComponent<Vec3> *colorDiffuse, MatComponent<Vec3> *colorSpec,
              MatComponent<Vec3> *colorEmission);
 };
 
