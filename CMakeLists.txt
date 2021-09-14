@@ -48,10 +48,10 @@ add_executable(Lab_1
         Model/Vec/Vec3.cpp
         Model/Vec/Vec3.h
 
-        Model/Material/MatComponent.cpp
-        Model/Material/MatComponent.h
-        Model/Material/MatCompSolid.cpp
-        Model/Material/MatCompSolid.h
+        Model/MaterialComponent/MatComponent.cpp
+        Model/MaterialComponent/MatComponent.h
+        Model/MaterialComponent/MatCompSolid.cpp
+        Model/MaterialComponent/MatCompSolid.h
 
         Model/File/ImageFileManager.cpp
         Model/File/ImageFileManager.h
@@ -66,7 +66,4 @@ add_executable(Lab_1
         Render/Phong.h
 
 
-
-
-
-        )
+        Model/MaterialComponent/MatComponent.cpp Model/MaterialComponent/MatCompSolid.cpp)
