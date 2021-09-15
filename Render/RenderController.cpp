@@ -36,7 +36,7 @@ void RenderController::render() {
     /**get image color**/
     for(int row = 0; row < currScene.getRenderCam()->getHeight(); ++row){
         for(int col = 0; col < currScene.getRenderCam()->getWidth(); ++col){
-            file->getImage()[row][col] = calcPixel(row, col);
+            file->getImage()[row][col] = calcPixel(row, col).clip(0, 1);
         }
     }
 //    file->getImage()[179][254] = calcPixel(203, 248);
