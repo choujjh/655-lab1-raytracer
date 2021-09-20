@@ -3,7 +3,6 @@
 //
 
 #include "RenderOps.h"
-#include "LinAlgOp.h"
 
 #include <cmath>
 
@@ -58,4 +57,11 @@ double RenderOps::calcFresnelReflectAmount(double iorLeft, double iorEntered, Ve
     double ret = r0 + (1.0 - r0) * x * x * x * x * x;
     //ret = (OBJECT_REFLECTIVITY + (1.0-OBJECT_REFLECTIVITY) * ret);
     return ret;
+}
+
+CoordinateSpace RenderOps::makeCoordinateSystem(Vec3 direction, Vec3 normal){
+    Vec3 right = direction.cross(normal);
+    Vec3 up = right.cross(direction);
+
+    return CoordinateSpace(direction, up, right);
 }

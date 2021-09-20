@@ -66,7 +66,4 @@ add_executable(Lab_1
         Render/Phong.h
 
 
-
-
-
-        )
+        Model/Vec/CoordinateSpace.cpp Model/Vec/CoordinateSpace.h)

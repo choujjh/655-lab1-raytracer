@@ -13,6 +13,7 @@
 #include "../Scene/Scene.h"
 #include "../Model/File/ImageFileManager.h"
 #include "Integrator.h"
+#include "../Model/Vec/CoordinateSpace.h"
 
 
 using std::vector;
