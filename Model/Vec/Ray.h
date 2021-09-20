@@ -14,6 +14,7 @@ public:
     Ray(const Vec3 &point, const Vec3 &direction);
     Ray();
 
+    bool isNan();
 };
 
 

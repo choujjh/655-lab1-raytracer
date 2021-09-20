@@ -5,6 +5,7 @@
 #include<fstream>
 #include<iostream>
 #include<iomanip>
+#include <thread>
 
 using std::ofstream;
 using std::endl;
@@ -34,12 +35,24 @@ void RenderController::render() {
     /**initialize rays**/
     initializeRays();
     /**get image color**/
-    for(int row = 0; row < currScene.getRenderCam()->getHeight(); ++row){
-        for(int col = 0; col < currScene.getRenderCam()->getWidth(); ++col){
-            file->getImage()[row][col] = calcPixel(row, col).clip(0, 1);
+//    int numCores = std::thread::hardware_concurrency();
+    vector<std::thread> threadList;
+//    int usedCores = 0;
+    for (int row = 0; row < currScene.getRenderCam()->getHeight(); ++row) {
+        threadList.push_back(std::thread(&RenderController::renderRow, this, row));
+//        ++usedCores;
+        if (row == currScene.getRenderCam()->getHeight() - 1) {//could also check to see if num cores are already used
+            for (int i = 0; i < threadList.size(); ++i) {
+                threadList.at(i).join();
+            }
+            threadList.clear();
         }
     }
-//    file->getImage()[179][254] = calcPixel(203, 248);
+}
+void RenderController::renderRow(int row){
+    for(int col = 0; col < currScene.getRenderCam()->getWidth(); ++col){
+        file->getImage()[row][col] = calcPixel(row, col).clip(0, 1);
+    }
 }
 
 void RenderController::initializeRays(){

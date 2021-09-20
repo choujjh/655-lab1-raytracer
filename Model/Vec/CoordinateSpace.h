@@ -17,6 +17,8 @@ public:
     CoordinateSpace(const Vec3 &direction, const Vec3 &up, const Vec3 &right);
 
     CoordinateSpace();
+
+    bool isNan();
 };
 
 

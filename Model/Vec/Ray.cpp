@@ -15,3 +15,10 @@ Ray::Ray() {
     this->direction = Vec3();
 }
 
+bool Ray::isNan(){
+    if(point.isNan() || direction.isNan()){
+        return true;
+    }
+    return false;
+}
+

@@ -4,8 +4,6 @@
 
 #include "Render/RenderController.h"
 #include "Model/RenderCompCreator.h"
-#include "Model/Ops/RenderOps.h"
-#include "Scene/Materials/Material.h"
 
 /*TODO:
  * multi- threading
@@ -278,8 +276,6 @@ void reflection(string outFile){
     a = Vec3(0.7, 0.01, 0);
     currScene.addObject(sceneComp.makeTriangle(&MTriangle2, a, b, c));
 
-//    currScene.addObject(sceneComp.makePlane(&MTriangle1, Vec3(-1, 1, 0), -1));
-
     /**lights**/
     currScene.addLight(sceneComp.makePointLight(Vec3(1.0, 1.0, 1.0), Vec3(0.5, 2.5, 0)));
 
@@ -313,23 +309,6 @@ int main() {
 //    fun("personal.ppm");
 //    t2 = std::chrono::high_resolution_clock::now();
 //    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
-
-//    #define PI 3.14159265
-//
-//    Vec3 I(1, -1, 0);
-//    I.normalize();
-//    Vec3 n(0, 1, 0);
-//    n.normalize();
-//
-//    double nit = 1.0/1.5;
-//    double theta = acos((I*-1).dot(n));
-//    std::cout << "theta:" << theta * 180.0 / PI << endl;
-//    Vec3 T = I*nit;
-//    double a = nit*cos(theta);
-//    double b = sqrt(1 + pow(nit, 2)* (pow(cos(theta), 2) - 1));
-//    T += n * (a - b);
-//    std::cout << T.x << " " << T.y << " " << T.z << endl;
-//    Vec3 tRayDir =
 
     return 0;
 }

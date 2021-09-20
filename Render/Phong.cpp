@@ -64,6 +64,9 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion) {
 
 }
 Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, double normalScalar) {
+    if(ray.isNan() || interVec.isNan()){
+        return Vec3(0, 0, 0);
+    }
     Vec3 surfColor;
     Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
     for (int i = 0; i < renderScene->getLightList().size(); ++i) {

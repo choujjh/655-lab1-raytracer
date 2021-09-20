@@ -38,7 +38,7 @@ private:
 public:
     RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator, int sampleDensity,
                      int levReflectRecursion);
-
+    void renderRow(int row);
     void render();
 };
 

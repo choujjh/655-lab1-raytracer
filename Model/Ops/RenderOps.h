@@ -17,7 +17,7 @@ public:
     double max(double a, double b);
     Ray calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject);
     double calcFresnelReflectAmount(double iorLeft, double iorEntered, Vec3 normal, Vec3 incident);
-    CoordinateSpace makeCoordinateSystem(Vec3 direction, Vec3 normal)
+    CoordinateSpace makeCoordinateSystem(Vec3 direction, Vec3 normal);
 };
 
 
