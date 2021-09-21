@@ -8,190 +8,234 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug"/>
+				<Option working_dir="C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug"/>
+				<Option working_dir="C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab_1">
-				<Option output="C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Lab_1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug"/>
+				<Option output="C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Lab_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_1"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_1"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab_1/fast">
-				<Option output="C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Lab_1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug"/>
+				<Option output="C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Lab_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_1/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_1/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug"/>
+				<Option working_dir="C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/CS_655/raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/chouj/CLionProjects/655-lab1-raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Material/MatCompSolid.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/File/ImageFileManager.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Material/MatCompSolid.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/File/ImageFileManager.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Material/MatComponent.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/File/PPMFileManager.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Material/MatComponent.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/File/PPMFileManager.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Ops/LinAlgOp.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/MaterialComponent/MatCompSolid.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Ops/LinAlgOp.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/MaterialComponent/MatCompSolid.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Ops/RenderOps.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/MaterialComponent/MatComponent.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Ops/RenderOps.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/MaterialComponent/MatComponent.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Vec/Ray.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Ops/LinAlgOp.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Vec/Ray.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Ops/LinAlgOp.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Vec/Vec3.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Ops/RenderOps.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Model/Vec/Vec3.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Ops/RenderOps.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/RenderAlg.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/RenderCompCreator.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Render/RenderAlg.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/RenderCompCreator.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/RenderCompCreator.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Vec/CoordinateSpace.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/RenderCompCreator.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Vec/CoordinateSpace.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Vec/Ray.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Vec/Ray.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Cam.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Vec/Vec3.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Cam.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Model/Vec/Vec3.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Light/AmbientLight.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Render/Integrator.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Light/AmbientLight.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Render/Integrator.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Light/DirectionLight.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Render/Phong.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Light/DirectionLight.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Render/Phong.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Light/Light.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Render/RenderController.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Light/Light.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Render/RenderController.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Materials/Material.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Cam.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/Materials/Material.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Cam.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Object.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/IntersectMethods/SceneIntersect.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Object.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/IntersectMethods/SceneIntersect.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Plane.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/AmbientLight.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Plane.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/AmbientLight.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Sphere.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/DirectionLight.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Sphere.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/DirectionLight.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Triangle.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/Light.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/Scene/RenderObj/Triangle.h">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/Light.h">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/main.cpp">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/PointLight.cpp">
 			<Option target="Lab_1"/>
 		</Unit>
-		<Unit filename="C:/Users/chouj/CLionProjects/CS_655/raytracer/CMakeLists.txt">
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Light/PointLight.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Materials/Material.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Materials/Material.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Object.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Object.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Plane.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Plane.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Sphere.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Sphere.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Triangle.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/RenderObj/Triangle.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Scene.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/Scene/Scene.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/main.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="C:/Users/chouj/CLionProjects/655-lab1-raytracer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

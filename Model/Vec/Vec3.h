@@ -23,6 +23,7 @@ public:
     Vec3(double x, double y, double z);
     Vec3(const Vec3 &obj);
 
+    bool isNan();
     Vec3 normalize();
     Vec3 clip(double min, double max);
 

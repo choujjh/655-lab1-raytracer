@@ -22,6 +22,12 @@ Vec3::Vec3(const Vec3 &obj){
     calcMagnitude();
 }
 
+bool Vec3::isNan(){
+    if(std::isnan(x)|| std::isnan(y) || std::isnan(z)){
+        return true;
+    }
+    return false;
+}
 Vec3 Vec3::normalize() {
     double length = getMagnitude();
     x /= length;
