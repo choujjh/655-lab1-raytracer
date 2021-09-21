@@ -13,11 +13,13 @@
 class Integrator {
 protected:
     Scene* renderScene;
+    bool randSample;
 public:
     Integrator(Scene *renderScene);
+    void setSampleDensity(bool randSample);
 
 public:
-    virtual Vec3 radiance(Ray ray, int depth, int levReflectRecursion) = 0;
+    virtual Vec3 radiance(Ray ray, int depth, int levReflectRecursion, int sampleDensity) = 0;
 };
 
 

@@ -18,6 +18,8 @@ public:
     Ray calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject);
     double calcFresnelReflectAmount(double iorLeft, double iorEntered, Vec3 normal, Vec3 incident);
     CoordinateSpace makeCoordinateSystem(Vec3 direction, Vec3 normal);
+    double randFloatValue(double min = 0.0, double max = 1.0);
+    double tentFloatRandGen(double min = 0.0, double max = 1.0);
 };
 
 

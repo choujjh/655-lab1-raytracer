@@ -6,7 +6,6 @@
 #include "Model/RenderCompCreator.h"
 
 /*TODO:
- * multi- threading
  * lights as objects
  * different illumination model
  * path tracing
@@ -103,7 +102,7 @@ void diffuse(string outFile){
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 1, 1);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), true, 1, 1);
     controller.render();
     fManager->writeToFileInt();
 
@@ -202,7 +201,7 @@ void fun(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 2, 1);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), true, 2, 1);
     controller.render();
     fManager->writeToFileInt();
 
@@ -282,13 +281,15 @@ void reflection(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene) , 3, 7);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), true, 7, 7);
     controller.render();
     fManager->writeToFileInt();
 
     delete renderCam;
 }
 int main() {
+
+    srand(time(0));
 
     using std::chrono::high_resolution_clock;
     using std::chrono::duration_cast;

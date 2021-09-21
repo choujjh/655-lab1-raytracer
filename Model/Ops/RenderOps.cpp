@@ -63,5 +63,18 @@ CoordinateSpace RenderOps::makeCoordinateSystem(Vec3 direction, Vec3 normal){
     Vec3 right = direction.cross(normal);
     Vec3 up = right.cross(direction);
 
-    return CoordinateSpace(direction, up, right);
+    return CoordinateSpace(direction.normalize(), up.normalize(), right.normalize());
+}
+double RenderOps::randFloatValue(double min, double max){
+    if(min > max) std::swap(max, min);
+    double randValue = ((double)rand())/ ((double) RAND_MAX);
+    return randValue * (max - min) + min;
+}
+double RenderOps::tentFloatRandGen(double min, double max){
+    if(min > max) std::swap(max, min);
+    double randVal = randFloatValue(0.0, 2.0);
+    double direction = 0.0;
+    if (randVal < 1.0){direction = sqrt(randVal) - 1.0;}
+    else {direction = 1.0 - sqrt(2-randVal);}
+    return (direction + 1) / 2 * (max - min) + min;
 }

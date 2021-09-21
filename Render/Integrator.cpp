@@ -4,4 +4,10 @@
 
 #include "Integrator.h"
 
-Integrator::Integrator(Scene *renderScene) : renderScene(renderScene) {}
+Integrator::Integrator(Scene *renderScene) : renderScene(renderScene) {
+    randSample = false;
+}
+
+void Integrator::setSampleDensity(bool randSample) {
+    this->randSample = randSample;
+}
