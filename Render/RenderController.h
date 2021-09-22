@@ -28,15 +28,14 @@ private:
     ImageFileManager* file;
     Scene currScene;
     Integrator* integrator;
-    bool randomSamples;
-    int sampleDensity;
+    int samples;
     int levReflectRecursion;
 
     void initializeRays();
     Vec3 calcPixel(int row, int col);
     Vec3 getColor(Ray ray);
 public:
-    RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator, bool randomSamples, int sampleDensity,
+    RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator, int samples,
                      int levReflectRecursion);
     void renderRow(int row);
     void render();
