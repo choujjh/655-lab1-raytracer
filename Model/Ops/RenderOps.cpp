@@ -66,6 +66,7 @@ CoordinateSpace RenderOps::makeCoordinateSystem(Vec3 direction, Vec3 normal){
     return CoordinateSpace(direction.normalize(), up.normalize(), right.normalize());
 }
 double RenderOps::randFloatValue(double min, double max){
+
     if(min > max) std::swap(max, min);
     double randValue = ((double)rand())/ ((double) RAND_MAX);
     return randValue * (max - min) + min;

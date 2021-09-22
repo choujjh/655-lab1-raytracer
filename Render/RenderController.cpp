@@ -47,6 +47,7 @@ void RenderController::render() {
 
     vector<std::thread> threadList(currScene.getRenderCam()->getHeight());
     for (int row = 0; row < currScene.getRenderCam()->getHeight(); ++row) {
+            srand(time(NULL));
         threadList.at(row) = std::thread(&RenderController::renderRow, this, row);
     }
     for (int i = 0; i < threadList.size(); ++i) {
@@ -58,27 +59,6 @@ void RenderController::render() {
             t1 = std::chrono::high_resolution_clock::now();
         }
     }
-
-
-//    int numCores = std::thread::hardware_concurrency();
-//    vector<std::thread> threadList;
-//    int usedCores = 0;
-//    for (int row = 0; row < currScene.getRenderCam()->getHeight(); ++row) {
-//        renderRow(row);
-//        threadList.push_back(std::thread(&RenderController::renderRow, this, row));
-//        ++usedCores;
-//        if (row == currScene.getRenderCam()->getHeight() - 1 ||
-//            usedCores % numCores == 0) {//could also check to see if num cores are already used
-//            for (int i = 0; i < threadList.size(); ++i) {
-//                threadList.at(i).join();
-//            }
-//            threadList.clear();
-//            auto t2 = std::chrono::high_resolution_clock::now();
-//            cout << "finished row " << row << " in " <<  duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds: " <<
-//                 std::fixed << std::setprecision(3) << ((row + 1) / currScene.getRenderCam()->getHeight()) * 100.0 << "% complete" << endl;
-//            t1 = std::chrono::high_resolution_clock::now();
-//        }
-//    }
 }
 void RenderController::renderRow(int row){
     for(int col = 0; col < currScene.getRenderCam()->getWidth(); ++col){
@@ -99,8 +79,8 @@ void RenderController::initializeRays(){
             //sampling Density
             for (int newCol = 0; newCol < samples; ++newCol) {
                 int savedCol = col * samples + newCol;
-                double offsetX = RenderOps().randFloatValue(-0.5, 0.5);
-                double offsetY = RenderOps().randFloatValue(-0.5, 0.5);
+                double offsetX = RenderOps().tentFloatRandGen(-1.0, 1.0);
+                double offsetY = RenderOps().tentFloatRandGen(-1.0, 1.0);
 
                 rays.at(row).at(savedCol).direction = (currCol +
                                                        incrX * offsetX - incrY * offsetY -

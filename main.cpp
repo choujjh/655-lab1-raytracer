@@ -281,7 +281,7 @@ void reflection(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 7, 7);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 1, 7);
     controller.render();
     fManager->writeToFileInt();
 

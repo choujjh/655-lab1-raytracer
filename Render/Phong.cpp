@@ -35,22 +35,26 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     Vec3 surfColor = calcSurfColor(ray, interVec, intersectObject, normalScalar);
 
     //refl color
-    Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
+    CoordinateSpace cs = RenderOps().makeCoordinateSystem(ray.direction, n * normalScalar);
+    double offsetX = RenderOps().randFloatValue(-0.1, 0.1);
+    double offsetY = RenderOps().randFloatValue(-0.1, 0.1);
     Vec3 reflDir = RenderOps().reflectionDirection(n * normalScalar, ray.direction);
+    reflDir = (reflDir + cs.up * offsetY + cs.right * offsetX).normalize();
+    Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
     Vec3 reflColor = radiance(Ray(reflDir, epsilonPoint), depth + 1, levReflectRecursion, sampleDensity) * intersectObject->material->kSpecular->getColor() *
                      intersectObject->material->kSpecular->getColor();
 
     if(opacity > 0) {
-
+        offsetX = RenderOps().randFloatValue(-0.1, 0.1);
+        offsetY = RenderOps().randFloatValue(-0.1, 0.1);
         Ray transRay = RenderOps().calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject);
+        transRay.direction = (transRay.direction + cs.up * offsetY + cs.right * offsetX).normalize();
         double iorLeft = 1.0;
         double iorEntered = intersectObject->material->IOR->getColor();
         if(isInsideObject){
             iorLeft = intersectObject->material->IOR->getColor();
             iorEntered = 1.0;
         }
-        Vec3 transDir = transRay.direction;
-        transDir.normalize();
 
         Vec3 refrColor = radiance(transRay, depth + 1, levReflectRecursion, sampleDensity);
         double fresnelEffect = RenderOps().calcFresnelReflectAmount(iorLeft, iorEntered, n, ray.direction);
