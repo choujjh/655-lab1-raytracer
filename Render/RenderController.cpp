@@ -47,7 +47,6 @@ void RenderController::render() {
 
     vector<std::thread> threadList(currScene.getRenderCam()->getHeight());
     for (int row = 0; row < currScene.getRenderCam()->getHeight(); ++row) {
-            srand(time(NULL));
         threadList.at(row) = std::thread(&RenderController::renderRow, this, row);
     }
     for (int i = 0; i < threadList.size(); ++i) {
@@ -61,6 +60,7 @@ void RenderController::render() {
     }
 }
 void RenderController::renderRow(int row){
+    srand(std::hash<std::thread::id>{}(std::this_thread::get_id()) + row * 17);
     for(int col = 0; col < currScene.getRenderCam()->getWidth(); ++col){
         Vec3 temp = calcPixel(row, col).clip(0, 1);
         file->getImage()[row][col] = temp;
