@@ -46,19 +46,51 @@ void RenderController::render() {
 
     auto t1 = std::chrono::high_resolution_clock::now();
 
-    vector<std::thread> threadList(currScene.getRenderCam()->getHeight());
-    for (int row = 0; row < currScene.getRenderCam()->getHeight(); ++row) {
-        threadList.at(row) = std::thread(&RenderController::renderRow, this, row);
+    int numCores = std::thread::hardware_concurrency();
+    int row = 0;
+    int activeTasks = 0;
+    vector<std::thread> threadList(numCores);
+    //initial threads
+    for(int i = 0; i < numCores; ++i){
+        threadList.at(i) = std::thread(&RenderController::renderRow, this, i);
     }
-    for (int i = 0; i < threadList.size(); ++i) {
-        threadList.at(i).join();
-        if((i + 1 )%50 == 0 || i == threadList.size() - 1){
+    //loop threads
+    for(row = numCores; row < currScene.getRenderCam()->getHeight(); ++row){
+        threadList.at(row%numCores).join();
+        if(row % 50 == 0) {
             auto t2 = std::chrono::high_resolution_clock::now();
-            cout << "finished row " << i + 1 << " in " <<  duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds: " <<
-            std::fixed << std::setprecision(3) << (i / (currScene.getRenderCam()->getHeight()-1)) * 100.0 << "% complete" << endl;
+            cout << "finished row " << row << " in "
+                 << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds: " <<
+                 std::fixed << std::setprecision(3) << (row / (currScene.getRenderCam()->getHeight() - 1)) * 100.0
+                 << "% complete" << endl;
+            t1 = std::chrono::high_resolution_clock::now();
+        }
+        threadList.at(row%numCores) = std::thread(&RenderController::renderRow, this, row);
+    }
+    for(int i = row - numCores; i < currScene.getRenderCam()->getHeight(); ++i){
+        threadList.at(i%numCores).join();
+        if(row+i % 50 == 0 || i == threadList.size() - 1) {
+            auto t2 = std::chrono::high_resolution_clock::now();
+            cout << "finished row " << i << " in "
+                 << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds: " <<
+                 std::fixed << std::setprecision(3) << (row / (currScene.getRenderCam()->getHeight() - 1)) * 100.0
+                 << "% complete" << endl;
             t1 = std::chrono::high_resolution_clock::now();
         }
     }
+//    for (int row = 0; row < currScene.getRenderCam()->getHeight(); ++row) {
+//        threadList.at(row) = std::thread(&RenderController::renderRow, this, row);
+//    }
+//    for (int i = 0; i < threadList.size(); ++i) {
+//        threadList.at(i).join();
+//        if((i + 1 )%50 == 0 || i == threadList.size() - 1){
+//            auto t2 = std::chrono::high_resolution_clock::now();
+//            cout << "finished row " << i + 1 << " in " <<  duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds: " <<
+//            std::fixed << std::setprecision(3) << (i / (currScene.getRenderCam()->getHeight()-1)) * 100.0 << "% complete" << endl;
+//            t1 = std::chrono::high_resolution_clock::now();
+//        }
+//    }
+//    for(int row)
 }
 void RenderController::renderRow(int row){
     srand(std::hash<std::thread::id>{}(std::this_thread::get_id()) + row * 17);

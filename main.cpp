@@ -23,7 +23,7 @@ void diffuse(string outFile){
     Vec3 cameraLookFrom(0, 0, 1);
     Vec3 up(0, 1, 0);
     double fov = 28.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 500, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
@@ -216,7 +216,7 @@ void reflection(string outFile){
     Vec3 cameraLookFrom(0.1, 0.35, 1.1);
     Vec3 up(0, 1, 0);
     double fov = 55.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 217, 217);
 
     /**setting up Scene**/
     Vec3 backColor(0.9, 0.9, 0.9);
@@ -253,7 +253,7 @@ void reflection(string outFile){
                             sceneComp.makeMatSolidD(1.0),
                             sceneComp.makeMatSolidD(0.0),
                             sceneComp.makeMatSolidV3(0, 0, 1),
-                            sceneComp.makeMatSolidV3(1, 1, 1),
+                            sceneComp.makeMatSolidV3(0, 0, 0),
                             sceneComp.makeMatSolidV3(Vec3()));
     Vec3 a(-0.50, 0.01, 3);
     Vec3 b(-3.5, 3, 0);
@@ -270,7 +270,7 @@ void reflection(string outFile){
                             sceneComp.makeMatSolidD(0.0),
                             sceneComp.makeMatSolidV3(1, 1, 0),
                             sceneComp.makeMatSolidV3(1, 1, 1),
-                            sceneComp.makeMatSolidV3(Vec3(1, 1, 0)));
+                            sceneComp.makeMatSolidV3(Vec3(0, 0, 0)));
     c = Vec3(-0.25, 0.01, 1);
     b = Vec3(-0.25, 0.01, -30); //back
     a = Vec3(0.7, 0.01, 0);
@@ -298,19 +298,19 @@ int main() {
     using std::chrono::milliseconds;
 
     auto t1 = std::chrono::high_resolution_clock::now();
-    diffuse("diffuse.ppm");
+//    diffuse("diffuse.ppm");
     auto t2 = std::chrono::high_resolution_clock::now();
-    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
+//    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
 
     t1 = std::chrono::high_resolution_clock::now();
     reflection("reflection.ppm");
     t2 = std::chrono::high_resolution_clock::now();
     std::cout << "reflection took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
-    t1 = std::chrono::high_resolution_clock::now();
-    fun("personal.ppm");
-    t2 = std::chrono::high_resolution_clock::now();
-    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
+//    t1 = std::chrono::high_resolution_clock::now();
+//    fun("personal.ppm");
+//    t2 = std::chrono::high_resolution_clock::now();
+//    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
     return 0;
 }
