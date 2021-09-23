@@ -8,15 +8,15 @@
 
 #include "../RenderObj/Object.h"
 
-class SceneIntersect {
+class ObjTracker {
 protected:
     vector<Object*> objList;
 public:
-    SceneIntersect();
+    ObjTracker();
 
     virtual Vec3 getIntersect(Ray currRay, bool closest, Object* &object) const;
-    virtual Vec3 getIntersect(Ray currRay, bool closest) const;
     virtual void addObject(Object* object);
+    virtual void optimize();
 };
 
 

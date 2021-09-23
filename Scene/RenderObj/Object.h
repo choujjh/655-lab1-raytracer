@@ -19,6 +19,7 @@ public:
     virtual Vec3 intersect(Ray ray);
     Vec3 infiniteVec3();
     virtual Vec3 normal(Vec3 point) = 0;
+    virtual bool isLight();
 };
 
 

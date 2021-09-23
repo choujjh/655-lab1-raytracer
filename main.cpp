@@ -28,7 +28,7 @@ void diffuse(string outFile){
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
 
-    Scene currScene(renderCam, backColor, sceneComp.makeSceneIntersect());
+    Scene currScene(renderCam, backColor, sceneComp.makeObjectTracker());
 
     /**objects**/
     Material MSphere1(sceneComp.makeMatSolidD(0.8),
@@ -121,7 +121,7 @@ void fun(string outFile){
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
-    Scene currScene(renderCam, backColor, sceneComp.makeSceneIntersect());
+    Scene currScene(renderCam, backColor, sceneComp.makeObjectTracker());
 
     /**objects**/
     Material MSphere1(sceneComp.makeMatSolidD(0.2),
@@ -216,11 +216,11 @@ void reflection(string outFile){
     Vec3 cameraLookFrom(0.1, 0.35, 1.1);
     Vec3 up(0, 1, 0);
     double fov = 55.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 100, 100);
 
     /**setting up Scene**/
     Vec3 backColor(0.9, 0.9, 0.9);
-    Scene currScene(renderCam, backColor, sceneComp.makeSceneIntersect());
+    Scene currScene(renderCam, backColor, sceneComp.makeObjectTracker());
 
     /**setting up objects**/
     Material MSphere1(sceneComp.makeMatSolidD(0.0),

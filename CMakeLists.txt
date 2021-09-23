@@ -1,10 +1,49 @@
 cmake_minimum_required(VERSION 3.17)
-project(Lab_1)
+project(655_lab1_raytracer)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Lab_1
-        main.cpp
+include_directories(Model)
+include_directories(Model/File)
+include_directories(Model/MaterialComponent)
+include_directories(Model/Ops)
+include_directories(Model/Vec)
+include_directories(Render)
+include_directories(Scene)
+include_directories(Scene/IntersectMethods)
+include_directories(Scene/Light)
+include_directories(Scene/Materials)
+include_directories(Scene/RenderObj)
+
+add_executable(655_lab1_raytracer
+        Model/File/ImageFileManager.cpp
+        Model/File/ImageFileManager.h
+        Model/File/PPMFileManager.cpp
+        Model/File/PPMFileManager.h
+        Model/MaterialComponent/MatComponent.cpp
+        Model/MaterialComponent/MatComponent.h
+        Model/MaterialComponent/MatCompSolid.cpp
+        Model/MaterialComponent/MatCompSolid.h
+        Model/Ops/LinAlgOp.cpp
+        Model/Ops/LinAlgOp.h
+        Model/Ops/RenderOps.cpp
+        Model/Ops/RenderOps.h
+        Model/Vec/CoordinateSpace.cpp
+        Model/Vec/CoordinateSpace.h
+        Model/Vec/Ray.cpp
+        Model/Vec/Ray.h
+        Model/Vec/Vec3.cpp
+        Model/Vec/Vec3.h
+        Model/RenderCompCreator.cpp
+        Model/RenderCompCreator.h
+        Render/Integrator.cpp
+        Render/Integrator.h
+        Render/Phong.cpp
+        Render/Phong.h
+        Render/RenderController.cpp
+        Render/RenderController.h
+        Scene/IntersectMethods/ObjTracker.cpp
+        Scene/IntersectMethods/ObjTracker.h
         Scene/Light/AmbientLight.cpp
         Scene/Light/AmbientLight.h
         Scene/Light/DirectionLight.cpp
@@ -13,7 +52,8 @@ add_executable(Lab_1
         Scene/Light/Light.h
         Scene/Light/PointLight.cpp
         Scene/Light/PointLight.h
-
+        Scene/Materials/Material.cpp
+        Scene/Materials/Material.h
         Scene/RenderObj/Object.cpp
         Scene/RenderObj/Object.h
         Scene/RenderObj/Plane.cpp
@@ -22,48 +62,8 @@ add_executable(Lab_1
         Scene/RenderObj/Sphere.h
         Scene/RenderObj/Triangle.cpp
         Scene/RenderObj/Triangle.h
-
-        Scene/Materials/Material.cpp
-        Scene/Materials/Material.h
-
-        Scene/Scene.cpp
-        Scene/Scene.h
-        Scene/IntersectMethods/SceneIntersect.cpp
-        Scene/IntersectMethods/SceneIntersect.h
-
         Scene/Cam.cpp
         Scene/Cam.h
-        Render/RenderController.cpp
-        Render/RenderController.h
-
-        Model/RenderCompCreator.cpp
-        Model/RenderCompCreator.h
-
-        Model/Ops/RenderOps.cpp
-        Model/Ops/RenderOps.h
-        Model/Ops/LinAlgOp.cpp
-        Model/Ops/LinAlgOp.h
-        Model/Vec/Ray.cpp
-        Model/Vec/Ray.h
-        Model/Vec/Vec3.cpp
-        Model/Vec/Vec3.h
-
-        Model/MaterialComponent/MatComponent.cpp
-        Model/MaterialComponent/MatComponent.h
-        Model/MaterialComponent/MatCompSolid.cpp
-        Model/MaterialComponent/MatCompSolid.h
-
-        Model/File/ImageFileManager.cpp
-        Model/File/ImageFileManager.h
-        Model/File/PPMFileManager.cpp
-        Model/File/PPMFileManager.h
-
-        Render/RenderController.cpp
-        Render/RenderController.h
-        Render/Integrator.cpp
-        Render/Integrator.h
-        Render/Phong.cpp
-        Render/Phong.h
-
-
-        Model/Vec/CoordinateSpace.cpp Model/Vec/CoordinateSpace.h)
+        Scene/Scene.cpp
+        Scene/Scene.h
+        main.cpp)

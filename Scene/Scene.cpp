@@ -35,14 +35,14 @@ void Scene::setLightList(const vector<Light *> &lightList) {
     Scene::lightList = lightList;
 }
 
-SceneIntersect* Scene::getObjTracker() {
+ObjTracker* Scene::getObjTracker() {
     return objTracker;
 }
 
-void Scene::setObjTracker(SceneIntersect* objTracker) {
+void Scene::setObjTracker(ObjTracker* objTracker) {
     Scene::objTracker = objTracker;
 }
 
-Scene::Scene(Cam *renderCam, const Vec3 &backColor, SceneIntersect* objTracker) : renderCam(renderCam),
-                                                                                        backColor(backColor),
-                                                                                        objTracker(objTracker) {}
+Scene::Scene(Cam *renderCam, const Vec3 &backColor, ObjTracker* objTracker) : renderCam(renderCam),
+                                                                              backColor(backColor),
+                                                                              objTracker(objTracker) {}

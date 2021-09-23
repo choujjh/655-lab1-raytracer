@@ -2,9 +2,9 @@
 // Created by chouj on 9/10/2021.
 //
 
-#include "SceneIntersect.h"
+#include "ObjTracker.h"
 
-Vec3 SceneIntersect::getIntersect(Ray currRay, bool closest, Object *&object) const {
+Vec3 ObjTracker::getIntersect(Ray currRay, bool closest, Object *&object) const {
     Vec3 minInterVec = objList.at(0)->intersect(currRay);
     if(minInterVec.getMagnitude() < VAL_INFINITY && minInterVec.getMagnitude() > NEG_INFINITY){
         object = objList.at(0);
@@ -22,13 +22,9 @@ Vec3 SceneIntersect::getIntersect(Ray currRay, bool closest, Object *&object) co
     }
     return minInterVec;
 }
-Vec3 SceneIntersect::getIntersect(Ray currRay, bool closest) const {
-    Object* object;
-    return getIntersect(currRay, closest, object);
-}
 
-void SceneIntersect::addObject(Object *object) {
+void ObjTracker::addObject(Object *object) {
     objList.push_back(object);
 }
 
-SceneIntersect::SceneIntersect() {}
+ObjTracker::ObjTracker() {}

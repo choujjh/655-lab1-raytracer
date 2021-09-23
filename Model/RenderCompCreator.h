@@ -30,7 +30,7 @@ private:
     vector<MatComponent<Vec3>*> matCompVec3;
     vector<ImageFileManager*> fileManagers;
     vector<Integrator*> integrators;
-    vector<SceneIntersect*> sceneIntersects;
+    vector<ObjTracker*> sceneIntersects;
 public:
     vector<Object*> objects;
     vector<Light*> lights;
@@ -97,8 +97,8 @@ public:
         integrators.push_back(tempIntegrator);
         return tempIntegrator;
     }
-    SceneIntersect* makeSceneIntersect(){
-        SceneIntersect* tempSceneIntersect = new SceneIntersect();
+    ObjTracker* makeObjectTracker(){
+        ObjTracker* tempSceneIntersect = new ObjTracker();
         sceneIntersects.push_back(tempSceneIntersect);
         return tempSceneIntersect;
 
