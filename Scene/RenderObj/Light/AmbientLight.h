@@ -13,10 +13,13 @@ class AmbientLight: public Light {
     Vec3 shadowRay(Vec3 point) override;
 
 public:
-    AmbientLight(const Vec3 &color);
+    AmbientLight(BaseMaterial* material);
 
-    bool isAmbient() override;
+    Vec3 intersect(Ray ray) override;
 
+    Vec3 normal(Vec3 point) override;
+
+    string ToString() override;
 };
 
 

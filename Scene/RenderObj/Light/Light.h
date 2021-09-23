@@ -11,14 +11,14 @@
 #include "../../Model/Vec/Vec3.h"
 
 using std::string;
-class Light {
+class Light: public Object {
 public:
-    Vec3 color;
+    Light(BaseMaterial *objMat);
 
-    Light(const Vec3 &color);
-
-    virtual Vec3 shadowRay(Vec3 point) = 0;
-    virtual bool isAmbient() = 0;
+    //object functions
+    virtual Vec3 intersect(Ray ray) = 0;
+    virtual Vec3 normal(Vec3 point) = 0;
+    bool isLight() override;
 
 
 };

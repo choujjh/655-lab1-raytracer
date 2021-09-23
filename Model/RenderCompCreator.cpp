@@ -12,9 +12,6 @@ RenderCompCreator::~RenderCompCreator() {
     for(auto curr: objects){
         delete curr;
     }
-    for(auto curr: lights){
-        delete curr;
-    }
     for( auto curr: matCompDoubles){
         delete curr;
     }
@@ -26,7 +23,10 @@ RenderCompCreator::~RenderCompCreator() {
     }
     for(auto curr: integrators){
         delete curr;
-    }for(auto curr: sceneIntersects){
+    }for(auto curr: objTracker){
+        delete curr;
+    }
+    for(auto curr: materials){
         delete curr;
     }
 }

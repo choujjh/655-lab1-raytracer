@@ -5,21 +5,25 @@
 #ifndef RAYTRACER_OBJECT_H
 #define RAYTRACER_OBJECT_H
 
+#include <string>
 
 #include "../../Model/Vec/Vec3.h"
 #include "../../Model/Vec/Ray.h"
-#include "../Materials/Material.h"
+#include "../Materials/BaseMaterial.h"
+
 
 class Object {
 public:
-    Material* material;
+    BaseMaterial* material;
 
-    Object(Material* objMat);
+    Object(BaseMaterial* objMat);
 
+    virtual Vec3 shadowRay(Vec3 point) = 0;
     virtual Vec3 intersect(Ray ray);
     Vec3 infiniteVec3();
     virtual Vec3 normal(Vec3 point) = 0;
     virtual bool isLight();
+    virtual std::string ToString();
 };
 
 

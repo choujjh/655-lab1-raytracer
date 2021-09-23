@@ -6,6 +6,7 @@
 #define RAYTRACER_CLASSCREATOR_H
 
 #include <vector>
+#include <IntersectMethods/BruteForce.h>
 #include "MaterialComponent/MatComponent.h"
 #include "MaterialComponent/MatCompSolid.h"
 
@@ -13,14 +14,14 @@
 #include "../Scene/RenderObj/Triangle.h"
 #include "../Scene/RenderObj/Sphere.h"
 
-#include "../Scene/Light/Light.h"
-#include "../Scene/Light/AmbientLight.h"
-#include "../Scene/Light/DirectionLight.h"
+#include "../Scene/RenderObj/Light/Light.h"
+#include "../Scene/RenderObj/Light/AmbientLight.h"
+#include "../Scene/RenderObj/Light/DirectionLight.h"
+#include "../Scene/RenderObj/Light/PointLight.h"
 #include "File/ImageFileManager.h"
 #include "File/PPMFileManager.h"
 #include "../Render/Integrator.h"
 #include "../Render/Phong.h"
-#include "../Scene/Light/PointLight.h"
 
 
 using std::vector;
@@ -30,10 +31,11 @@ private:
     vector<MatComponent<Vec3>*> matCompVec3;
     vector<ImageFileManager*> fileManagers;
     vector<Integrator*> integrators;
-    vector<ObjTracker*> sceneIntersects;
-public:
+    vector<ObjTracker*> objTracker;
+    vector<BaseMaterial*> materials;
     vector<Object*> objects;
-    vector<Light*> lights;
+public:
+
 
     RenderCompCreator();
 
@@ -55,36 +57,46 @@ public:
         return tempMatComp;
     }
 
-    Object* makeTriangle(Material *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c){
+    Object* makeTriangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c){
         Object* tempObject = new Triangle(objMat, a, b, c);
         objects.push_back(tempObject);
         return tempObject;
     }
-    Object* makeSphere(Material *objMat, const Vec3 &center, double radius){
+    Object* makeSphere(BaseMaterial *objMat, const Vec3 &center, double radius){
         Object* tempObject = new Sphere(objMat, center, radius);
         objects.push_back(tempObject);
         return tempObject;
     }
-    Object* makePlane(Material *objMat, const Vec3 &n, double d){
+    Object* makePlane(BaseMaterial *objMat, const Vec3 &n, double d){
         Object* tempObject = new Plane(objMat, n, d);
         objects.push_back(tempObject);
         return tempObject;
     }
 
-    Light* makeAmbientLight(const Vec3 &color){
-        Light* tempLight = new AmbientLight(color);
-        lights.push_back(tempLight);
+    Light* makeAmbientLight(BaseMaterial* material){
+        Light* tempLight = new AmbientLight(material);
+        objects.push_back(tempLight);
         return tempLight;
     }
-    Light* makeDirectionLight(const Vec3 &color, const Vec3 &dir){
-        Light* tempLight = new DirectionLight(color, dir);
-        lights.push_back(tempLight);
+    Light* makeDirectionLight(BaseMaterial* material, const Vec3 &dir){
+        Light* tempLight = new DirectionLight(material, dir);
+        objects.push_back(tempLight);
         return tempLight;
     }
-    Light* makePointLight(const Vec3 &color, const Vec3 &position){
-        Light* tempLight = new PointLight(color, position);
-        lights.push_back(tempLight);
+    Light* makePointLight(BaseMaterial* material, const Vec3 &position){
+        Light* tempLight = new PointLight(material, position);
+        objects.push_back(tempLight);
         return tempLight;
+    }
+
+    BaseMaterial* makeLightMaterial(MatComponent<Vec3>* color){
+        MatComponent<Vec3>* tempVec3 = makeMatSolidV3(0, 0, 0);
+        MatComponent<double>* tempDoub = makeMatSolidD(0.0);
+        BaseMaterial* tempMaterial = new BaseMaterial(
+                tempDoub, tempDoub, tempDoub, tempDoub, tempDoub, tempDoub,
+                tempVec3, tempVec3, color);
+        materials.push_back(tempMaterial);
+        return tempMaterial;
     }
 
     ImageFileManager* makePPMFileManager(const string &fileName, unsigned int height, unsigned int width){
@@ -97,9 +109,9 @@ public:
         integrators.push_back(tempIntegrator);
         return tempIntegrator;
     }
-    ObjTracker* makeObjectTracker(){
-        ObjTracker* tempSceneIntersect = new ObjTracker();
-        sceneIntersects.push_back(tempSceneIntersect);
+    ObjTracker* makeBruteForceTracker(){
+        ObjTracker* tempSceneIntersect = new BruteForce();
+        objTracker.push_back(tempSceneIntersect);
         return tempSceneIntersect;
 
     }

@@ -14,12 +14,13 @@ public:
     Vec3 b;
     Vec3 c;
 
-    Triangle(Material *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c);
+    Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c);
 
     Vec3 intersect(Ray ray) override;
 
     Vec3 normal(Vec3 point) override;
 
+    Vec3 shadowRay(Vec3 point) override;
 };
 
 

@@ -4,27 +4,37 @@
 
 #include "ObjTracker.h"
 
-Vec3 ObjTracker::getIntersect(Ray currRay, bool closest, Object *&object) const {
-    Vec3 minInterVec = objList.at(0)->intersect(currRay);
-    if(minInterVec.getMagnitude() < VAL_INFINITY && minInterVec.getMagnitude() > NEG_INFINITY){
-        object = objList.at(0);
+Vec3 ObjTracker::getIntersect(Ray currRay, bool closest, Object *&object) {
+    if(!isOptimized){
+        Optimize();
     }
-    for(int i = 1; i < objList.size(); ++i){
-        Vec3 interPoint = objList.at(i)->intersect(currRay);
-        if (!closest && interPoint.getMagnitude() != VAL_INFINITY && interPoint.getMagnitude() != NEG_INFINITY) {
-            object = objList.at(i);
-            return interPoint;
-        }
-        if ((interPoint - currRay.point).getMagnitude() < (minInterVec - currRay.point).getMagnitude()) {
-            minInterVec = interPoint;
-            object = objList.at(i);
-        }
-    }
-    return minInterVec;
+    return Vec3();
 }
 
 void ObjTracker::addObject(Object *object) {
     objList.push_back(object);
+    if(object->isLight()){
+        lightList.push_back(object);
+    }
+    isOptimized = false;
 }
 
-ObjTracker::ObjTracker() {}
+const vector<Object *> &ObjTracker::getObjList() const {
+    return objList;
+}
+
+void ObjTracker::setObjList(const vector<Object *> &objList) {
+    ObjTracker::objList = objList;
+}
+
+vector<Object*> ObjTracker::getLightList() {
+    return lightList;
+}
+void ObjTracker::setLightList(const vector<Object*> &lightList){
+    this->lightList = lightList;
+}
+
+void ObjTracker::Optimize(){
+    isOptimized = true;
+}
+ObjTracker::ObjTracker(): isOptimized(false) {}

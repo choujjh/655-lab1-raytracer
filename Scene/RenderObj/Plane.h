@@ -13,11 +13,12 @@ protected:
     Vec3 n;
     double d;
 public:
-    Plane(Material *objMat, const Vec3 &n, double d);
+    Plane(BaseMaterial *objMat, const Vec3 &n, double d);
 
     Vec3 intersect(Ray ray) override;
     Vec3 normal(Vec3 point) override;
 
+    Vec3 shadowRay(Vec3 point) override;
 };
 
 

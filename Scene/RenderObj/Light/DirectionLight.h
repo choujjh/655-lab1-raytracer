@@ -12,9 +12,12 @@ public:
     Vec3 dir;
     Vec3 shadowRay(Vec3 point) override;
 
-    DirectionLight(const Vec3 &color, const Vec3 &dir);
+    DirectionLight(BaseMaterial* material, const Vec3 &dir);
 
-    bool isAmbient() override;
+
+    Vec3 intersect(Ray ray) override;
+
+    Vec3 normal(Vec3 point) override;
 };
 
 

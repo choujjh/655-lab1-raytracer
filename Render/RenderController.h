@@ -9,7 +9,7 @@
 #include<vector>
 #include "../Scene/Cam.h"
 #include "../Scene/RenderObj/Object.h"
-#include "../Scene/Light/Light.h"
+#include "../Scene/RenderObj/Light/Light.h"
 #include "../Scene/Scene.h"
 #include "../Model/File/ImageFileManager.h"
 #include "Integrator.h"

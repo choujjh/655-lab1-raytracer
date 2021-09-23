@@ -22,8 +22,8 @@ void Sphere::setRadius(double radius) {
     Sphere::radius = radius;
 }
 
-Sphere::Sphere(Material *objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
-                                                                            radius(radius) {}
+Sphere::Sphere(BaseMaterial *objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
+                                                                          radius(radius) {}
 
 Vec3 Sphere::intersect(Ray ray) {
     ray.direction.normalize();
@@ -55,4 +55,9 @@ Vec3 Sphere::intersect(Ray ray) {
 Vec3 Sphere::normal(Vec3 point) {
     Vec3 normal = (point - center).normalize();
     return normal;
+}
+
+Vec3 Sphere::shadowRay(Vec3 point) {
+    //TODO: get this so soft shadows work
+    return infiniteVec3();
 }

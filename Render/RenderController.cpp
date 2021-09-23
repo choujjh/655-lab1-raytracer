@@ -13,7 +13,8 @@ using std::endl;
 #include "RenderController.h"
 #include "../Model/Ops/RenderOps.h"
 
-using std::cout, std::endl;
+using std::cout;
+using std::endl;
 
 RenderController::RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator,
                                    int samples, int levReflectRecursion) :

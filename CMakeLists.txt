@@ -11,7 +11,7 @@ include_directories(Model/Vec)
 include_directories(Render)
 include_directories(Scene)
 include_directories(Scene/IntersectMethods)
-include_directories(Scene/Light)
+include_directories(Scene/RenderObj/Light)
 include_directories(Scene/Materials)
 include_directories(Scene/RenderObj)
 
@@ -44,16 +44,16 @@ add_executable(655_lab1_raytracer
         Render/RenderController.h
         Scene/IntersectMethods/ObjTracker.cpp
         Scene/IntersectMethods/ObjTracker.h
-        Scene/Light/AmbientLight.cpp
-        Scene/Light/AmbientLight.h
-        Scene/Light/DirectionLight.cpp
-        Scene/Light/DirectionLight.h
-        Scene/Light/Light.cpp
-        Scene/Light/Light.h
-        Scene/Light/PointLight.cpp
-        Scene/Light/PointLight.h
-        Scene/Materials/Material.cpp
-        Scene/Materials/Material.h
+        Scene/RenderObj/Light/AmbientLight.cpp
+        Scene/RenderObj/Light/AmbientLight.h
+        Scene/RenderObj/Light/DirectionLight.cpp
+        Scene/RenderObj/Light/DirectionLight.h
+        Scene/RenderObj/Light/Light.cpp
+        Scene/RenderObj/Light/Light.h
+        Scene/RenderObj/Light/PointLight.cpp
+        Scene/RenderObj/Light/PointLight.h
+        Scene/Materials/BaseMaterial.cpp
+        Scene/Materials/BaseMaterial.h
         Scene/RenderObj/Object.cpp
         Scene/RenderObj/Object.h
         Scene/RenderObj/Plane.cpp
@@ -66,4 +66,4 @@ add_executable(655_lab1_raytracer
         Scene/Cam.h
         Scene/Scene.cpp
         Scene/Scene.h
-        main.cpp)
+        main.cpp Scene/IntersectMethods/BruteForce.cpp Scene/IntersectMethods/BruteForce.h)

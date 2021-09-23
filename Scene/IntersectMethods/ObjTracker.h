@@ -11,12 +11,21 @@
 class ObjTracker {
 protected:
     vector<Object*> objList;
+    vector<Object*> lightList;
+    bool isOptimized;
 public:
     ObjTracker();
 
-    virtual Vec3 getIntersect(Ray currRay, bool closest, Object* &object) const;
-    virtual void addObject(Object* object);
-    virtual void optimize();
+    virtual Vec3 getIntersect(Ray currRay, bool closest, Object* &object);
+    void addObject(Object* object);
+    virtual void Optimize() = 0;
+
+    vector<Object*> getLightList();
+    void setLightList(const vector<Object*> &lightList);
+
+    const vector<Object *> &getObjList() const;
+
+    void setObjList(const vector<Object *> &objList);
 };
 
 

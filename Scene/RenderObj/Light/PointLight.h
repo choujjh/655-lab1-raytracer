@@ -6,16 +6,21 @@
 #define LAB_1_POINTLIGHT_H
 
 
+#include "../Sphere.h"
 #include "Light.h"
 
 class PointLight: public Light {
 private:
     Vec3 position;
+    Sphere intersectionSphere;
 public:
-    PointLight(const Vec3 &color, const Vec3 &position);
+    PointLight(BaseMaterial* material, const Vec3 &position);
 
     Vec3 shadowRay(Vec3 point) override;
-    bool isAmbient() override;
+
+    Vec3 intersect(Ray ray) override;
+
+    Vec3 normal(Vec3 point) override;
 
 
 };

@@ -17,10 +17,10 @@ private:
 
     Vec3 calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, double normalScalar);
 
-    Vec3 calcLighting(Object* surface, Light* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
-    Vec3 calcSpec(Object* surface, Light* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
-    Vec3 calcDiffuse(Object* surface, Light* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
-    Vec3 calcAmbient(Object* surface, Light* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
+    Vec3 calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
+    Vec3 calcSpec(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
+    Vec3 calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
+    Vec3 calcAmbient(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
 };
 
 

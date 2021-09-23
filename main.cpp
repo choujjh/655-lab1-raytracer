@@ -28,74 +28,74 @@ void diffuse(string outFile){
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
 
-    Scene currScene(renderCam, backColor, sceneComp.makeObjectTracker());
+    Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
     /**objects**/
-    Material MSphere1(sceneComp.makeMatSolidD(0.8),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(4),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(1, 1, 1),
-                      sceneComp.makeMatSolidV3(1.0, 1, 1.0),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere1(sceneComp.makeMatSolidD(0.8),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(4),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(1, 1, 1),
+                          sceneComp.makeMatSolidV3(1.0, 1, 1.0),
+                          sceneComp.makeMatSolidV3(Vec3()));
     Object* sphere = sceneComp.makeSphere(&MSphere1, Vec3(0.35, 0, -0.1), 0.05);
     currScene.addObject(sphere);
 
-    Material MSphere2(sceneComp.makeMatSolidD(0.3),
-                      sceneComp.makeMatSolidD(0.6),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(32),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(1, 0, 0),
-                      sceneComp.makeMatSolidV3(0.5, 1, 0.5),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere2(sceneComp.makeMatSolidD(0.3),
+                          sceneComp.makeMatSolidD(0.6),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(32),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(1, 0, 0),
+                          sceneComp.makeMatSolidV3(0.5, 1, 0.5),
+                          sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makeSphere(&MSphere2, Vec3(0.2, 0, -0.1), 0.075));
 
-    Material MSphere3(sceneComp.makeMatSolidD(0.4),
-                      sceneComp.makeMatSolidD(0.5),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(32),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(0, 1, 0),
-                      sceneComp.makeMatSolidV3(0.5, 1, 0.5),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere3(sceneComp.makeMatSolidD(0.4),
+                          sceneComp.makeMatSolidD(0.5),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(32),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(0, 1, 0),
+                          sceneComp.makeMatSolidV3(0.5, 1, 0.5),
+                          sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makeSphere(&MSphere3, Vec3(-0.6, 0, 0), 0.3));
 
-    Material MTriangle1(sceneComp.makeMatSolidD(0.7),
-                      sceneComp.makeMatSolidD(0.2),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(32),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(0, 0, 1.0),
-                      sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MTriangle1(sceneComp.makeMatSolidD(0.7),
+                            sceneComp.makeMatSolidD(0.2),
+                            sceneComp.makeMatSolidD(0.1),
+                            sceneComp.makeMatSolidD(32),
+                            sceneComp.makeMatSolidD(1.0),
+                            sceneComp.makeMatSolidD(0.0),
+                            sceneComp.makeMatSolidV3(0, 0, 1.0),
+                            sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
+                            sceneComp.makeMatSolidV3(Vec3()));
     Vec3 a(0.3, -0.3, -0.4);
     Vec3 b(0.0, 0.3, -0.1);
     Vec3 c(-0.3, -0.3, 0.2);
     currScene.addObject(sceneComp.makeTriangle(&MTriangle1, a, b, c));
 
-    Material MTriangle2(sceneComp.makeMatSolidD(0.9),
-                        sceneComp.makeMatSolidD(0.0),
-                        sceneComp.makeMatSolidD(0.1),
-                        sceneComp.makeMatSolidD(4),
-                        sceneComp.makeMatSolidD(1.0),
-                        sceneComp.makeMatSolidD(0.0),
-                        sceneComp.makeMatSolidV3(1, 1, 0),
-                        sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
-                        sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MTriangle2(sceneComp.makeMatSolidD(0.9),
+                            sceneComp.makeMatSolidD(0.0),
+                            sceneComp.makeMatSolidD(0.1),
+                            sceneComp.makeMatSolidD(4),
+                            sceneComp.makeMatSolidD(1.0),
+                            sceneComp.makeMatSolidD(0.0),
+                            sceneComp.makeMatSolidV3(1, 1, 0),
+                            sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
+                            sceneComp.makeMatSolidV3(Vec3()));
     a = Vec3(-0.2, 0.1, 0.1);
     b = Vec3(-0.2, -0.5, 0.2);
     c = Vec3(-0.2, 0.1, -0.3);
     currScene.addObject((sceneComp.makeTriangle(&MTriangle2, a, b, c)));
 
     /**lights**/
-    currScene.addLight(sceneComp.makeDirectionLight(Vec3(1.0, 1.0, 1.0), Vec3(-1.0, 0.0, 0.0)));
-    currScene.addLight(sceneComp.makeAmbientLight(Vec3(0.2, 0.2, 0.2)));
+    currScene.addObject(sceneComp.makeDirectionLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1.0, 1.0, 1.0)), Vec3(-1.0, 0.0, 0.0)));
+    currScene.addObject(sceneComp.makeAmbientLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.2, 0.2, 0.2))));
 
 
     /**File**/
@@ -121,82 +121,82 @@ void fun(string outFile){
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
-    Scene currScene(renderCam, backColor, sceneComp.makeObjectTracker());
+    Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
     /**objects**/
-    Material MSphere1(sceneComp.makeMatSolidD(0.2),
-                      sceneComp.makeMatSolidD(0.8),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(4),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(1, 1, 0),
-                      sceneComp.makeMatSolidV3(1.0, 1, 0.0),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere1(sceneComp.makeMatSolidD(0.2),
+                          sceneComp.makeMatSolidD(0.8),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(4),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(1, 1, 0),
+                          sceneComp.makeMatSolidV3(1.0, 1, 0.0),
+                          sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0.35, 0, -0.1), 0.3));
 
-    Material MSphere2(sceneComp.makeMatSolidD(0.8),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(4),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(1, 1, 1),
-                      sceneComp.makeMatSolidV3(1.0, 1, 1),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere2(sceneComp.makeMatSolidD(0.8),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(4),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(1, 1, 1),
+                          sceneComp.makeMatSolidV3(1.0, 1, 1),
+                          sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makeSphere(&MSphere2, Vec3(-0.3, 0.3, -0.1), 0.1));
 
-    Material MSphere3(sceneComp.makeMatSolidD(0.8),
-                      sceneComp.makeMatSolidD(0.2),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(4),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(1, 1, 1),
-                      sceneComp.makeMatSolidV3(1.0, 1, 1.0),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere3(sceneComp.makeMatSolidD(0.8),
+                          sceneComp.makeMatSolidD(0.2),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(4),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(1, 1, 1),
+                          sceneComp.makeMatSolidV3(1.0, 1, 1.0),
+                          sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makeSphere(&MSphere3, Vec3(-0.3, -0.1, -0.1), 0.15));
 
-    Material MSphere4(sceneComp.makeMatSolidD(0.8),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(4),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(1, 1, 1),
-                      sceneComp.makeMatSolidV3(1, 1, 1),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere4(sceneComp.makeMatSolidD(0.8),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(4),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(1, 1, 1),
+                          sceneComp.makeMatSolidV3(1, 1, 1),
+                          sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makeSphere(&MSphere4, Vec3(0.0, 0.3, 0.0), 0.25));
 
-    Material MPlane1(sceneComp.makeMatSolidD(0.6),
-                      sceneComp.makeMatSolidD(0.3),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(4),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(0.5, 0.5, 0.5),
-                      sceneComp.makeMatSolidV3(1.0, 1, 1.0),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MPlane1(sceneComp.makeMatSolidD(0.6),
+                         sceneComp.makeMatSolidD(0.3),
+                         sceneComp.makeMatSolidD(0.1),
+                         sceneComp.makeMatSolidD(4),
+                         sceneComp.makeMatSolidD(1.0),
+                         sceneComp.makeMatSolidD(0.0),
+                         sceneComp.makeMatSolidV3(0.5, 0.5, 0.5),
+                         sceneComp.makeMatSolidV3(1.0, 1, 1.0),
+                         sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makePlane(&MPlane1, Vec3(0.0, 1.0, 0.0), -0.5));
 
-    Material MTriangle1(sceneComp.makeMatSolidD(0.6),
-                     sceneComp.makeMatSolidD(0.3),
-                     sceneComp.makeMatSolidD(0.1),
-                     sceneComp.makeMatSolidD(4),
-                     sceneComp.makeMatSolidD(1.0),
-                     sceneComp.makeMatSolidD(0.0),
-                     sceneComp.makeMatSolidV3(0, 0.5, 0.5),
-                     sceneComp.makeMatSolidV3(1.0, 1, 1.0),
-                     sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MTriangle1(sceneComp.makeMatSolidD(0.6),
+                            sceneComp.makeMatSolidD(0.3),
+                            sceneComp.makeMatSolidD(0.1),
+                            sceneComp.makeMatSolidD(4),
+                            sceneComp.makeMatSolidD(1.0),
+                            sceneComp.makeMatSolidD(0.0),
+                            sceneComp.makeMatSolidV3(0, 0.5, 0.5),
+                            sceneComp.makeMatSolidV3(1.0, 1, 1.0),
+                            sceneComp.makeMatSolidV3(Vec3()));
     Vec3 a(0.0, 0.0, -2.5);
     Vec3 b(-0.5, 2.0, -0.5);
     Vec3 c(-0.5, 0.3, 0.5);
     currScene.addObject(sceneComp.makeTriangle(&MTriangle1, a, b, c));
 
     /**lights**/
-    currScene.addLight(sceneComp.makeDirectionLight(Vec3(1.0, 0.0, 0.0), Vec3(-1.0, -1.0, 0.0)));
-    currScene.addLight(sceneComp.makeDirectionLight(Vec3(0.0, 0.20, 0.70), Vec3(-0.1, -1.0, 0.0)));
-    currScene.addLight(sceneComp.makeAmbientLight(Vec3(0.1, 0.1, 0.1)));
+    currScene.addObject(sceneComp.makeDirectionLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1.0, 0.0, 0.0)), Vec3(-1.0, -1.0, 0.0)));
+    currScene.addObject(sceneComp.makeDirectionLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.0, 0.20, 0.70)), Vec3(-0.1, -1.0, 0.0)));
+    currScene.addObject(sceneComp.makeAmbientLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.1, 0.1, 0.1))));
 
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
@@ -216,44 +216,45 @@ void reflection(string outFile){
     Vec3 cameraLookFrom(0.1, 0.35, 1.1);
     Vec3 up(0, 1, 0);
     double fov = 55.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 100, 100);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.9, 0.9, 0.9);
-    Scene currScene(renderCam, backColor, sceneComp.makeObjectTracker());
+    Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
+
 
     /**setting up objects**/
-    Material MSphere1(sceneComp.makeMatSolidD(0.0),
-                        sceneComp.makeMatSolidD(0.9),
-                        sceneComp.makeMatSolidD(0.1),
-                        sceneComp.makeMatSolidD(4),
-                        sceneComp.makeMatSolidD(1.5),
-                        sceneComp.makeMatSolidD(1.0),
-                        sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
-                        sceneComp.makeMatSolidV3(1.0, 1, 1.0),
-                        sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MSphere1(sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidD(0.9),
+                          sceneComp.makeMatSolidD(0.1),
+                          sceneComp.makeMatSolidD(4),
+                          sceneComp.makeMatSolidD(1.5),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
+                          sceneComp.makeMatSolidV3(1.0, 1, 1.0),
+                          sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0.0, 0.32, 0.0), 0.3));
 
-    Material MPlane1(sceneComp.makeMatSolidD(0.4),
-                     sceneComp.makeMatSolidD(0.5),
-                     sceneComp.makeMatSolidD(0.1),
-                     sceneComp.makeMatSolidD(4),
-                     sceneComp.makeMatSolidD(1.0),
-                     sceneComp.makeMatSolidD(0.0),
-                     sceneComp.makeMatSolidV3(0.6, 0.6, 0.6),
-                     sceneComp.makeMatSolidV3(1, 1, 1),
-                     sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MPlane1(sceneComp.makeMatSolidD(0.4),
+                         sceneComp.makeMatSolidD(0.5),
+                         sceneComp.makeMatSolidD(0.1),
+                         sceneComp.makeMatSolidD(4),
+                         sceneComp.makeMatSolidD(1.0),
+                         sceneComp.makeMatSolidD(0.0),
+                         sceneComp.makeMatSolidV3(0.6, 0.6, 0.6),
+                         sceneComp.makeMatSolidV3(1, 1, 1),
+                         sceneComp.makeMatSolidV3(Vec3()));
     currScene.addObject(sceneComp.makePlane(&MPlane1, Vec3(0, 1, 0), -0.05));
 
-    Material MTriangle1(sceneComp.makeMatSolidD(0.4),
-                      sceneComp.makeMatSolidD(0.5),
-                      sceneComp.makeMatSolidD(0.1),
-                      sceneComp.makeMatSolidD(4),
-                      sceneComp.makeMatSolidD(1.0),
-                      sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(0, 0, 1),
-                      sceneComp.makeMatSolidV3(1, 1, 1),
-                      sceneComp.makeMatSolidV3(Vec3()));
+    BaseMaterial MTriangle1(sceneComp.makeMatSolidD(0.4),
+                            sceneComp.makeMatSolidD(0.5),
+                            sceneComp.makeMatSolidD(0.1),
+                            sceneComp.makeMatSolidD(4),
+                            sceneComp.makeMatSolidD(1.0),
+                            sceneComp.makeMatSolidD(0.0),
+                            sceneComp.makeMatSolidV3(0, 0, 1),
+                            sceneComp.makeMatSolidV3(1, 1, 1),
+                            sceneComp.makeMatSolidV3(Vec3()));
     Vec3 a(-0.50, 0.01, 3);
     Vec3 b(-3.5, 3, 0);
     Vec3 c(-0.50, 0.01, -30); //back
@@ -261,22 +262,22 @@ void reflection(string outFile){
 //    currScene.addObject(sceneComp.makePlane(&MTriangle1, Vec3(1, 2, 0), -1));
 
 
-    Material MTriangle2(sceneComp.makeMatSolidD(0.4),
-                        sceneComp.makeMatSolidD(0.5),
-                        sceneComp.makeMatSolidD(0.1),
-                        sceneComp.makeMatSolidD(4),
-                        sceneComp.makeMatSolidD(1.0),
-                        sceneComp.makeMatSolidD(0.0),
-                        sceneComp.makeMatSolidV3(1, 1, 0),
-                        sceneComp.makeMatSolidV3(1, 1, 1),
-                        sceneComp.makeMatSolidV3(Vec3(1, 1, 0)));
+    BaseMaterial MTriangle2(sceneComp.makeMatSolidD(0.4),
+                            sceneComp.makeMatSolidD(0.5),
+                            sceneComp.makeMatSolidD(0.1),
+                            sceneComp.makeMatSolidD(4),
+                            sceneComp.makeMatSolidD(1.0),
+                            sceneComp.makeMatSolidD(0.0),
+                            sceneComp.makeMatSolidV3(1, 1, 0),
+                            sceneComp.makeMatSolidV3(1, 1, 1),
+                            sceneComp.makeMatSolidV3(Vec3(1, 1, 0)));
     c = Vec3(-0.25, 0.01, 1);
     b = Vec3(-0.25, 0.01, -30); //back
     a = Vec3(0.7, 0.01, 0);
     currScene.addObject(sceneComp.makeTriangle(&MTriangle2, a, b, c));
 
     /**lights**/
-    currScene.addLight(sceneComp.makePointLight(Vec3(1.0, 1.0, 1.0), Vec3(0.5, 2.5, 0)));
+    currScene.addObject(sceneComp.makePointLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1.0, 1.0, 1.0)), Vec3(0.5, 2.5, 0)));
 
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
@@ -297,19 +298,19 @@ int main() {
     using std::chrono::milliseconds;
 
     auto t1 = std::chrono::high_resolution_clock::now();
-//    diffuse("diffuse.ppm");
+    diffuse("diffuse.ppm");
     auto t2 = std::chrono::high_resolution_clock::now();
-//    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
+    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
 
     t1 = std::chrono::high_resolution_clock::now();
     reflection("reflection.ppm");
     t2 = std::chrono::high_resolution_clock::now();
     std::cout << "reflection took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
-//    t1 = std::chrono::high_resolution_clock::now();
-//    fun("personal.ppm");
-//    t2 = std::chrono::high_resolution_clock::now();
-//    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
+    t1 = std::chrono::high_resolution_clock::now();
+    fun("personal.ppm");
+    t2 = std::chrono::high_resolution_clock::now();
+    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
     return 0;
 }

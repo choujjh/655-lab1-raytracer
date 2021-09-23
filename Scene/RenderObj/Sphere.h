@@ -14,7 +14,7 @@ private:
     Vec3 center;
     double radius;
 public:
-    Sphere(Material *objMat, const Vec3 &center, double radius);
+    Sphere(BaseMaterial *objMat, const Vec3 &center, double radius);
 
     Vec3 intersect(Ray ray) override;
 
@@ -27,6 +27,8 @@ public:
     double getRadius() const;
 
     void setRadius(double radius);
+
+    Vec3 shadowRay(Vec3 point) override;
 };
 
 

@@ -7,9 +7,6 @@
 void Scene::addObject(Object* newObject){
     objTracker->addObject(newObject);
 }
-void Scene::addLight(Light* newLight){
-    lightList.push_back(newLight);
-}
 
 Cam *Scene::getRenderCam() const {
     return renderCam;
@@ -25,14 +22,6 @@ const Vec3 &Scene::getBackColor() const {
 
 void Scene::setBackColor(const Vec3 &backColor) {
     Scene::backColor = backColor;
-}
-
-const vector<Light *> &Scene::getLightList() const {
-    return lightList;
-}
-
-void Scene::setLightList(const vector<Light *> &lightList) {
-    Scene::lightList = lightList;
 }
 
 ObjTracker* Scene::getObjTracker() {
