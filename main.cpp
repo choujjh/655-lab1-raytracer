@@ -23,7 +23,7 @@ void diffuse(string outFile){
     Vec3 cameraLookFrom(0, 0, 1);
     Vec3 up(0, 1, 0);
     double fov = 28.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 500, 512);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.2, 0.2, 0.2);
@@ -216,7 +216,7 @@ void reflection(string outFile){
     Vec3 cameraLookFrom(0.1, 0.35, 1.1);
     Vec3 up(0, 1, 0);
     double fov = 55.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 217, 217);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.9, 0.9, 0.9);
