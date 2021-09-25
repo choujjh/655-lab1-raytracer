@@ -58,6 +58,5 @@ Vec3 Sphere::normal(Vec3 point) {
 }
 
 Vec3 Sphere::shadowRay(Vec3 point) {
-    //TODO: get this so soft shadows work
-    return infiniteVec3();
+    return (this->center - point).normalize();
 }

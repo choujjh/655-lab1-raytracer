@@ -5,6 +5,7 @@
 #include "Triangle.h"
 #include "../../Model/Ops/LinAlgOp.h"
 #include <limits>
+#include "../../Model/Ops/RenderOps.h"
 
 Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c)
         : Plane(objMat, Vec3(), 0), a(a), b(b), c(c) {
@@ -31,7 +32,8 @@ Vec3 Triangle::normal(Vec3 point) {
 }
 
 Vec3 Triangle::shadowRay(Vec3 point) {
-    //TODO: get this so soft shadows work
-    return infiniteVec3();
+    Vec3 aPrime = RenderOps().randomPointBetweenPoints(a, b);
+    Vec3 bPrime = RenderOps().randomPointBetweenPoints(a, c);
+    return (RenderOps().randomPointBetweenPoints(aPrime, bPrime) - point).normalize();
 }
 

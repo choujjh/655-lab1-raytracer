@@ -1,6 +1,6 @@
-#include <limits>
 #include <iostream>
 #include <chrono>
+#include <RenderOps.h>
 
 #include "Render/RenderController.h"
 #include "Model/RenderCompCreator.h"
@@ -212,57 +212,57 @@ void reflection(string outFile){
     RenderCompCreator sceneComp;
 
     /**setting up camera**/
-    Vec3 cameraLookAt(0, 0.32, 0.0);
-    Vec3 cameraLookFrom(0.1, 0.35, 1.1);
+    Vec3 cameraLookAt(0, 0.15, 0.0);
+    Vec3 cameraLookFrom(0.1, 0.5, 1.0);
     Vec3 up(0, 1, 0);
     double fov = 55.0;
     Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
-    Vec3 backColor(0.9, 0.9, 0.9);
+    Vec3 backColor(0.8, 0.8, 0.8);
     Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
 
     /**setting up objects**/
-    BaseMaterial MSphere1(sceneComp.makeMatSolidD(0.0),
-                          sceneComp.makeMatSolidD(0.9),
-                          sceneComp.makeMatSolidD(0.1),
+    BaseMaterial MSphere1(sceneComp.makeMatSolidD(0.5),
+                          sceneComp.makeMatSolidD(0.5),
+                          sceneComp.makeMatSolidD(0.0),
                           sceneComp.makeMatSolidD(4),
                           sceneComp.makeMatSolidD(1.5),
-                          sceneComp.makeMatSolidD(1.0),
-                          sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
+                          sceneComp.makeMatSolidD(0.0),
+                          sceneComp.makeMatSolidV3(1.0, 0.0, 0.0),
                           sceneComp.makeMatSolidV3(1.0, 1, 1.0),
                           sceneComp.makeMatSolidV3(Vec3()));
-    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0.0, 0.32, 0.0), 0.3));
+    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0.0, 0.25, 0.0), 0.3));
 
-    BaseMaterial MPlane1(sceneComp.makeMatSolidD(0.4),
-                         sceneComp.makeMatSolidD(0.5),
-                         sceneComp.makeMatSolidD(0.1),
+    BaseMaterial MPlane1(sceneComp.makeMatSolidD(0.8),
+                         sceneComp.makeMatSolidD(0.2),
+                         sceneComp.makeMatSolidD(0.0),
                          sceneComp.makeMatSolidD(4),
                          sceneComp.makeMatSolidD(1.0),
                          sceneComp.makeMatSolidD(0.0),
-                         sceneComp.makeMatSolidV3(0.6, 0.6, 0.6),
+                         sceneComp.makeMatSolidV3(0.5, 0.5, 0.5),
                          sceneComp.makeMatSolidV3(1, 1, 1),
                          sceneComp.makeMatSolidV3(Vec3()));
-    currScene.addObject(sceneComp.makePlane(&MPlane1, Vec3(0, 1, 0), -0.05));
+    currScene.addObject(sceneComp.makePlane(&MPlane1, Vec3(0, 1, 0), 0));
 
-    BaseMaterial MTriangle1(sceneComp.makeMatSolidD(0.4),
-                            sceneComp.makeMatSolidD(0.5),
-                            sceneComp.makeMatSolidD(0.1),
-                            sceneComp.makeMatSolidD(4),
-                            sceneComp.makeMatSolidD(1.0),
-                            sceneComp.makeMatSolidD(0.0),
-                            sceneComp.makeMatSolidV3(0, 0, 1),
-                            sceneComp.makeMatSolidV3(0, 0, 0),
-                            sceneComp.makeMatSolidV3(Vec3()));
-    Vec3 a(-0.50, 0.01, 3);
+    BaseMaterial Mat1(sceneComp.makeMatSolidD(0.4),
+                      sceneComp.makeMatSolidD(0.5),
+                      sceneComp.makeMatSolidD(0.1),
+                      sceneComp.makeMatSolidD(4),
+                      sceneComp.makeMatSolidD(1.0),
+                      sceneComp.makeMatSolidD(0.0),
+                      sceneComp.makeMatSolidV3(0, 0, 1),
+                      sceneComp.makeMatSolidV3(1, 1, 1),
+                      sceneComp.makeMatSolidV3(Vec3(1, 1, 1)));
+    Vec3 a(-0.50, 0.1, 3);
     Vec3 b(-3.5, 3, 0);
-    Vec3 c(-0.50, 0.01, -30); //back
-    currScene.addObject(sceneComp.makeTriangle(&MTriangle1, a, b, c));
-//    currScene.addObject(sceneComp.makePlane(&MTriangle1, Vec3(1, 2, 0), -1));
+    Vec3 c(-0.50, 0.1, -30); //back
+//    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(0.5, 2.5, 0), 0.2));
+//    currScene.addObject(sceneComp.makeTriangle(&Mat1, a, b, c));
 
 
-    BaseMaterial MTriangle2(sceneComp.makeMatSolidD(0.4),
+    BaseMaterial Mat2(sceneComp.makeMatSolidD(0.4),
                             sceneComp.makeMatSolidD(0.5),
                             sceneComp.makeMatSolidD(0.1),
                             sceneComp.makeMatSolidD(4),
@@ -270,14 +270,18 @@ void reflection(string outFile){
                             sceneComp.makeMatSolidD(0.0),
                             sceneComp.makeMatSolidV3(1, 1, 0),
                             sceneComp.makeMatSolidV3(1, 1, 1),
-                            sceneComp.makeMatSolidV3(Vec3(0, 0, 0)));
-    c = Vec3(-0.25, 0.01, 1);
-    b = Vec3(-0.25, 0.01, -30); //back
-    a = Vec3(0.7, 0.01, 0);
-    currScene.addObject(sceneComp.makeTriangle(&MTriangle2, a, b, c));
+                            sceneComp.makeMatSolidV3(Vec3(1, 1, 1)));
+//    a = Vec3(-0.25, 0.01, 1);
+//    c = Vec3(-0.25, 0.01, -30); //back
+//    b = Vec3(0.7, 0.01, 0);
+    a = Vec3(0.5, 1, 0.4);
+    b = Vec3(0.7, 0.7, 0.3);
+    c = Vec3(0.7, 0.7, 0.5);
+    currScene.addObject(sceneComp.makeTriangle(&Mat2, a, b, c));
+    currScene.addObject(sceneComp.makeAmbientLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.1, 0.1, 0.1))));
 
     /**lights**/
-    currScene.addObject(sceneComp.makePointLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1.0, 1.0, 1.0)), Vec3(0.5, 2.5, 0)));
+//    currScene.addObject(sceneComp.makePointLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1.0, 1.0, 1.0)), Vec3(0.5, 2.5, 0)));
 
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
@@ -289,14 +293,11 @@ void reflection(string outFile){
     delete renderCam;
 }
 int main() {
-
-    srand(time(0));
-
     using std::chrono::high_resolution_clock;
     using std::chrono::duration_cast;
     using std::chrono::duration;
     using std::chrono::milliseconds;
-
+//
     auto t1 = std::chrono::high_resolution_clock::now();
 //    diffuse("diffuse.ppm");
     auto t2 = std::chrono::high_resolution_clock::now();

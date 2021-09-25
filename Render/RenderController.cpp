@@ -32,6 +32,7 @@ RenderController::RenderController(ImageFileManager *file, const Scene &currScen
     for(int i = 0; i < rays.size(); ++i) {
         rays.at(i).resize(width * samples);
     }
+    times.resize(height);
 }
 
 
@@ -39,12 +40,6 @@ void RenderController::render() {
     /**initialize rays**/
     initializeRays();
     /**get image color**/
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
-
-    auto t1 = std::chrono::high_resolution_clock::now();
 
     int numCores = std::thread::hardware_concurrency();
     int activeCores = 0;
@@ -59,11 +54,12 @@ void RenderController::render() {
                     break;
                 }
             }
-            threadList.at(0).join();
-            --activeCores;
-            threadList.erase(threadList.begin());
+            if(activeCores == numCores) {
+                threadList.at(0).join();
+                --activeCores;
+                threadList.erase(threadList.begin());
+            }
         }
-        cout << "pushed row " << row << " to be rendered" << endl;
         threadList.push_back(std::thread(&RenderController::renderRow, this, row));
         ++activeCores;
     }
@@ -71,13 +67,36 @@ void RenderController::render() {
         threadList.at(i).join();
     }
     threadList.clear();
+
+    double min = VAL_INFINITY;
+    double max = NEG_INFINITY;
+    double avg = 0;
+    for(double i: times){
+        if(i < min){
+            min = i;
+        }
+        if(i > max){
+            max = i;
+        }
+        avg += i;
+    }
+    cout << "min time per thread: " << std::fixed << std::setprecision(3) << min << endl;
+    cout << "max time per thread: " << max << endl;
+    cout << "avg time per thread: " << avg / times.size() << endl;
 }
 void RenderController::renderRow(int row){
     srand(std::hash<std::thread::id>{}(std::this_thread::get_id()) + row * 17);
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+
+    auto t1 = std::chrono::high_resolution_clock::now();
     for(int col = 0; col < currScene.getRenderCam()->getWidth(); ++col){
-        Vec3 temp = calcPixel(row, col).clip(0, 1);
-        file->getImage()[row][col] = temp;
+        file->getImage()[row][col] = calcPixel(row, col).clip(0, 1);
     }
+    auto t2 = std::chrono::high_resolution_clock::now();
+    times.at(row) = duration_cast<milliseconds>(t2 - t1).count() / 1000.0;
 }
 
 void RenderController::initializeRays(){
@@ -92,8 +111,8 @@ void RenderController::initializeRays(){
             //sampling Density
             for (int newCol = 0; newCol < samples; ++newCol) {
                 int savedCol = col * samples + newCol;
-                double offsetX = RenderOps().tentFloatRandGen(-1.0, 1.0);
-                double offsetY = RenderOps().tentFloatRandGen(-1.0, 1.0);
+                double offsetX = RenderOps().tentFloatRandGen(-0.5, 0.5);
+                double offsetY = RenderOps().tentFloatRandGen(-0.5, 0.5);
 
                 rays.at(row).at(savedCol).direction = (currCol +
                                                        incrX * offsetX - incrY * offsetY -

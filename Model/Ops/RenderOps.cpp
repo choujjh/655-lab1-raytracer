@@ -25,7 +25,7 @@ Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVe
     Vec3 T = I*nit;
     double a = nit*cos(theta);
     double b = sqrt(1 - nit*nit*(1-cos(theta) * cos(theta)));
-//    double b = sqrt(1 + pow(nit, 2)* (pow(cos(theta), 2) - 1));
+    //double b = sqrt(1 + pow(nit, 2)* (pow(cos(theta), 2) - 1));
     T += n * (a - b);
     Vec3 epsilonPoint;
     if(isInsideObject){
@@ -36,7 +36,6 @@ Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVe
     }
     return Ray(epsilonPoint, T);
 }
-
 double RenderOps::calcFresnelReflectAmount(double iorLeft, double iorEntered, Vec3 normal, Vec3 incident){
     // code from https://blog.demofox.org/2017/01/09/raytracing-reflection-refraction-fresnel-total-internal-reflection-and-beers-law/
     normal.normalize();
@@ -65,6 +64,7 @@ CoordinateSpace RenderOps::makeCoordinateSystem(Vec3 direction, Vec3 normal){
 
     return CoordinateSpace(direction.normalize(), up.normalize(), right.normalize());
 }
+
 double RenderOps::randFloatValue(double min, double max){
 
     if(min > max) std::swap(max, min);
@@ -78,4 +78,10 @@ double RenderOps::tentFloatRandGen(double min, double max){
     if (randVal < 1.0){direction = sqrt(randVal) - 1.0;}
     else {direction = 1.0 - sqrt(2-randVal);}
     return (direction + 1) / 2 * (max - min) + min;
+}
+Vec3 RenderOps::randomPointBetweenPoints(Vec3 a, Vec3 b, bool useTent){
+    Vec3 ab = b - a;
+    double t = useTent? tentFloatRandGen(): randFloatValue();
+    return ab * t + a;
+
 }

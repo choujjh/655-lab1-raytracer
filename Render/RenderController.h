@@ -31,6 +31,8 @@ private:
     int samples;
     int levReflectRecursion;
 
+    vector<double> times;
+
     void initializeRays();
     Vec3 calcPixel(int row, int col);
     Vec3 getColor(Ray ray);

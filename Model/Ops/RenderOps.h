@@ -20,6 +20,7 @@ public:
     CoordinateSpace makeCoordinateSystem(Vec3 direction, Vec3 normal);
     double randFloatValue(double min = 0.0, double max = 1.0);
     double tentFloatRandGen(double min = 0.0, double max = 1.0);
+    Vec3 randomPointBetweenPoints(Vec3 a, Vec3 b, bool useTent = false);
 };
 
 
