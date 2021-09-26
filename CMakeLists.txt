@@ -66,4 +66,4 @@ add_executable(655_lab1_raytracer
         Scene/Cam.h
         Scene/Scene.cpp
         Scene/Scene.h
-        main.cpp Scene/IntersectMethods/BruteForce.cpp Scene/IntersectMethods/BruteForce.h)
+        main.cpp Scene/IntersectMethods/BruteForce.cpp Scene/IntersectMethods/BruteForce.h Scene/RenderObj/AxisAlignBox.cpp Scene/RenderObj/AxisAlignBox.h)

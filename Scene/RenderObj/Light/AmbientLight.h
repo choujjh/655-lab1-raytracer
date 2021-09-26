@@ -10,7 +10,7 @@
 #include "Light.h"
 
 class AmbientLight: public Light {
-    Vec3 shadowRay(Vec3 point) override;
+    Vec3 shadowRay(Vec3 point, Vec3 objectNormal) override;
 
 public:
     AmbientLight(BaseMaterial* material);

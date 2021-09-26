@@ -16,7 +16,7 @@ private:
 public:
     PointLight(BaseMaterial* material, const Vec3 &position);
 
-    Vec3 shadowRay(Vec3 point) override;
+    Vec3 shadowRay(Vec3 point, Vec3 objectNormal) override;
 
     Vec3 intersect(Ray ray) override;
 

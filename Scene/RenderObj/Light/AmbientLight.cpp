@@ -5,7 +5,7 @@
 #include "AmbientLight.h"
 
 
-Vec3 AmbientLight::shadowRay(Vec3 point) {
+Vec3 AmbientLight::shadowRay(Vec3 point, Vec3 objectNormal) {
     return Vec3(0.0, 0.0, 0.0);
 }
 AmbientLight::AmbientLight(BaseMaterial* material) : Light(material) {}

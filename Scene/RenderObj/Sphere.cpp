@@ -5,6 +5,7 @@
 #include "Sphere.h"
 
 #include <cmath>
+#include "../../Model/Ops/RenderOps.h"
 
 const Vec3 &Sphere::getCenter() const {
     return center;
@@ -57,6 +58,22 @@ Vec3 Sphere::normal(Vec3 point) {
     return normal;
 }
 
-Vec3 Sphere::shadowRay(Vec3 point) {
-    return (this->center - point).normalize();
+Vec3 Sphere::shadowRay(Vec3 point, Vec3 objectNormal) {
+    double nx = RenderOps().randFloatValue();
+    double ny = RenderOps().randFloatValue();
+    if((point - center).getMagnitude() < radius){
+        double nz = (objectNormal.x * nx + objectNormal.y * ny)/objectNormal.z;
+        CoordinateSpace cs = RenderOps().makeCoordinateSystem(objectNormal, Vec3(nx, ny, nz));
+        return (cs.right * RenderOps().tentFloatRandGen(-1, 1) + cs.up * RenderOps().tentFloatRandGen(-1, 1) + cs.direction * RenderOps().randFloatValue(0, 1)).normalize();
+    }
+
+    Vec3 dir = (this->center - point).normalize();
+    double nz = (dir.x * nx + dir.y * ny)/dir.z;
+    CoordinateSpace cs = RenderOps().makeCoordinateSystem(dir, Vec3(nx, ny, nz));
+    double randTheta = RenderOps().randFloatValue(0, 2 * M_PI);
+    double randRadius = RenderOps().randFloatValue(0, radius);
+    double y = sin(randTheta) * randRadius;
+    double x = cos(randTheta) * randRadius;
+    Vec3 randPoint = center + cs.up * y + cs.right * x;
+    return (randPoint - point).normalize();
 }

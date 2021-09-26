@@ -84,7 +84,7 @@ Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, doubl
     Vec3 surfColor;
     Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
     for (int i = 0; i < renderScene->getObjTracker()->getLightList().size(); ++i){
-        Ray shadowRay = Ray(epsilonPoint, renderScene->getObjTracker()->getLightList().at(i)->shadowRay(interVec));
+        Ray shadowRay = Ray(epsilonPoint, renderScene->getObjTracker()->getLightList().at(i)->shadowRay(interVec, intersectObject->normal(interVec) * normalScalar));
         Object* shadowObject = nullptr;
         Vec3 shadowIntersect = renderScene->getObjTracker()->getIntersect(shadowRay, true, shadowObject);
         bool isOccluded = true;

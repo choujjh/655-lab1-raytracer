@@ -4,7 +4,7 @@
 
 #include "PointLight.h"
 
-Vec3 PointLight::shadowRay(Vec3 point) {
+Vec3 PointLight::shadowRay(Vec3 point, Vec3 objectNormal) {
     return this->position - point;
 }
 

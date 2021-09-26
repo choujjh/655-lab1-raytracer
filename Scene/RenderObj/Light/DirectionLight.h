@@ -10,7 +10,7 @@
 class DirectionLight: public Light {
 public:
     Vec3 dir;
-    Vec3 shadowRay(Vec3 point) override;
+    Vec3 shadowRay(Vec3 point, Vec3 objectNormal) override;
 
     DirectionLight(BaseMaterial* material, const Vec3 &dir);
 

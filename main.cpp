@@ -213,13 +213,13 @@ void reflection(string outFile){
 
     /**setting up camera**/
     Vec3 cameraLookAt(0, 0.15, 0.0);
-    Vec3 cameraLookFrom(0.1, 0.5, 1.0);
+    Vec3 cameraLookFrom(0.1, 0.3, 1.2);
     Vec3 up(0, 1, 0);
-    double fov = 55.0;
+    double fov = 30.0;
     Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
-    Vec3 backColor(0.8, 0.8, 0.8);
+    Vec3 backColor(0.1, 0.8, 0.8);
     Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
 
@@ -229,14 +229,15 @@ void reflection(string outFile){
                           sceneComp.makeMatSolidD(0.0),
                           sceneComp.makeMatSolidD(4),
                           sceneComp.makeMatSolidD(1.5),
-                          sceneComp.makeMatSolidD(0.0),
-                          sceneComp.makeMatSolidV3(1.0, 0.0, 0.0),
-                          sceneComp.makeMatSolidV3(1.0, 1, 1.0),
+                          sceneComp.makeMatSolidD(1.0),
+                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
+                          sceneComp.makeMatSolidV3(0, 1, 1.0),
                           sceneComp.makeMatSolidV3(Vec3()));
-    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0.0, 0.25, 0.0), 0.3));
+//    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(-0.0, 0.35, -1.0), 0.3));
+    currScene.addObject(sceneComp.makeAxisAlignBox(&MSphere1, Vec3(0.2,0.2,0.2), Vec3(-0.2, 0, -0.2)));
 
-    BaseMaterial MPlane1(sceneComp.makeMatSolidD(0.8),
-                         sceneComp.makeMatSolidD(0.2),
+    BaseMaterial MPlane1(sceneComp.makeMatSolidD(0.9),
+                         sceneComp.makeMatSolidD(0.1),
                          sceneComp.makeMatSolidD(0.0),
                          sceneComp.makeMatSolidD(4),
                          sceneComp.makeMatSolidD(1.0),
@@ -252,9 +253,10 @@ void reflection(string outFile){
                       sceneComp.makeMatSolidD(4),
                       sceneComp.makeMatSolidD(1.0),
                       sceneComp.makeMatSolidD(0.0),
-                      sceneComp.makeMatSolidV3(0, 0, 1),
                       sceneComp.makeMatSolidV3(1, 1, 1),
-                      sceneComp.makeMatSolidV3(Vec3(1, 1, 1)));
+                      sceneComp.makeMatSolidV3(1, 1, 1),
+                      sceneComp.makeMatSolidV3(Vec3()));
+//    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(1.0, 0.35, -1.0), 0.3));
     Vec3 a(-0.50, 0.1, 3);
     Vec3 b(-3.5, 3, 0);
     Vec3 c(-0.50, 0.1, -30); //back
@@ -262,23 +264,24 @@ void reflection(string outFile){
 //    currScene.addObject(sceneComp.makeTriangle(&Mat1, a, b, c));
 
 
-    BaseMaterial Mat2(sceneComp.makeMatSolidD(0.4),
-                            sceneComp.makeMatSolidD(0.5),
-                            sceneComp.makeMatSolidD(0.1),
-                            sceneComp.makeMatSolidD(4),
-                            sceneComp.makeMatSolidD(1.0),
-                            sceneComp.makeMatSolidD(0.0),
-                            sceneComp.makeMatSolidV3(1, 1, 0),
-                            sceneComp.makeMatSolidV3(1, 1, 1),
-                            sceneComp.makeMatSolidV3(Vec3(1, 1, 1)));
+//    BaseMaterial Mat2(sceneComp.makeMatSolidD(0.4),
+//                            sceneComp.makeMatSolidD(0.5),
+//                            sceneComp.makeMatSolidD(0.1),
+//                            sceneComp.makeMatSolidD(4),
+//                            sceneComp.makeMatSolidD(1.0),
+//                            sceneComp.makeMatSolidD(0.0),
+//                            sceneComp.makeMatSolidV3(1, 1, 0),
+//                            sceneComp.makeMatSolidV3(1, 1, 1),
+//                            sceneComp.makeMatSolidV3(Vec3(3, 3, 3)));
 //    a = Vec3(-0.25, 0.01, 1);
 //    c = Vec3(-0.25, 0.01, -30); //back
 //    b = Vec3(0.7, 0.01, 0);
     a = Vec3(0.5, 1, 0.4);
     b = Vec3(0.7, 0.7, 0.3);
     c = Vec3(0.7, 0.7, 0.5);
-    currScene.addObject(sceneComp.makeTriangle(&Mat2, a, b, c));
-    currScene.addObject(sceneComp.makeAmbientLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.1, 0.1, 0.1))));
+//    currScene.addObject(sceneComp.makeTriangle(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1, 1, 1)), a, b, c));
+    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.8, 0.8, 0.8)), Vec3(0, 0, 0), 3000));
+//    currScene.addObject(sceneComp.makeAmbientLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.8, 0.8, 0.8))));
 
     /**lights**/
 //    currScene.addObject(sceneComp.makePointLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1.0, 1.0, 1.0)), Vec3(0.5, 2.5, 0)));
@@ -286,7 +289,7 @@ void reflection(string outFile){
     /**File**/
     ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 35, 7);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 10, 7);
     controller.render();
     fManager->writeToFileInt();
 

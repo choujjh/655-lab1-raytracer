@@ -13,6 +13,7 @@
 #include "../Scene/RenderObj/Object.h"
 #include "../Scene/RenderObj/Triangle.h"
 #include "../Scene/RenderObj/Sphere.h"
+#include "../Scene/RenderObj/AxisAlignBox.h"
 
 #include "../Scene/RenderObj/Light/Light.h"
 #include "../Scene/RenderObj/Light/AmbientLight.h"
@@ -69,6 +70,11 @@ public:
     }
     Object* makePlane(BaseMaterial *objMat, const Vec3 &n, double d){
         Object* tempObject = new Plane(objMat, n, d);
+        objects.push_back(tempObject);
+        return tempObject;
+    }
+    Object* makeAxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3 &minVals){
+        Object* tempObject = new AxisAlignBox(objMat, maxVals, minVals);
         objects.push_back(tempObject);
         return tempObject;
     }

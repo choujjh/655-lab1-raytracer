@@ -27,7 +27,7 @@ Vec3 Plane::normal(Vec3 point) {
     return n;
 }
 
-Vec3 Plane::shadowRay(Vec3 point) {
+Vec3 Plane::shadowRay(Vec3 point, Vec3 objectNormal) {
     return n * -1;
 }
 

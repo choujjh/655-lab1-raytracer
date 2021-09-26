@@ -18,7 +18,7 @@ public:
 
     Object(BaseMaterial* objMat);
 
-    virtual Vec3 shadowRay(Vec3 point) = 0;
+    virtual Vec3 shadowRay(Vec3 point, Vec3 objectNormal) = 0;
     virtual Vec3 intersect(Ray ray);
     Vec3 infiniteVec3();
     virtual Vec3 normal(Vec3 point) = 0;

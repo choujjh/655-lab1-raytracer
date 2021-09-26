@@ -18,6 +18,9 @@ public:
     //object functions
     virtual Vec3 intersect(Ray ray) = 0;
     virtual Vec3 normal(Vec3 point) = 0;
+
+    virtual Vec3 shadowRay(Vec3 point, Vec3 objectNormal) = 0;
+
     bool isLight() override;
 
 

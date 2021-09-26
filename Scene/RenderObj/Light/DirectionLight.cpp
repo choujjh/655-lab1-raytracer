@@ -4,7 +4,7 @@
 
 #include "DirectionLight.h"
 
-Vec3 DirectionLight::shadowRay(Vec3 point){
+Vec3 DirectionLight::shadowRay(Vec3 point, Vec3 objectNormal){
     return dir * -1;
 }
 

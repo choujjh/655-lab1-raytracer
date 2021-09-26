@@ -31,7 +31,7 @@ Vec3 Triangle::normal(Vec3 point) {
     return n;
 }
 
-Vec3 Triangle::shadowRay(Vec3 point) {
+Vec3 Triangle::shadowRay(Vec3 point, Vec3 objectNormal) {
     Vec3 aPrime = RenderOps().randomPointBetweenPoints(a, b);
     Vec3 bPrime = RenderOps().randomPointBetweenPoints(a, c);
     return (RenderOps().randomPointBetweenPoints(aPrime, bPrime) - point).normalize();
