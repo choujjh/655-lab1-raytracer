@@ -2,6 +2,7 @@
 // Created by chouj on 9/25/2021.
 //
 
+#include <cmath>
 #include "../../Model/Ops/RenderOps.h"
 #include "AxisAlignBox.h"
 
@@ -34,8 +35,8 @@ Vec3 AxisAlignBox::intersect(Ray ray) {
         if(t1 > tNear) tNear = t1;
         if(t2 < tFar) tFar = t2;
         if(tNear > tFar || tFar < 0) return infiniteVec3();
-        return ray.direction * tNear + ray.point;
     }
+    return ray.direction * tNear + ray.point;
     return infiniteVec3();
 }
 bool AxisAlignBox::calcAxisT(double point, double direction, double min, double max, double& t1, double& t2){
@@ -51,28 +52,28 @@ bool AxisAlignBox::calcAxisT(double point, double direction, double min, double 
 
 Vec3 AxisAlignBox::normal(Vec3 point) {
     //TODO:get normal calculations
-//    Vec3 normal = Vec3(minVals.x, 0, 0);
-//    double min = abs(point.x - minVals.x);
-//    if(abs(point.x - maxVals.x) < min){
-//        min = abs(point.x - maxVals.x);
-//        normal = Vec3(maxVals.x, 0, 0);
-//    }
-//    if(abs(point.y - maxVals.y) < min){
-//        min = abs(point.y - maxVals.y);
-//        normal = Vec3(0, maxVals.y, 0);
-//    }
-//    if(abs(point.y - minVals.y) < min){
-//        min = abs(point.y - minVals.y);
-//        normal = Vec3(0, minVals.y, 0);
-//    }
-//    if(abs(point.z - minVals.z) < min){
-//        min = abs(point.y - minVals.z);
-//        normal = Vec3(0, 0, minVals.z);
-//    }
-//    if(abs(point.z - maxVals.z) < min) {
-//        normal = Vec3(0, 0, maxVals.y);
-//    }
-    return Vec3(RenderOps().randFloatValue(-0.5, 0.5), RenderOps().randFloatValue(-0.5, 0.5), RenderOps().randFloatValue(-0.5, 0.5));
+    Vec3 normal = Vec3(minVals.x - maxVals.x, 0, 0);
+    double min = fabs(point.x - minVals.x);
+    if(fabs(point.x - maxVals.x) < min){
+        min = fabs(point.x - maxVals.x);
+        normal = Vec3(maxVals.x - minVals.x, 0, 0);
+    }
+    if(fabs(point.y - maxVals.y) < min){
+        min = fabs(point.y - maxVals.y);
+        normal = Vec3(0, maxVals.y - minVals.y, 0);
+    }
+    if(fabs(point.y - minVals.y) < min){
+        min = fabs(point.y - minVals.y);
+        normal = Vec3(0, minVals.y - maxVals.y, 0);
+    }
+    if(fabs(point.z - minVals.z) < min){
+        min = fabs(point.z - minVals.z);
+        normal = Vec3(0, 0, minVals.z - maxVals.z);
+    }
+    if(fabs(point.z - maxVals.z) < min) {
+        normal = Vec3(0, 0, maxVals.z - minVals.z);
+    }
+    return normal.normalize();
 }
 
 AxisAlignBox::AxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3 &minVals) : Object(objMat),
