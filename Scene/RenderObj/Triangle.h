@@ -9,6 +9,9 @@
 #include "Plane.h"
 
 class Triangle: public Plane {
+private:
+    double findMinVal(double a, double b, double c);
+    double findMaxVal(double a, double b, double c);
 public:
     Vec3 a;
     Vec3 b;

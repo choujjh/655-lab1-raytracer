@@ -24,7 +24,10 @@ void Sphere::setRadius(double radius) {
 }
 
 Sphere::Sphere(BaseMaterial *objMat, const Vec3 &center, double radius) : Object(objMat), center(center),
-                                                                          radius(radius) {}
+                                                                          radius(radius) {
+    maxVals = Vec3(center.x + radius, center.y + radius, center.z + radius);
+    minVals = Vec3(center.x - radius, center.y - radius, center.z - radius);
+}
 
 Vec3 Sphere::intersect(Ray ray) {
     ray.direction.normalize();

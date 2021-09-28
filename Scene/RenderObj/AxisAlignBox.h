@@ -9,9 +9,6 @@
 #include "Object.h"
 
 class AxisAlignBox: public Object {
-private:
-    Vec3 maxVals;
-    Vec3 minVals;
 public:
     AxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3 &minVals);
     bool calcAxisT(double point, double direction, double min, double max, double &t1, double &t2);

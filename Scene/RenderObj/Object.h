@@ -14,6 +14,8 @@
 
 class Object {
 public:
+    Vec3 maxVals = Vec3(0, 0, 0);;
+    Vec3 minVals = Vec3(0, 0, 0);;
     BaseMaterial* material;
 
     Object(BaseMaterial* objMat);

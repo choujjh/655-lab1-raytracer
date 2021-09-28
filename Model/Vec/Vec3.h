@@ -14,14 +14,14 @@ using std::vector;
 
 class Vec3 {
 private:
-    void calcMagnitude();
     double magnitude;
 public:
     double x, y, z;
-
     Vec3();
+
     Vec3(double x, double y, double z);
     Vec3(const Vec3 &obj);
+    void calcMagnitude();
 
     bool isNan();
     Vec3 normalize();

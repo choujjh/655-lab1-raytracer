@@ -5,7 +5,6 @@
 #include "BruteForce.h"
 
 Vec3 BruteForce::getIntersect(Ray currRay, bool closest, Object *&object) {
-    ObjTracker::getIntersect(currRay, closest, object);
     Vec3 minInterVec = objList.at(0)->intersect(currRay);
     if(minInterVec.getMagnitude() < VAL_INFINITY && minInterVec.getMagnitude() > NEG_INFINITY){
         object = objList.at(0);
@@ -27,6 +26,5 @@ Vec3 BruteForce::getIntersect(Ray currRay, bool closest, Object *&object) {
 BruteForce::BruteForce() {}
 
 
-void BruteForce::Optimize() {
-    ObjTracker::Optimize();
+void BruteForce::optimize() {
 }

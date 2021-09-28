@@ -55,8 +55,8 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     Vec3 refrColor = Vec3();
     double fresnelEffect;
     if(opacity > 0) {
-        offsetX = RenderOps().randFloatValue(-0.1, 0.1);
-        offsetY = RenderOps().randFloatValue(-0.1, 0.1);
+        offsetX = RenderOps().randFloatValue(-0.05, 0.05);
+        offsetY = RenderOps().randFloatValue(-0.05, 0.05);
         Ray transRay = RenderOps().calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject);
         transRay.direction = (transRay.direction + cs.up * offsetY + cs.right * offsetX).normalize();
         double iorLeft = 1.0;

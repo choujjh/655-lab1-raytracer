@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <IntersectMethods/BruteForce.h>
+#include <MediumSplit.h>
 #include "MaterialComponent/MatComponent.h"
 #include "MaterialComponent/MatCompSolid.h"
 
@@ -68,11 +69,6 @@ public:
         objects.push_back(tempObject);
         return tempObject;
     }
-    Object* makePlane(BaseMaterial *objMat, const Vec3 &n, double d){
-        Object* tempObject = new Plane(objMat, n, d);
-        objects.push_back(tempObject);
-        return tempObject;
-    }
     Object* makeAxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3 &minVals){
         Object* tempObject = new AxisAlignBox(objMat, maxVals, minVals);
         objects.push_back(tempObject);
@@ -119,7 +115,11 @@ public:
         ObjTracker* tempSceneIntersect = new BruteForce();
         objTracker.push_back(tempSceneIntersect);
         return tempSceneIntersect;
-
+    }
+    ObjTracker* makeMediumSplitTracker(int levSubdivision, int objectPerLeaf){
+        ObjTracker* tempSceneIntersect= new MediumSplit(levSubdivision, objectPerLeaf);
+        objTracker.push_back(tempSceneIntersect);
+        return tempSceneIntersect;
     }
 
 };

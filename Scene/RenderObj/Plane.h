@@ -18,7 +18,7 @@ public:
     Vec3 intersect(Ray ray) override;
     Vec3 normal(Vec3 point) override;
 
-    Vec3 shadowRay(Vec3 point, Vec3 objectNormal) override;
+    virtual Vec3 shadowRay(Vec3 point, Vec3 objectNormal) = 0;
 };
 
 

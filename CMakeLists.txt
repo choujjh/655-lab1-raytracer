@@ -10,7 +10,7 @@ include_directories(Model/Ops)
 include_directories(Model/Vec)
 include_directories(Render)
 include_directories(Scene)
-include_directories(Scene/IntersectMethods)
+include_directories(Render/IntersectMethods)
 include_directories(Scene/RenderObj/Light)
 include_directories(Scene/Materials)
 include_directories(Scene/RenderObj)
@@ -42,8 +42,8 @@ add_executable(655_lab1_raytracer
         Render/Phong.h
         Render/RenderController.cpp
         Render/RenderController.h
-        Scene/IntersectMethods/ObjTracker.cpp
-        Scene/IntersectMethods/ObjTracker.h
+        Render/IntersectMethods/ObjTracker.cpp
+        Render/IntersectMethods/ObjTracker.h
         Scene/RenderObj/Light/AmbientLight.cpp
         Scene/RenderObj/Light/AmbientLight.h
         Scene/RenderObj/Light/DirectionLight.cpp
@@ -66,4 +66,4 @@ add_executable(655_lab1_raytracer
         Scene/Cam.h
         Scene/Scene.cpp
         Scene/Scene.h
-        main.cpp Scene/IntersectMethods/BruteForce.cpp Scene/IntersectMethods/BruteForce.h Scene/RenderObj/AxisAlignBox.cpp Scene/RenderObj/AxisAlignBox.h)
+        main.cpp Render/IntersectMethods/BruteForce.cpp Render/IntersectMethods/BruteForce.h Scene/RenderObj/AxisAlignBox.cpp Scene/RenderObj/AxisAlignBox.h Render/IntersectMethods/IntersectTreeNode.cpp Render/IntersectMethods/IntersectTreeNode.h Render/IntersectMethods/MediumSplit.cpp Render/IntersectMethods/MediumSplit.h)

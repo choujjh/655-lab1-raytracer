@@ -14,7 +14,7 @@ public:
 
     Vec3 getIntersect(Ray currRay, bool closest, Object *&object) override;
 
-    void Optimize() override;
+    void optimize() override;
 
 };
 

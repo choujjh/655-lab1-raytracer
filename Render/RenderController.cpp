@@ -39,10 +39,14 @@ RenderController::RenderController(ImageFileManager *file, const Scene &currScen
 void RenderController::render() {
     /**initialize rays**/
     initializeRays();
+    /**optimize scene**/
+    currScene.getObjTracker()->optimize();
     /**get image color**/
 //    for(int row = 0; row < currScene.getRenderCam()->getHeight(); ++row){
 //        renderRow(row);
+//        cout << row << endl;
 //    }
+//    return;
     int numCores = std::thread::hardware_concurrency();
     int activeCores = 0;
     vector<std::thread> threadList;

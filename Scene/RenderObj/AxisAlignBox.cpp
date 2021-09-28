@@ -36,8 +36,12 @@ Vec3 AxisAlignBox::intersect(Ray ray) {
         if(t2 < tFar) tFar = t2;
         if(tNear > tFar || tFar < 0) return infiniteVec3();
     }
+    if(ray.point.x < maxVals.x && ray.point.x > minVals.x &&
+       ray.point.y < maxVals.y && ray.point.y > minVals.y &&
+       ray.point.z < maxVals.z && ray.point.z > minVals.z){
+        return ray.direction * tFar + ray.point;
+    }
     return ray.direction * tNear + ray.point;
-    return infiniteVec3();
 }
 bool AxisAlignBox::calcAxisT(double point, double direction, double min, double max, double& t1, double& t2){
     if(direction == 0){
@@ -51,7 +55,6 @@ bool AxisAlignBox::calcAxisT(double point, double direction, double min, double 
 }
 
 Vec3 AxisAlignBox::normal(Vec3 point) {
-    //TODO:get normal calculations
     Vec3 normal = Vec3(minVals.x - maxVals.x, 0, 0);
     double min = fabs(point.x - minVals.x);
     if(fabs(point.x - maxVals.x) < min){
@@ -76,6 +79,27 @@ Vec3 AxisAlignBox::normal(Vec3 point) {
     return normal.normalize();
 }
 
-AxisAlignBox::AxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3 &minVals) : Object(objMat),
-                                                                                             maxVals(maxVals),
-                                                                                             minVals(minVals) {}
+AxisAlignBox::AxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3 &minVals) : Object(objMat) {
+
+    double tempMinValX = minVals.x;
+    double tempMaxValX = maxVals.x;
+    double tempMinValY = minVals.y;
+    double tempMaxValY = maxVals.y;
+    double tempMinValZ = minVals.z;
+    double tempMaxValZ = maxVals.z;
+    if (maxVals.x < minVals.x){
+        tempMinValX = maxVals.x;
+        tempMaxValX = minVals.x;
+    }
+    if (maxVals.y < minVals.y){
+        tempMinValY = maxVals.y;
+        tempMaxValY = minVals.y;
+    }
+    if (maxVals.z < minVals.z){
+        tempMinValZ = maxVals.z;
+        tempMaxValZ = minVals.z;
+    }
+
+    this->maxVals = Vec3(tempMaxValX, tempMaxValY, tempMaxValZ);
+    this->minVals = Vec3(tempMinValX, tempMinValY, tempMinValZ);
+}

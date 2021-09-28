@@ -11,6 +11,29 @@ Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec
         : Plane(objMat, Vec3(), 0), a(a), b(b), c(c) {
     n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
     d = n.dot(a);
+
+    double maxX = findMaxVal(a.x, b.x, c.x);
+    double maxY = findMaxVal(a.y, b.y, c.y);
+    double maxZ = findMaxVal(a.z, b.z, c.z);
+
+    double minX = findMinVal(a.x, b.x, c.x);
+    double minY = findMinVal(a.y, b.y, c.y);
+    double minZ = findMinVal(a.z, b.z, c.z);
+    maxVals = Vec3(maxX, maxY, maxZ);
+    minVals = Vec3(minX, minY, minZ);
+
+}
+double Triangle::findMaxVal(double a, double b, double c) {
+    double currMax = a;
+    if(currMax < b) currMax = b;
+    if(currMax < c) currMax = c;
+    return currMax;
+}
+double Triangle::findMinVal(double a, double b, double c) {
+    double currMin = a;
+    if(currMin > b) currMin = b;
+    if(currMin > c) currMin = c;
+    return currMin;
 }
 
 Vec3 Triangle::intersect(Ray ray) {
