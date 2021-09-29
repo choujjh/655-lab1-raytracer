@@ -16,10 +16,6 @@ include_directories(Scene/Materials)
 include_directories(Scene/RenderObj)
 
 add_executable(655_lab1_raytracer
-        Model/File/Writer/ImageFileWriter.cpp
-        Model/File/Writer/ImageFileWriter.h
-        Model/File/Writer/PPMFileReader.cpp
-        Model/File/Writer/PPMFileReader.h
         Model/MaterialComponent/MatComponent.cpp
         Model/MaterialComponent/MatComponent.h
         Model/MaterialComponent/MatCompSolid.cpp
@@ -73,4 +69,14 @@ add_executable(655_lab1_raytracer
         Render/IntersectMethods/IntersectTreeNode.cpp
         Render/IntersectMethods/IntersectTreeNode.h
         Render/IntersectMethods/MediumSplit.cpp
-        Render/IntersectMethods/MediumSplit.h)
+        Render/IntersectMethods/MediumSplit.h
+        Model/File/Writer/WriteImageStrategy.cpp
+        Model/File/Writer/WriteImageStrategy.h
+        Model/File/Writer/PPMFileWriter.cpp
+        Model/File/Writer/PPMFileWriter.h
+        Model/File/ImageFile.cpp
+        Model/File/ImageFile.h
+        Model/File/Reader/ReadImageStrategy.cpp
+        Model/File/Reader/ReadImageStrategy.h
+        Model/File/Reader/PPMFileReader.cpp
+        Model/File/Reader/PPMFileReader.h)

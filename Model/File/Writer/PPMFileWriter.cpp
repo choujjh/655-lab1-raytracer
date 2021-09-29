@@ -3,9 +3,9 @@
 //
 
 
-#include "PPMFileReader.h"
+#include "PPMFileWriter.h"
 
-void PPMFileReader::writeToFileInt(int maxVal){
+void PPMFileWriter::writeToFile(Vec3** image, int maxVal){
     ofstream out;
     out.open(fileName);
 
@@ -22,5 +22,5 @@ void PPMFileReader::writeToFileInt(int maxVal){
 
 }
 
-PPMFileReader::PPMFileReader(const string &fileName, unsigned int height, unsigned int width) : ImageFileWriter(
+PPMFileWriter::PPMFileWriter(const string &fileName, unsigned int height, unsigned int width) : WriteImageStrategy(
         fileName, height, width) {}

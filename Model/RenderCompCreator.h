@@ -20,8 +20,8 @@
 #include "../Scene/RenderObj/Light/AmbientLight.h"
 #include "../Scene/RenderObj/Light/DirectionLight.h"
 #include "../Scene/RenderObj/Light/PointLight.h"
-#include "File/Writer/ImageFileWriter.h"
-#include "File/Writer/PPMFileReader.h"
+#include "File/ImageFile.h"
+#include "File/Writer/PPMFileWriter.h"
 #include "../Render/Integrator.h"
 #include "../Render/Phong.h"
 
@@ -31,7 +31,7 @@ class RenderCompCreator {
 private:
     vector<MatComponent<double>*> matCompDoubles;
     vector<MatComponent<Vec3>*> matCompVec3;
-    vector<ImageFileWriter*> fileManagers;
+    vector<ImageFile*> fileManagers;
     vector<Integrator*> integrators;
     vector<ObjTracker*> objTracker;
     vector<BaseMaterial*> materials;
@@ -101,8 +101,8 @@ public:
         return tempMaterial;
     }
 
-    ImageFileWriter* makePPMFileManager(const string &fileName, unsigned int height, unsigned int width){
-        ImageFileWriter* tempManager = new PPMFileReader(fileName, height, width);
+    ImageFile* makeImageFile(unsigned int height, unsigned int width){
+        ImageFile* tempManager = new ImageFile(height, width);
         fileManagers.push_back(tempManager);
         return tempManager;
     }

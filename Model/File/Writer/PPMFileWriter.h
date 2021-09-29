@@ -9,17 +9,18 @@
 #include <cmath>
 #include <fstream>
 
-#include "ImageFileWriter.h"
+#include "ImageFile.h"
 
 using std::ofstream;
 using std::endl;
 
-class PPMFileReader: public ImageFileWriter{
+class PPMFileWriter: public WriteImageStrategy{
 
 public:
-    PPMFileReader(const string &fileName, unsigned int height, unsigned int width);
+    PPMFileWriter(const string &fileName, unsigned int height, unsigned int width);
 
-    void writeToFileInt(int maxVal) override;
+public:
+    void writeToFile(Vec3** image, int maxVal) override;
 
 };
 

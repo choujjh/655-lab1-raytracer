@@ -99,12 +99,12 @@ void diffuse(string outFile){
 
 
     /**File**/
-    ImageFileWriter* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
+    ImageFile* imageFile = sceneComp.makeImageFile(renderCam->getHeight(), renderCam->getWidth());
 
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 1, 1);
+    RenderController controller(imageFile, currScene, sceneComp.makePhongIntegrator(&currScene), 1, 1);
     controller.render();
-    fManager->writeToFileInt();
+    imageFile->writeToFile(outFile, WRITE_PPM);
 
     delete renderCam;
 }
@@ -199,11 +199,11 @@ void fun(string outFile){
     currScene.addObject(sceneComp.makeAmbientLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.1, 0.1, 0.1))));
 
     /**File**/
-    ImageFileWriter* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
+    ImageFile* imageFile = sceneComp.makeImageFile(renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 2, 7);
+    RenderController controller(imageFile, currScene, sceneComp.makePhongIntegrator(&currScene), 2, 7);
     controller.render();
-    fManager->writeToFileInt();
+    imageFile->writeToFile(outFile, WRITE_PPM);
 
     delete renderCam;
 }
@@ -220,8 +220,8 @@ void reflection(string outFile){
 
     /**setting up Scene**/
     Vec3 backColor(0.1, 0.8, 0.8);
-    Scene currScene(renderCam, backColor, sceneComp.makeMediumSplitTracker(6, 3));
-//    Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
+//    Scene currScene(renderCam, backColor, sceneComp.makeMediumSplitTracker(6, 3));
+    Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
 
     /**setting up objects**/
@@ -272,8 +272,6 @@ void reflection(string outFile){
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(Vec3()));
-    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(0, 0.35, 0.5), 0.3));
-//    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(0.7, 0.35, 0), 0.2));
 
 
     currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(2, 2, 2)), Vec3(-2.3, 2.35, 0.5), 0.7));
@@ -282,34 +280,37 @@ void reflection(string outFile){
     /**lights**/
 
     /**File**/
-    ImageFileWriter* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
+    ImageFile* imageFile = sceneComp.makeImageFile(renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 300, 7);
+    RenderController controller(imageFile, currScene, sceneComp.makePhongIntegrator(&currScene), 1, 7);
     controller.render();
-    fManager->writeToFileInt();
+    imageFile->writeToFile(outFile, WRITE_PPM);
 
     delete renderCam;
 }
 int main() {
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
+//    using std::chrono::high_resolution_clock;
+//    using std::chrono::duration_cast;
+//    using std::chrono::duration;
+//    using std::chrono::milliseconds;
+////
+//    auto t1 = std::chrono::high_resolution_clock::now();
+////    diffuse("diffuse.ppm");
+//    auto t2 = std::chrono::high_resolution_clock::now();
+////    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
 //
-    auto t1 = std::chrono::high_resolution_clock::now();
-//    diffuse("diffuse.ppm");
-    auto t2 = std::chrono::high_resolution_clock::now();
-//    std::cout << "diffuse took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << std::endl;
-
-    t1 = std::chrono::high_resolution_clock::now();
-    reflection("reflection.ppm");
-    t2 = std::chrono::high_resolution_clock::now();
-    std::cout << "reflection took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
+//    t1 = std::chrono::high_resolution_clock::now();
+//    reflection("reflection.ppm");
+//    t2 = std::chrono::high_resolution_clock::now();
+//    std::cout << "reflection took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
 //    t1 = std::chrono::high_resolution_clock::now();
 //    fun("personal.ppm");
 //    t2 = std::chrono::high_resolution_clock::now();
 //    std::cout << "personal took " << duration_cast<milliseconds>(t2 - t1).count() / 1000.0 << " seconds" << endl;
 
+    ImageFile file;
+    file.openFile("reflection.ppm");
+    file.writeToFile("1.ppm", WRITE_PPM);
     return 0;
 }
