@@ -20,6 +20,7 @@ public:
     virtual Vec3 normal(Vec3 point) = 0;
 
     virtual Vec3 shadowRay(Vec3 point, Vec3 objectNormal) = 0;
+    void getUV(Vec3 point, double& u, double& v) override;
 
     bool isLight() override;
 

@@ -103,3 +103,7 @@ AxisAlignBox::AxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3
     this->maxVals = Vec3(tempMaxValX, tempMaxValY, tempMaxValZ);
     this->minVals = Vec3(tempMinValX, tempMinValY, tempMinValZ);
 }
+
+void AxisAlignBox::getUV(Vec3 point, double& u, double& v) {
+
+}

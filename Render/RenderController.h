@@ -11,7 +11,7 @@
 #include "../Scene/RenderObj/Object.h"
 #include "../Scene/RenderObj/Light/Light.h"
 #include "../Scene/Scene.h"
-#include "../Model/File/ImageFileManager.h"
+#include "File/Writer/ImageFileWriter.h"
 #include "Integrator.h"
 #include "../Model/Vec/CoordinateSpace.h"
 
@@ -25,7 +25,7 @@ private:
     //vector of rays
 
     vector<vector<Ray>> rays;
-    ImageFileManager* file;
+    ImageFileWriter* file;
     Scene currScene;
     Integrator* integrator;
     int samples;
@@ -37,7 +37,7 @@ private:
     Vec3 calcPixel(int row, int col);
     Vec3 getColor(Ray ray);
 public:
-    RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator, int samples,
+    RenderController(ImageFileWriter *file, const Scene &currScene, Integrator* integrator, int samples,
                      int levReflectRecursion);
     void renderRow(int row);
     void render();

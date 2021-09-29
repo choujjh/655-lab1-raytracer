@@ -99,7 +99,7 @@ void diffuse(string outFile){
 
 
     /**File**/
-    ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
+    ImageFileWriter* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
 
     RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 1, 1);
@@ -199,7 +199,7 @@ void fun(string outFile){
     currScene.addObject(sceneComp.makeAmbientLight(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.1, 0.1, 0.1))));
 
     /**File**/
-    ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
+    ImageFileWriter* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
     RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 2, 7);
     controller.render();
@@ -213,15 +213,15 @@ void reflection(string outFile){
 
     /**setting up camera**/
     Vec3 cameraLookAt(0, 0.15, 0.0);
-    Vec3 cameraLookFrom(0, 1, 2.7);
+    Vec3 cameraLookFrom(0, 1.5, 1.7);
     Vec3 up(0, 1, 0);
     double fov = 40.0;
     Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
 
     /**setting up Scene**/
     Vec3 backColor(0.1, 0.8, 0.8);
-//    Scene currScene(renderCam, backColor, sceneComp.makeMediumSplitTracker(6, 3));
-    Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
+    Scene currScene(renderCam, backColor, sceneComp.makeMediumSplitTracker(6, 3));
+//    Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
 
     /**setting up objects**/
@@ -272,19 +272,19 @@ void reflection(string outFile){
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(1, 1, 1),
                       sceneComp.makeMatSolidV3(Vec3()));
-    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(1.3, 0.35, 0), 0.3));
-    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(0.7, 0.35, 0), 0.2));
+    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(0, 0.35, 0.5), 0.3));
+//    currScene.addObject(sceneComp.makeSphere(&Mat1, Vec3(0.7, 0.35, 0), 0.2));
 
 
-    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(2, 2, 2)), Vec3(-1.3, 0.35, 0), 0.3));
+    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(2, 2, 2)), Vec3(-2.3, 2.35, 0.5), 0.7));
     currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.3, 0.3, 0.3)), Vec3(0, 0, 0), 3000));
 
     /**lights**/
 
     /**File**/
-    ImageFileManager* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
+    ImageFileWriter* fManager = sceneComp.makePPMFileManager(outFile, renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 100, 7);
+    RenderController controller(fManager, currScene, sceneComp.makePhongIntegrator(&currScene), 300, 7);
     controller.render();
     fManager->writeToFileInt();
 

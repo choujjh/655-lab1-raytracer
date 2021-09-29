@@ -9,15 +9,15 @@
 #include <cmath>
 #include <fstream>
 
-#include "ImageFileManager.h"
+#include "ImageFileWriter.h"
 
 using std::ofstream;
 using std::endl;
 
-class PPMFileManager: public ImageFileManager{
+class PPMFileReader: public ImageFileWriter{
 
 public:
-    PPMFileManager(const string &fileName, unsigned int height, unsigned int width);
+    PPMFileReader(const string &fileName, unsigned int height, unsigned int width);
 
     void writeToFileInt(int maxVal) override;
 

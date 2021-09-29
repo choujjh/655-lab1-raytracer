@@ -16,7 +16,7 @@ using std::endl;
 using std::cout;
 using std::endl;
 
-RenderController::RenderController(ImageFileManager *file, const Scene &currScene, Integrator* integrator,
+RenderController::RenderController(ImageFileWriter *file, const Scene &currScene, Integrator* integrator,
                                    int samples, int levReflectRecursion) :
                                    file(file),
                                    currScene(currScene),

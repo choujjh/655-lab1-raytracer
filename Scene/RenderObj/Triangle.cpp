@@ -59,4 +59,9 @@ Vec3 Triangle::shadowRay(Vec3 point, Vec3 objectNormal) {
     Vec3 bPrime = RenderOps().randomPointBetweenPoints(a, c);
     return (RenderOps().randomPointBetweenPoints(aPrime, bPrime) - point).normalize();
 }
+void Triangle::getUV(Vec3 point, double& u, double& v) {
+    //TODO: implement triangle
+    u = 0.0;
+    v = 0.0;
+}
 

@@ -16,10 +16,10 @@ include_directories(Scene/Materials)
 include_directories(Scene/RenderObj)
 
 add_executable(655_lab1_raytracer
-        Model/File/ImageFileManager.cpp
-        Model/File/ImageFileManager.h
-        Model/File/PPMFileManager.cpp
-        Model/File/PPMFileManager.h
+        Model/File/Writer/ImageFileWriter.cpp
+        Model/File/Writer/ImageFileWriter.h
+        Model/File/Writer/PPMFileReader.cpp
+        Model/File/Writer/PPMFileReader.h
         Model/MaterialComponent/MatComponent.cpp
         Model/MaterialComponent/MatComponent.h
         Model/MaterialComponent/MatCompSolid.cpp
@@ -66,4 +66,11 @@ add_executable(655_lab1_raytracer
         Scene/Cam.h
         Scene/Scene.cpp
         Scene/Scene.h
-        main.cpp Render/IntersectMethods/BruteForce.cpp Render/IntersectMethods/BruteForce.h Scene/RenderObj/AxisAlignBox.cpp Scene/RenderObj/AxisAlignBox.h Render/IntersectMethods/IntersectTreeNode.cpp Render/IntersectMethods/IntersectTreeNode.h Render/IntersectMethods/MediumSplit.cpp Render/IntersectMethods/MediumSplit.h)
+        main.cpp Render/IntersectMethods/BruteForce.cpp
+        Render/IntersectMethods/BruteForce.h
+        Scene/RenderObj/AxisAlignBox.cpp
+        Scene/RenderObj/AxisAlignBox.h
+        Render/IntersectMethods/IntersectTreeNode.cpp
+        Render/IntersectMethods/IntersectTreeNode.h
+        Render/IntersectMethods/MediumSplit.cpp
+        Render/IntersectMethods/MediumSplit.h)

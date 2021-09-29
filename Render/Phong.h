@@ -15,12 +15,12 @@ public:
 private:
     Vec3 radiance(Ray ray, int depth, int levReflectRecursion, int sampleDensity) override;
 
-    Vec3 calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, double normalScalar);
+    Vec3 calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, double normalScalar, double u , double v);
 
-    Vec3 calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
-    Vec3 calcSpec(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
-    Vec3 calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
-    Vec3 calcAmbient(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar);
+    Vec3 calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, double u, double v);
+    Vec3 calcSpec(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, double u, double v);
+    Vec3 calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, double u, double v);
+    Vec3 calcAmbient(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, double u, double v);
 };
 
 

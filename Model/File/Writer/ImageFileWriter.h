@@ -6,12 +6,12 @@
 #define RAYTRACER_IMAGEFILEMANAGER_H
 
 
-#include "../Vec/Vec3.h"
+#include "Vec/Vec3.h"
 #include <string>
 
 using std::string;
 
-class ImageFileManager {
+class ImageFileWriter {
 private:
 protected:
 
@@ -24,7 +24,7 @@ public:
     void virtual writeToFileInt(int maxVal) = 0;
     void virtual writeToFileInt();
 
-    ImageFileManager(const string &fileName, unsigned int height, unsigned int width);
+    ImageFileWriter(const string &fileName, unsigned int height, unsigned int width);
 
     const string &getFileName() const;
 
@@ -34,7 +34,7 @@ public:
 
     void setImage(Vec3 **image);
 
-    ~ImageFileManager();
+    ~ImageFileWriter();
 
 
 };

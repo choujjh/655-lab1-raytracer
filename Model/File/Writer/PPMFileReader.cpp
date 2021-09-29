@@ -3,9 +3,9 @@
 //
 
 
-#include "PPMFileManager.h"
+#include "PPMFileReader.h"
 
-void PPMFileManager::writeToFileInt(int maxVal){
+void PPMFileReader::writeToFileInt(int maxVal){
     ofstream out;
     out.open(fileName);
 
@@ -22,5 +22,5 @@ void PPMFileManager::writeToFileInt(int maxVal){
 
 }
 
-PPMFileManager::PPMFileManager(const string &fileName, unsigned int height, unsigned int width) : ImageFileManager(
+PPMFileReader::PPMFileReader(const string &fileName, unsigned int height, unsigned int width) : ImageFileWriter(
         fileName, height, width) {}

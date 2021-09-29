@@ -18,6 +18,8 @@ public:
     Vec3 intersect(Ray ray) override;
 
     Vec3 normal(Vec3 point) override;
+
+    void getUV(Vec3 point, double& u, double& v) override;
 };
 
 

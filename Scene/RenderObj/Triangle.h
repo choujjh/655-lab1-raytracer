@@ -24,6 +24,7 @@ public:
     Vec3 normal(Vec3 point) override;
 
     Vec3 shadowRay(Vec3 point, Vec3 objectNormal) override;
+    void getUV(Vec3 point, double& u, double& v) override;
 };
 
 
