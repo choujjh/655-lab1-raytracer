@@ -9,8 +9,11 @@
  * different illumination model
  * path tracing
  * kd trees
+ * salmon goldsmith algorithm
  * sampling from sphere instead of circle (sphere inside)
  * refactoring material code
+ * ppm file reader (faster)
+ * how to do is light for uv mapped things
  * */
 
 using std::string;
