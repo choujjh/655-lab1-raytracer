@@ -53,14 +53,14 @@ Vec3 MediumSplit::traverseTree(Ray currRay, bool closest, Object *&object, Inter
 void MediumSplit::optimize() {
     Vec3 max(NEG_INFINITY, NEG_INFINITY, NEG_INFINITY);
     Vec3 min(VAL_INFINITY, VAL_INFINITY, VAL_INFINITY);
-    for(int i = 0; i < objList.size(); ++i){
-        if(max.x < objList.at(i)->maxVals.x) max.x = objList.at(i)->maxVals.x;
-        if(max.y < objList.at(i)->maxVals.y) max.y = objList.at(i)->maxVals.y;
-        if(max.z < objList.at(i)->maxVals.z) max.z = objList.at(i)->maxVals.z;
+    for(int i = 0; i < masterObjList.size(); ++i){
+        if(max.x < masterObjList.at(i)->maxVals.x) max.x = masterObjList.at(i)->maxVals.x;
+        if(max.y < masterObjList.at(i)->maxVals.y) max.y = masterObjList.at(i)->maxVals.y;
+        if(max.z < masterObjList.at(i)->maxVals.z) max.z = masterObjList.at(i)->maxVals.z;
 
-        if(min.x > objList.at(i)->minVals.x) min.x = objList.at(i)->minVals.x;
-        if(min.y > objList.at(i)->minVals.y) min.y = objList.at(i)->minVals.y;
-        if(min.z > objList.at(i)->minVals.z) min.z = objList.at(i)->minVals.z;
+        if(min.x > masterObjList.at(i)->minVals.x) min.x = masterObjList.at(i)->minVals.x;
+        if(min.y > masterObjList.at(i)->minVals.y) min.y = masterObjList.at(i)->minVals.y;
+        if(min.z > masterObjList.at(i)->minVals.z) min.z = masterObjList.at(i)->minVals.z;
     }
     max.calcMagnitude();
     min.calcMagnitude();
@@ -82,7 +82,7 @@ void MediumSplit::optimize() {
         axisOrder.at(i) = saveIndex;
         axisSort.at(saveIndex) = NEG_INFINITY;
     }
-    root = generateTree(0, objList, min, max, axisOrder);
+    root = generateTree(0, masterObjList, min, max, axisOrder);
 }
 
 MediumSplit::~MediumSplit() {

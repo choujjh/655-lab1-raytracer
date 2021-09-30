@@ -5,18 +5,18 @@
 #include "ObjTracker.h"
 
 void ObjTracker::addObject(Object *object) {
-    objList.push_back(object);
+    masterObjList.push_back(object);
     if(object->isLight()){
         lightList.push_back(object);
     }
 }
 
-const vector<Object *> &ObjTracker::getObjList() const {
-    return objList;
+const vector<Object *> &ObjTracker::getMasterObjList() const {
+    return masterObjList;
 }
 
-void ObjTracker::setObjList(const vector<Object *> &objList) {
-    ObjTracker::objList = objList;
+void ObjTracker::setMasterObjList(const vector<Object *> &objList) {
+    ObjTracker::masterObjList = objList;
 }
 
 vector<Object*> ObjTracker::getLightList() {

@@ -10,7 +10,7 @@
 
 class ObjTracker {
 protected:
-    vector<Object*> objList;
+    vector<Object*> masterObjList;
     vector<Object*> lightList;
 public:
     ObjTracker();
@@ -22,9 +22,9 @@ public:
     vector<Object*> getLightList();
     void setLightList(const vector<Object*> &lightList);
 
-    const vector<Object *> &getObjList() const;
+    const vector<Object *> &getMasterObjList() const;
 
-    void setObjList(const vector<Object *> &objList);
+    void setMasterObjList(const vector<Object *> &objList);
 };
 
 

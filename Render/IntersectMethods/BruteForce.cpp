@@ -5,19 +5,19 @@
 #include "BruteForce.h"
 
 Vec3 BruteForce::getIntersect(Ray currRay, bool closest, Object *&object) {
-    Vec3 minInterVec = objList.at(0)->intersect(currRay);
+    Vec3 minInterVec = masterObjList.at(0)->intersect(currRay);
     if(minInterVec.getMagnitude() < VAL_INFINITY && minInterVec.getMagnitude() > NEG_INFINITY){
-        object = objList.at(0);
+        object = masterObjList.at(0);
     }
-    for(int i = 1; i < objList.size(); ++i){
-        Vec3 interPoint = objList.at(i)->intersect(currRay);
+    for(int i = 1; i < masterObjList.size(); ++i){
+        Vec3 interPoint = masterObjList.at(i)->intersect(currRay);
         if (!closest && interPoint.getMagnitude() != VAL_INFINITY && interPoint.getMagnitude() != NEG_INFINITY) {
-            object = objList.at(i);
+            object = masterObjList.at(i);
             return interPoint;
         }
         if ((interPoint - currRay.point).getMagnitude() < (minInterVec - currRay.point).getMagnitude()) {
             minInterVec = interPoint;
-            object = objList.at(i);
+            object = masterObjList.at(i);
         }
     }
     return minInterVec;
