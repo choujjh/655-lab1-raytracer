@@ -6,10 +6,11 @@
 #define RAYTRACER_CLASSCREATOR_H
 
 #include <vector>
-#include <IntersectMethods/BruteForce.h>
-#include <MediumSplit.h>
+#include "../Render/IntersectMethods/MediumSplit.h"
+#include "../Render/IntersectMethods/BruteForce.h"
 #include "MaterialComponent/MatComponent.h"
 #include "MaterialComponent/MatCompSolid.h"
+#include "MaterialComponent/MatCompFileVec3.h"
 
 #include "../Scene/RenderObj/Object.h"
 #include "../Scene/RenderObj/Triangle.h"
@@ -44,17 +45,22 @@ public:
     ~RenderCompCreator();
 
     MatComponent<double>* makeMatSolidD(double val){
-        MatCompSolid<double>* t = new MatCompSolid<double>(val);// = new MatCompSolid<double>(val);
+        MatComponent<double>* t = new MatCompSolid<double>(val);// = new MatCompSolid<double>(val);
         matCompDoubles.push_back(t);
         return t;
     }
     MatComponent<Vec3>* makeMatSolidV3(double r, double g, double b){
-        MatCompSolid<Vec3>* tempMatComp = new MatCompSolid<Vec3>(Vec3(r, g, b));
+        MatComponent<Vec3>* tempMatComp = new MatCompSolid<Vec3>(Vec3(r, g, b));
         matCompVec3.push_back(tempMatComp);
         return tempMatComp;
     }
     MatComponent<Vec3>* makeMatSolidV3(const Vec3 &vec){
-        MatCompSolid<Vec3>* tempMatComp = new MatCompSolid<Vec3>(vec);
+        MatComponent<Vec3>* tempMatComp = new MatCompSolid<Vec3>(vec);
+        matCompVec3.push_back(tempMatComp);
+        return tempMatComp;
+    }
+    MatComponent<Vec3>* makeMatFileV3(string file){
+        MatComponent<Vec3>* tempMatComp = new MatCompFileVec3(file);
         matCompVec3.push_back(tempMatComp);
         return tempMatComp;
     }

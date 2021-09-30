@@ -46,6 +46,7 @@ void ImageFile::openFile(string imageFile) {
         read = new PPMFileReader();
         image = read->readImage(imageFile, height, width);
     }
+    delete read;
 
 }
 
@@ -73,4 +74,12 @@ void ImageFile::deleteImage(){
     }
     delete image;
     image = nullptr;
+}
+
+unsigned int ImageFile::getHeight() const {
+    return height;
+}
+
+unsigned int ImageFile::getWidth() const {
+    return width;
 }

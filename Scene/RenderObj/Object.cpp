@@ -18,7 +18,7 @@ Vec3 Object::infiniteVec3() {
     return Object::intersect(Ray());
 }
 bool Object::isLight() {
-    if(material->colorEmission->getColor().getMagnitude() > 0){
+    if(material->colorEmission->getColor(0, 0).getMagnitude() > 0){
         return true;
     }
     return false;

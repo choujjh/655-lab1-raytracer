@@ -15,7 +15,7 @@ class RenderOps {
 public:
     Vec3 reflectionDirection(Vec3 normal, Vec3 initDir);
     double max(double a, double b);
-    Ray calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject);
+    Ray calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject, double u, double v);
     double calcFresnelReflectAmount(double iorLeft, double iorEntered, Vec3 normal, Vec3 incident);
     CoordinateSpace makeCoordinateSystem(Vec3 direction, Vec3 normal);
     double randFloatValue(double min = 0.0, double max = 1.0);

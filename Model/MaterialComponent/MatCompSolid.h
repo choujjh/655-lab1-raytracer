@@ -14,7 +14,6 @@ public:
     T getColor(double u, double v) override {
         return val;
     }
-
     T getColor() override {
         return val;
     }

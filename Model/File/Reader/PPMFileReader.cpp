@@ -23,24 +23,42 @@ Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned 
     int maxColor;
     Vec3** image = nullptr;
     ppmFile >> tempString;
-    ppmFile >> width;
-    ppmFile >> height;
-    ppmFile >> maxColor;
+    ppmFile.ignore();
+    width = getNextNumber(ppmFile);
+    height = getNextNumber(ppmFile);
+    maxColor = getNextNumber(ppmFile);
     image = new Vec3*[height];
     for(int i = 0; i < height; ++i){
         image[i] = new Vec3[width];
     }
     for(int row = 0; row < height; ++row){
         for(int col = 0; col < width; ++col){
-            int temp;
-            ppmFile >> temp;
-            image[row][col].x = static_cast<double>(temp)/maxColor;
-            ppmFile >> temp;
-            image[row][col].y = static_cast<double>(temp)/maxColor;
-            ppmFile >> temp;
-            image[row][col].z = static_cast<double>(temp)/maxColor;
+            double temp;
+            temp = getNextNumber(ppmFile);
+            image[row][col].x = temp/maxColor;
+            temp = getNextNumber(ppmFile);
+            image[row][col].y = temp/maxColor;
+            temp = getNextNumber(ppmFile);
+            image[row][col].z = temp/maxColor;
+            cout << row << " " << col << ": " << image[row][col].x << " " << image[row][col].y << " " << image[row][col].z << endl;
         }
     }
     ppmFile.close();
     return image;
+}
+double PPMFileReader::getNextNumber(ifstream& in){
+    string tempString;
+    while(!in.eof()){
+        in >> tempString;
+        in.ignore();
+        if(isdigit(tempString.at(0))){
+            return atof(tempString.c_str());
+        }
+        cout << tempString << endl;
+        if(tempString.at(0) == '#'){
+            getline(in, tempString);
+            cout << tempString << endl;
+        }
+    }
+    return 0.0;
 }

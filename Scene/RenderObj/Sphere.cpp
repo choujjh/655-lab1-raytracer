@@ -4,7 +4,7 @@
 
 #include "Sphere.h"
 
-#include <cmath>
+#include <math.h>
 #include "../../Model/Ops/RenderOps.h"
 
 const Vec3 &Sphere::getCenter() const {
@@ -83,11 +83,20 @@ Vec3 Sphere::shadowRay(Vec3 point, Vec3 objectNormal) {
 
 void Sphere::getUV(Vec3 point, double &u, double &v) {
     Vec3 localVec = point - center;
-    if(localVec.x == 0.0 && localVec.y == 0.0){
+    if(localVec.x == 0 && localVec.z == 0){
         u = 0.0;
     }
     else{
-        u = atan(localVec.z/localVec.x) / (2 * M_PI);
+        double newZ = -1 * localVec.z;
+        if(localVec.x >= 0.0) {
+            //quadrant 1
+            u = (2 * M_PI + atan(newZ / localVec.x)) / (2 * M_PI);
+            u = fmod(u, 1.0);
+        }
+        else{
+            u = (M_PI + atan(newZ / localVec.x)) / (2 * M_PI);
+        }
+
     }
-    v = asin(localVec.y/radius) / M_PI;
+    v =  1.0 - ((asin(localVec.y/radius) + (M_PI/2)) / M_PI);
 }

@@ -41,6 +41,8 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     if(isInsideObject) normalScalar = -1.0;
     double opacity = intersectObject->material->opacity->getColor(u, v);
 
+//    return intersectObject->material->colorDiffuse->getColor(u, v);
+
     //surf color
     CoordinateSpace cs = RenderOps().makeCoordinateSystem(ray.direction, n * normalScalar);
     double offsetX = 0;//RenderOps().randFloatValue(-0.1, 0.1);
@@ -61,7 +63,7 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     if(opacity > 0) {
         offsetX = RenderOps().randFloatValue(-0.05, 0.05);
         offsetY = RenderOps().randFloatValue(-0.05, 0.05);
-        Ray transRay = RenderOps().calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject);
+        Ray transRay = RenderOps().calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject, u, v);
         transRay.direction = (transRay.direction + cs.up * offsetY + cs.right * offsetX).normalize();
         double iorLeft = 1.0;
         double iorEntered = intersectObject->material->IOR->getColor(u, v);

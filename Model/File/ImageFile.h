@@ -28,6 +28,11 @@ public:
     void openFile(string imageFile);
     ImageFile(unsigned int height, unsigned int width);
     ImageFile();
+
+    unsigned int getHeight() const;
+
+    unsigned int getWidth() const;
+
     Vec3 **getImage() const;
 
     ~ImageFile();

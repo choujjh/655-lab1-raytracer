@@ -6,8 +6,13 @@
 #define RAYTRACER_PPMFILEREADER_H
 
 #include "ReadImageStrategy.h"
+#include <istream>
+using std::ifstream;
 
 class PPMFileReader: public ReadImageStrategy {
+private:
+    double getNextNumber(ifstream& in);
+public:
     Vec3** readImage(string readFile, unsigned int& height, unsigned int& width) override;
 };
 
