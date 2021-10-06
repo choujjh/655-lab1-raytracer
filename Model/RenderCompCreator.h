@@ -70,6 +70,11 @@ public:
         objects.push_back(tempObject);
         return tempObject;
     }
+    Object* makeTriangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c, const Vec3 &aUv, const Vec3 &bUv, const Vec3 &cUv){
+        Object* tempObject = new Triangle(objMat, a, b, c, aUv, bUv, cUv);
+        objects.push_back(tempObject);
+        return tempObject;
+    }
     Object* makeSphere(BaseMaterial *objMat, const Vec3 &center, double radius){
         Object* tempObject = new Sphere(objMat, center, radius);
         objects.push_back(tempObject);

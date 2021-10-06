@@ -63,7 +63,7 @@ ImageFile::ImageFile(unsigned int height, unsigned int width) {
     }
 
 }
-ImageFile::ImageFile() : height(0), width(0) {}
+ImageFile::ImageFile() : height(0), width(0), image(nullptr) {}
 
 ImageFile::~ImageFile() {
     deleteImage();

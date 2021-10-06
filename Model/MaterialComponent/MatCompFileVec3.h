@@ -6,6 +6,7 @@
 #define INC_655_LAB1_RAYTRACER_MATCOMPFILEVEC3_H
 
 #include <Ops/RenderOps.h>
+#include <cmath>
 #include "File/ImageFile.h"
 #include "MatComponent.h"
 class MatCompFileVec3: public MatComponent<Vec3> {
@@ -18,22 +19,19 @@ public:
 
 public:
     Vec3 getColor(double u, double v) override {
-        unsigned int pixelRow = v == 1? imageFile.getHeight() - 1: v * imageFile.getHeight();
-        unsigned int pixelCol = u == 1? imageFile.getWidth() - 1: u * imageFile.getWidth();
-        if(u > 1.0){
-            return Vec3(RenderOps().randFloatValue(0.5, 1), 0, 0);
-        }
-        else if(u < 0.0){
-            return Vec3(RenderOps().randFloatValue(0, 0.5), 0, 0);
-        }
-        else if(v > 1.0){
-            return Vec3(0, RenderOps().randFloatValue(0.5, 1), 0);
-        }
-        else if(v < 0.0){
-            return Vec3(0, RenderOps().randFloatValue(0, 0.5), 0);
-        }
+        // getting tiling textures
+        if(u == 1.0) u = 0.999;
+        if(v == 1.0) v = 0.999;
+        u = fmod(u, 1.0);
+        v = fmod(v, 1.0);
+        if(u < 0.0) u = 1 + u;
+        if(v < 0.0) v = 1 + v;
+
+        unsigned int pixelRow = v * imageFile.getHeight();
+        unsigned int pixelCol = u * imageFile.getWidth();
+
         Vec3 var = imageFile.getImage()[pixelRow][pixelCol];
-        return var; Vec3(u, v, 0);
+        return var;
     }
     Vec3 getColor() override {
         return imageFile.getImage()[0][0];

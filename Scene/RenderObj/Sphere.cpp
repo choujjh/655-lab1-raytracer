@@ -98,5 +98,5 @@ void Sphere::getUV(Vec3 point, double &u, double &v) {
         }
 
     }
-    v =  1.0 - ((asin(localVec.y/radius) + (M_PI/2)) / M_PI);
+    v =  (asin(localVec.y/radius) + (M_PI/2)) / M_PI;
 }

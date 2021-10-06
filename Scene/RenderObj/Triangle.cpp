@@ -11,6 +11,9 @@ Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec
         : Plane(objMat, Vec3(), 0), a(a), b(b), c(c) {
     n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
     d = n.dot(a);
+    aUv = Vec3();
+    bUv = Vec3(1, 0, 0);
+    cUv = Vec3(0.5, 1, 0);
 
     double maxX = findMaxVal(a.x, b.x, c.x);
     double maxY = findMaxVal(a.y, b.y, c.y);
@@ -23,12 +26,36 @@ Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec
     minVals = Vec3(minX, minY, minZ);
 
 }
+Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c, const Vec3 &aUv, const Vec3 &bUv, const Vec3 &cUv) :
+        Plane(objMat, Vec3(), 0), a(a), b(b), c(c), aUv(aUv), bUv(bUv), cUv(cUv) {
+    n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
+    d = n.dot(a);
+
+    this->aUv.z = 0.0;
+    this->bUv.z = 0.0;
+    this->cUv.z = 0.0;
+
+    this->aUv.calcMagnitude();
+    this->bUv.calcMagnitude();
+    this->cUv.calcMagnitude();
+
+    double maxX = findMaxVal(a.x, b.x, c.x);
+    double maxY = findMaxVal(a.y, b.y, c.y);
+    double maxZ = findMaxVal(a.z, b.z, c.z);
+
+    double minX = findMinVal(a.x, b.x, c.x);
+    double minY = findMinVal(a.y, b.y, c.y);
+    double minZ = findMinVal(a.z, b.z, c.z);
+    maxVals = Vec3(maxX, maxY, maxZ);
+    minVals = Vec3(minX, minY, minZ);
+}
 double Triangle::findMaxVal(double a, double b, double c) {
     double currMax = a;
     if(currMax < b) currMax = b;
     if(currMax < c) currMax = c;
     return currMax;
 }
+
 double Triangle::findMinVal(double a, double b, double c) {
     double currMin = a;
     if(currMin > b) currMin = b;
@@ -53,15 +80,19 @@ Vec3 Triangle::intersect(Ray ray) {
 Vec3 Triangle::normal(Vec3 point) {
     return n;
 }
-
 Vec3 Triangle::shadowRay(Vec3 point, Vec3 objectNormal) {
     Vec3 aPrime = RenderOps().randomPointBetweenPoints(a, b);
     Vec3 bPrime = RenderOps().randomPointBetweenPoints(a, c);
     return (RenderOps().randomPointBetweenPoints(aPrime, bPrime) - point).normalize();
 }
+
 void Triangle::getUV(Vec3 point, double& u, double& v) {
-    //TODO: implement triangle
-    u = 0.0;
-    v = 0.0;
+    double triAreaMult2 = ((b-a).cross(c-a)).getMagnitude();
+    double triAMult2 = ((c-b).cross(point-b)).getMagnitude()/triAreaMult2;
+    double triBMult2 = ((a-c).cross(point-c)).getMagnitude()/triAreaMult2;
+    double triCMult2 = 1 - triAMult2 - triBMult2;
+    Vec3 uvw = aUv * triAMult2 + bUv * triBMult2 + cUv * triCMult2;
+    u = uvw.x;
+    v = uvw.y;
 }
 

@@ -31,7 +31,7 @@ Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned 
     for(int i = 0; i < height; ++i){
         image[i] = new Vec3[width];
     }
-    for(int row = 0; row < height; ++row){
+    for(int row = height - 1; row >= 0; --row){
         for(int col = 0; col < width; ++col){
             double temp;
             temp = getNextNumber(ppmFile);
@@ -40,7 +40,7 @@ Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned 
             image[row][col].y = temp/maxColor;
             temp = getNextNumber(ppmFile);
             image[row][col].z = temp/maxColor;
-            cout << row << " " << col << ": " << image[row][col].x << " " << image[row][col].y << " " << image[row][col].z << endl;
+//            cout << row << " " << col << ": " << image[row][col].x << " " << image[row][col].y << " " << image[row][col].z << endl;
         }
     }
     ppmFile.close();
