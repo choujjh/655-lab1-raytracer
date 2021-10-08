@@ -65,7 +65,7 @@ Vec3 Sphere::shadowRay(Vec3 point, Vec3 objectNormal) {
     double nx = RenderOps().randFloatValue();
     double ny = RenderOps().randFloatValue();
     if((point - center).getMagnitude() < radius){
-        double nz = (objectNormal.x * nx + objectNormal.y * ny)/objectNormal.z;
+        double nz = RenderOps().randFloatValue();
         CoordinateSpace cs = RenderOps().makeCoordinateSystem(objectNormal, Vec3(nx, ny, nz));
         return (cs.right * RenderOps().tentFloatRandGen(-1, 1) + cs.up * RenderOps().tentFloatRandGen(-1, 1) + cs.direction * RenderOps().randFloatValue(0, 1)).normalize();
     }

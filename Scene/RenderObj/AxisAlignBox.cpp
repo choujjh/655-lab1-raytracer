@@ -105,5 +105,6 @@ AxisAlignBox::AxisAlignBox(BaseMaterial *objMat, const Vec3 &maxVals, const Vec3
 }
 
 void AxisAlignBox::getUV(Vec3 point, double& u, double& v) {
-
+    u = 0;
+    v = 0;
 }
