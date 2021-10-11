@@ -13,13 +13,13 @@ double RenderOps::max(double a, double b) {
     return a > b ? a : b;
 }
 
-Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject, double u, double v){
+Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject, Vec2 objectUV){
     I.normalize();
     Vec3 n = intersectObject->normal(interVec).normalize();
     double normalScalar = isInsideObject ? -1: 1;
 
-    double nit = intersectObject->material->IOR->getColor(u, v);;
-    if(!isInsideObject) nit = 1 / intersectObject->material->IOR->getColor(u, v);
+    double nit = intersectObject->material->IOR->getColor(objectUV);
+    if(!isInsideObject) nit = 1 / intersectObject->material->IOR->getColor(objectUV);
 
     double theta = acos((I*-1).dot(n * normalScalar));
     Vec3 T = I*nit;

@@ -11,9 +11,9 @@ Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec
         : Plane(objMat, Vec3(), 0), a(a), b(b), c(c) {
     n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
     d = n.dot(a);
-    aUv = Vec3();
-    bUv = Vec3(1, 0, 0);
-    cUv = Vec3(0.5, 1, 0);
+    aUv = Vec2();
+    bUv = Vec2(1, 0);
+    cUv = Vec2(0.5, 1);
 
     double maxX = findMaxVal(a.x, b.x, c.x);
     double maxY = findMaxVal(a.y, b.y, c.y);
@@ -26,18 +26,10 @@ Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec
     minVals = Vec3(minX, minY, minZ);
 
 }
-Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c, const Vec3 &aUv, const Vec3 &bUv, const Vec3 &cUv) :
+Triangle::Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c, const Vec2 &aUv, const Vec2 &bUv, const Vec2 &cUv) :
         Plane(objMat, Vec3(), 0), a(a), b(b), c(c), aUv(aUv), bUv(bUv), cUv(cUv) {
     n = LinAlgOp().cross((this->b - this->a).normalize(), (this->c - this->a).normalize()).normalize();
     d = n.dot(a);
-
-    this->aUv.z = 0.0;
-    this->bUv.z = 0.0;
-    this->cUv.z = 0.0;
-
-    this->aUv.calcMagnitude();
-    this->bUv.calcMagnitude();
-    this->cUv.calcMagnitude();
 
     double maxX = findMaxVal(a.x, b.x, c.x);
     double maxY = findMaxVal(a.y, b.y, c.y);
@@ -86,13 +78,11 @@ Vec3 Triangle::shadowRay(Vec3 point, Vec3 objectNormal) {
     return (RenderOps().randomPointBetweenPoints(aPrime, bPrime) - point).normalize();
 }
 
-void Triangle::getUV(Vec3 point, double& u, double& v) {
+Vec2 Triangle::getUV(Vec3 point) {
     double triAreaMult2 = ((b-a).cross(c-a)).getMagnitude();
     double triAMult2 = ((c-b).cross(point-b)).getMagnitude()/triAreaMult2;
     double triBMult2 = ((a-c).cross(point-c)).getMagnitude()/triAreaMult2;
     double triCMult2 = 1 - triAMult2 - triBMult2;
-    Vec3 uvw = aUv * triAMult2 + bUv * triBMult2 + cUv * triCMult2;
-    u = uvw.x;
-    v = uvw.y;
+    return aUv * triAMult2 + bUv * triBMult2 + cUv * triCMult2;
 }
 

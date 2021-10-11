@@ -18,6 +18,10 @@ public:
         return val;
     }
 
+    T getColor(Vec2 uv) override {
+        return val;
+    }
+
     MatCompSolid(T val): val(val){}
 private:
     T val;

@@ -16,21 +16,21 @@ public:
     Vec3 a;
     Vec3 b;
     Vec3 c;
-    Vec3 aUv;
-    Vec3 bUv;
-    Vec3 cUv;
+    Vec2 aUv;
+    Vec2 bUv;
+    Vec2 cUv;
 
     Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c);
 
     Triangle(BaseMaterial *objMat, const Vec3 &a, const Vec3 &b, const Vec3 &c,
-             const Vec3 &aUv, const Vec3 &bUv, const Vec3 &cUv);
+             const Vec2 &aUv, const Vec2 &bUv, const Vec2 &cUv);
 
     Vec3 intersect(Ray ray) override;
 
     Vec3 normal(Vec3 point) override;
 
     Vec3 shadowRay(Vec3 point, Vec3 objectNormal) override;
-    void getUV(Vec3 point, double& u, double& v) override;
+    Vec2 getUV(Vec3 point) override;
 };
 
 

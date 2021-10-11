@@ -81,7 +81,8 @@ Vec3 Sphere::shadowRay(Vec3 point, Vec3 objectNormal) {
     return (randPoint - point).normalize();
 }
 
-void Sphere::getUV(Vec3 point, double &u, double &v) {
+Vec2 Sphere::getUV(Vec3 point) {
+    double u = 0, v = 0;
     Vec3 localVec = point - center;
     if(localVec.x == 0 && localVec.z == 0){
         u = 0.0;
@@ -98,4 +99,5 @@ void Sphere::getUV(Vec3 point, double &u, double &v) {
 
     }
     v =  (asin(localVec.y/radius) + (M_PI/2)) / M_PI;
+    return Vec2(u, v);
 }

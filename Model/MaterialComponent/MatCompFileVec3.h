@@ -36,6 +36,10 @@ public:
     Vec3 getColor() override {
         return imageFile.getImage()[0][0];
     }
+
+    Vec3 getColor(Vec2 uv) override {
+        return getColor(uv.u, uv.v);
+    }
 };
 
 

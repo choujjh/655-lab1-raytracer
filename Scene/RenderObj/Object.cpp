@@ -24,6 +24,6 @@ bool Object::isLight() {
     return false;
 }
 
-std::string Object::ToString(){
-    return "Object";
+int Object::ID() {
+    return ID_Object;
 }

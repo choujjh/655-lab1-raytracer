@@ -18,6 +18,6 @@ Vec3 AmbientLight::normal(Vec3 point) {
     return infiniteVec3();
 }
 
-string AmbientLight::ToString() {
-    return "Ambient Light";
+int AmbientLight::ID() {
+    return ID_Ambient_Light;
 }

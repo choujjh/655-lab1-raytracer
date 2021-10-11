@@ -19,7 +19,7 @@ public:
 
     Vec3 normal(Vec3 point) override;
 
-    string ToString() override;
+    int ID() override;
 };
 
 
