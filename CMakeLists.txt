@@ -81,4 +81,4 @@ add_executable(655_lab1_raytracer
         Model/File/Reader/PPMFileReader.cpp
         Model/File/Reader/PPMFileReader.h
         Model/MaterialComponent/MatCompFileVec3.cpp
-        Model/MaterialComponent/MatCompFileVec3.h)
+        Model/MaterialComponent/MatCompFileVec3.h Model/Vec/Vec2.cpp Model/Vec/Vec2.h)

@@ -235,7 +235,7 @@ void reflection(string outFile){
                           sceneComp.makeMatSolidD(4),
                           sceneComp.makeMatSolidD(1.5),
                           sceneComp.makeMatSolidD(0),
-                          sceneComp.makeMatFileV3("jedi.ppm"),
+                          sceneComp.makeMatFileV3("byu.ppm"),
 //                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
                           sceneComp.makeMatSolidV3(1, 1, 1.0),
                           sceneComp.makeMatSolidV3(Vec3()));
@@ -246,8 +246,8 @@ void reflection(string outFile){
     Vec3 aUv = Vec3(-0.2, 0, 0);
     Vec3 bUv = Vec3(1.2, 0, 0);
     Vec3 cUv = Vec3(0.5, 1.5, 0);
-    currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c, aUv, bUv, cUv));
-//    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.3));
+//    currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c, aUv, bUv, cUv));
+    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.3));
 
     BaseMaterial MBox1(sceneComp.makeMatSolidD(0.9),
                          sceneComp.makeMatSolidD(0.1),

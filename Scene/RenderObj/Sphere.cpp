@@ -89,7 +89,6 @@ void Sphere::getUV(Vec3 point, double &u, double &v) {
     else{
         double newZ = -1 * localVec.z;
         if(localVec.x >= 0.0) {
-            //quadrant 1
             u = (2 * M_PI + atan(newZ / localVec.x)) / (2 * M_PI);
             u = fmod(u, 1.0);
         }
