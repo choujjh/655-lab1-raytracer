@@ -6,15 +6,15 @@
 #include "Model/RenderCompCreator.h"
 
 /*TODO:
- * different illumination model
+ * refactoring material code
  * path tracing
+ * medium split to do width
  * kd trees
  * salmon goldsmith algorithm
- * sampling from sphere instead of circle (sphere inside)
- * refactoring material code
+ * sampling from sphere instead of circle (inside sphere), (outside sphere shadow)
  * ppm file reader (faster)
- * how to do is light for uv mapped things
- * Vec2 for uv coordinates
+ * obj parser
+ * scene parser
  * */
 
 using std::string;
