@@ -103,6 +103,7 @@ void RenderController::renderRow(int row){
     }
     auto t2 = std::chrono::high_resolution_clock::now();
     times.at(row) = duration_cast<milliseconds>(t2 - t1).count() / 1000.0;
+    cout << "finished row " << row << endl;
 }
 
 void RenderController::initializeRays(){

@@ -102,12 +102,11 @@ public:
         return tempLight;
     }
 
-    BaseMaterial* makeLightMaterial(MatComponent<Vec3>* color){
+    BaseMaterial* makeLightMaterial(MatComponent<Vec3>* color, MatComponent<Vec3>* gamma){
         MatComponent<Vec3>* tempVec3 = makeMatSolidV3(0, 0, 0);
         MatComponent<double>* tempDoub = makeMatSolidD(0.0);
         BaseMaterial* tempMaterial = new BaseMaterial(
-                tempDoub, tempDoub, tempDoub, tempDoub, tempDoub, tempDoub,
-                tempVec3, tempVec3, color);
+                tempVec3, tempVec3, color, gamma);
         materials.push_back(tempMaterial);
         return tempMaterial;
     }

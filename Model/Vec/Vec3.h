@@ -25,6 +25,7 @@ public:
 
     bool isNan();
     Vec3 normalize();
+    Vec3 normalizeSum();
     Vec3 clip(double min, double max);
 
     double getMagnitude() const;

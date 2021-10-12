@@ -28,6 +28,14 @@ bool Vec3::isNan(){
     }
     return false;
 }
+Vec3 Vec3::normalizeSum(){
+    double sum = x + y + z;
+    x /= sum;
+    y /= sum;
+    z /= sum;
+    calcMagnitude();
+    return *this;
+}
 Vec3 Vec3::normalize() {
     double length = getMagnitude();
     x /= length;
