@@ -235,19 +235,19 @@ void reflection(string outFile){
                           sceneComp.makeMatSolidD(4),
                           sceneComp.makeMatSolidD(1.5),
                           sceneComp.makeMatSolidD(0),
-                          sceneComp.makeMatFileV3("byu.ppm"),
-//                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
+//                          sceneComp.makeMatFileV3("1_test.ppm"),
+                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
                           sceneComp.makeMatSolidV3(1, 1, 1.0),
-                          sceneComp.makeMatSolidV3(Vec3()));
-//                          sceneComp.makeMatFileV3("jedi.ppm"));
+//                          sceneComp.makeMatSolidV3(Vec3()));
+                          sceneComp.makeMatFileV3("1_test.ppm"));
     Vec3 a = Vec3(-0.5, 0.05, 0.2);
     Vec3 b = Vec3(0.5, 0.05, 0.2);
     Vec3 c = Vec3(0, 0.6, -0.3);
-    Vec3 aUv = Vec3(-0.2, 0, 0);
-    Vec3 bUv = Vec3(1.2, 0, 0);
-    Vec3 cUv = Vec3(0.5, 1.5, 0);
-//    currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c, aUv, bUv, cUv));
-    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.3));
+    Vec2 aUv = Vec2(-0.2, 0);
+    Vec2 bUv = Vec2(1.2, 0);
+    Vec2 cUv = Vec2(0.5, 1.5);
+    currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c/*, aUv, bUv, cUv*/));
+//    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.3));
 
     BaseMaterial MBox1(sceneComp.makeMatSolidD(0.9),
                          sceneComp.makeMatSolidD(0.1),
@@ -287,7 +287,7 @@ void reflection(string outFile){
                       sceneComp.makeMatSolidV3(Vec3()));
 
 
-    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1, 1, 1)), Vec3(-2.3, 2.35, 0.5), 0.7));
+//    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1, 1, 1)), Vec3(-2.3, 2.35, 0.5), 0.7));
     currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.5, 0.5, 0.5)), Vec3(0, 0, 0), 3000));
 
     /**lights**/

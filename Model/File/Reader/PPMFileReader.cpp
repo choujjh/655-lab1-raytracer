@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include <fstream>
+#include "../../Ops/RenderOps.h"
 #include "Reader/ReadImageStrategy.h"
 #include "Reader/PPMFileReader.h"
 
@@ -17,7 +18,12 @@ Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned 
     ppmFile.open(readFile);
     if(!ppmFile.is_open()){
         cout << readFile << " file not opened" << endl;
-        return nullptr;
+        height = 1;
+        width = 1;
+        Vec3** image = new Vec3*[height];
+        image[0] = new Vec3[width];
+        image[0][0] = Vec3(RenderOps().randFloatValue(), RenderOps().randFloatValue(), RenderOps().randFloatValue());
+        return image;
     }
     string tempString;
     int maxColor;

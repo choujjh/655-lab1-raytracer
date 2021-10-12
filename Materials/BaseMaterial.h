@@ -7,7 +7,7 @@
 
 
 #include "../../Model/Vec/Vec3.h"
-#include "../../Model/MaterialComponent/MatComponent.h"
+#include "MaterialComponent/MatComponent.h"
 
 class BaseMaterial {
 public:

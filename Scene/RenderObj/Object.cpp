@@ -3,7 +3,7 @@
 //
 
 
-#include "../Model/MaterialComponent/MatCompSolid.h"
+#include "../Materials/MaterialComponent/MatCompSolid.h"
 #include "Object.h"
 
 

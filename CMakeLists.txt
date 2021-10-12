@@ -5,21 +5,21 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(Model)
 include_directories(Model/File)
-include_directories(Model/MaterialComponent)
+include_directories(Materials/MaterialComponent)
 include_directories(Model/Ops)
 include_directories(Model/Vec)
 include_directories(Render)
 include_directories(Scene)
 include_directories(Render/IntersectMethods)
 include_directories(Scene/RenderObj/Light)
-include_directories(Scene/Materials)
+include_directories(Materials)
 include_directories(Scene/RenderObj)
 
 add_executable(655_lab1_raytracer
-        Model/MaterialComponent/MatComponent.cpp
-        Model/MaterialComponent/MatComponent.h
-        Model/MaterialComponent/MatCompSolid.cpp
-        Model/MaterialComponent/MatCompSolid.h
+        Materials/MaterialComponent/MatComponent.cpp
+        Materials/MaterialComponent/MatComponent.h
+        Materials/MaterialComponent/MatCompSolid.cpp
+        Materials/MaterialComponent/MatCompSolid.h
         Model/Ops/LinAlgOp.cpp
         Model/Ops/LinAlgOp.h
         Model/Ops/RenderOps.cpp
@@ -48,8 +48,8 @@ add_executable(655_lab1_raytracer
         Scene/RenderObj/Light/Light.h
         Scene/RenderObj/Light/PointLight.cpp
         Scene/RenderObj/Light/PointLight.h
-        Scene/Materials/BaseMaterial.cpp
-        Scene/Materials/BaseMaterial.h
+        Materials/BaseMaterial.cpp
+        Materials/BaseMaterial.h
         Scene/RenderObj/Object.cpp
         Scene/RenderObj/Object.h
         Scene/RenderObj/Plane.cpp
@@ -80,5 +80,5 @@ add_executable(655_lab1_raytracer
         Model/File/Reader/ReadImageStrategy.h
         Model/File/Reader/PPMFileReader.cpp
         Model/File/Reader/PPMFileReader.h
-        Model/MaterialComponent/MatCompFileVec3.cpp
-        Model/MaterialComponent/MatCompFileVec3.h Model/Vec/Vec2.cpp Model/Vec/Vec2.h)
+        Materials/MaterialComponent/MatCompFileVec3.cpp
+        Materials/MaterialComponent/MatCompFileVec3.h Model/Vec/Vec2.cpp Model/Vec/Vec2.h Materials/MaterialComponent/MatCompFileDouble.cpp Materials/MaterialComponent/MatCompFileDouble.h)
