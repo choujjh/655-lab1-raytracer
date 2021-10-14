@@ -10,27 +10,45 @@
 #include "MaterialComponent/MatComponent.h"
 
 class BaseMaterial {
-public:
+private:
     MatComponent<Vec3>* Diff_Refl_Transm;
     MatComponent<Vec3>* Rough_Gloss_Transl;
     MatComponent<Vec3>* color;
     MatComponent<Vec3>* KGLS_IOR_gamma;
-//    MatComponent<double>* kDiffuse;
-//    MatComponent<double>* kSpecular;
-//    MatComponent<double>* kAmbient;
-//    MatComponent<double>* kgls;
-//    MatComponent<double>* IOR;
-//    MatComponent<double>* opacity;
-//
-//    MatComponent<Vec3>* colorDiffuse;
-//    MatComponent<Vec3>* colorSpec;
-//    MatComponent<Vec3>* colorEmission;
-
-//    BaseMaterial(MatComponent<double> *kDiffuse, MatComponent<double> *kSpecular, MatComponent<double> *kAmbient,
-//                 MatComponent<double> *kgls, MatComponent<double>* IOR, MatComponent<double>* opacity, MatComponent<Vec3> *colorDiffuse, MatComponent<Vec3> *colorSpec,
-//                 MatComponent<Vec3> *colorEmission);
+public:
     BaseMaterial(MatComponent<Vec3> *diffReflTransm, MatComponent<Vec3> *glossTransl, MatComponent<Vec3> *color,
                  MatComponent<Vec3> *kglsIorGamma);
+
+    double diffuse(Vec2 uv){
+        return Diff_Refl_Transm->getColor(uv).x;
+    }
+    double reflective(Vec2 uv){
+        return Diff_Refl_Transm->getColor(uv).y;
+    }
+    double transmission(Vec2 uv){
+        return Diff_Refl_Transm->getColor(uv).z;
+    }
+    double roughness(Vec2 uv){
+        return Rough_Gloss_Transl->getColor(uv).x;
+    }
+    double gloss(Vec2 uv){
+        return Rough_Gloss_Transl->getColor(uv).y;
+    }
+    double translucency(Vec2 uv){
+        return Rough_Gloss_Transl->getColor(uv).z;
+    }
+    double kgls(Vec2 uv){
+        return KGLS_IOR_gamma->getColor(uv).x;
+    }
+    double ior(Vec2 uv){
+        return KGLS_IOR_gamma->getColor(uv).y;
+    }
+    double gamma(Vec2 uv){
+        return Rough_Gloss_Transl->getColor(uv).y;
+    }
+    Vec3 getColor(Vec2 uv){
+        return color->getColor(uv);
+    }
 };
 
 

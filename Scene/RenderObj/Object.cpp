@@ -18,7 +18,7 @@ Vec3 Object::infiniteVec3() {
     return Object::intersect(Ray());
 }
 bool Object::isLight() {
-    if(material->KGLS_IOR_gamma->getColor(0, 0).z > 0){
+    if(material->gamma(Vec2()) > 0){
         return true;
     }
     return false;

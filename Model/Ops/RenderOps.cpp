@@ -18,8 +18,8 @@ Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVe
     Vec3 n = intersectObject->normal(interVec).normalize();
     double normalScalar = isInsideObject ? -1: 1;
 
-    double nit = intersectObject->material->KGLS_IOR_gamma->getColor(objectUV).y;
-    if(!isInsideObject) nit = 1 / intersectObject->material->KGLS_IOR_gamma->getColor(objectUV).y;
+    double nit = intersectObject->material->ior(objectUV);
+    if(!isInsideObject) nit = 1 / intersectObject->material->ior(objectUV);
 
     double theta = acos((I*-1).dot(n * normalScalar));
     Vec3 T = I*nit;
