@@ -10,7 +10,6 @@
 template <class T>
 class MatComponent {
 public:
-    //TODO: when creating one can pass in if it should be clipped or not
     virtual T getColor(double u, double v) = 0;
     virtual T getColor(Vec2 uv) = 0;
     virtual T getColor() = 0;

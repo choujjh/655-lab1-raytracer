@@ -25,6 +25,7 @@
 #include "File/Writer/PPMFileWriter.h"
 #include "../Render/Integrator.h"
 #include "../Render/Phong.h"
+#include "../Render/PathTracer.h"
 
 
 using std::vector;
@@ -118,6 +119,11 @@ public:
     }
     Integrator* makePhongIntegrator(Scene* scene){
         Integrator* tempIntegrator = new Phong(scene);
+        integrators.push_back(tempIntegrator);
+        return tempIntegrator;
+    }
+    Integrator* makePathTracerIntegrator(Scene* scene){
+        Integrator* tempIntegrator = new PathTracer(scene);
         integrators.push_back(tempIntegrator);
         return tempIntegrator;
     }

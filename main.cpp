@@ -6,7 +6,6 @@
 #include "Model/RenderCompCreator.h"
 
 /*TODO:
- * refactoring material code
  * path tracing
  * medium split to do width
  * kd trees
