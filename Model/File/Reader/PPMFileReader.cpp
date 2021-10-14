@@ -13,7 +13,7 @@
 using std::ifstream;
 using std::cout;
 using std::endl;
-Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned int& width) {
+Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned int& width, bool normalizeSum) {
     ifstream ppmFile;
     ppmFile.open(readFile);
     if(!ppmFile.is_open()){
@@ -46,6 +46,9 @@ Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned 
             image[row][col].y = temp/maxColor;
             temp = getNextNumber(ppmFile);
             image[row][col].z = temp/maxColor;
+            if(normalizeSum){
+                image[row][col].normalizeSum();
+            }
 //            cout << row << " " << col << ": " << image[row][col].x << " " << image[row][col].y << " " << image[row][col].z << endl;
         }
     }

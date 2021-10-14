@@ -23,7 +23,7 @@ public:
     }
 
     MatCompSolid(T val): val(val){}
-private:
+protected:
     T val;
 };
 

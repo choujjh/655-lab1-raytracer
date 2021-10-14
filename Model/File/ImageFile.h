@@ -25,7 +25,7 @@ private:
 public:
     void writeToFile(string writeFile, unsigned int strategy);
 
-    void openFile(string imageFile);
+    void openFile(string imageFile, bool normalizeSum);
     ImageFile(unsigned int height, unsigned int width);
     ImageFile();
 

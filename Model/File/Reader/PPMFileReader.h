@@ -13,7 +13,7 @@ class PPMFileReader: public ReadImageStrategy {
 private:
     double getNextNumber(ifstream& in);
 public:
-    Vec3** readImage(string readFile, unsigned int& height, unsigned int& width) override;
+    Vec3** readImage(string readFile, unsigned int& height, unsigned int& width, bool normalizeSum) override;
 };
 
 

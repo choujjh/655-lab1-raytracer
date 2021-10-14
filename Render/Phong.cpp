@@ -130,7 +130,6 @@ Vec3 Phong::calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 r
 
 }
 Vec3 Phong::calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, Vec2 objectUV, Vec2 lightUV) {
-    //TODO
     Vec3 od = surface->material->color->getColor(objectUV);
     Vec3 l = rayDir;
     Vec3 n = surface->normal(interPoint).normalize() * normalScalar;
@@ -141,7 +140,6 @@ Vec3 Phong::calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 ra
     return retVec;
 }
 Vec3 Phong::calcSpec(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, Vec2 objectUV, Vec2 lightUV){
-    //TODO
     Vec3 r = RenderOps().reflectionDirection(surface->normal(interPoint).normalize() * normalScalar,
                                              (rayDir) * -1);
     double ks = surface->material->Diff_Refl_Transm->getColor(objectUV).y;
@@ -153,7 +151,6 @@ Vec3 Phong::calcSpec(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDi
     return lightEmission * os * ks * pow(maxSpec, kgls);
 }
 Vec3 Phong::calcAmbient(Object* surface, Object* light, Vec2 objectUV) {
-    //TODO
     Vec3 lightEmission = light->material->color->getColor(0, 0) * light->material->KGLS_IOR_gamma->getColor(0, 0).z;
     return lightEmission * surface->material->color->getColor(objectUV) * surface->material->Diff_Refl_Transm->getColor(objectUV).x * 0.001;
 }

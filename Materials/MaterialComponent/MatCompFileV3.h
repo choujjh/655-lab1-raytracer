@@ -8,16 +8,14 @@
 #include <Ops/RenderOps.h>
 #include <cmath>
 #include "File/ImageFile.h"
-#include "MatComponent.h"
-class MatCompFileVec3: public MatComponent<Vec3> {
+#include "MatCompSolidV3.h"
+class MatCompFileV3: public MatComponent<Vec3> {
 private:
     ImageFile imageFile;
 public:
-    MatCompFileVec3(string& textureFile) {
-        imageFile.openFile(textureFile);
+    MatCompFileV3(string& textureFile, bool normalizeSum = false) {
+        imageFile.openFile(textureFile, normalizeSum);
     }
-
-public:
     Vec3 getColor(double u, double v) override {
         // getting tiling textures
         if(u == 1.0) u = 0.999;

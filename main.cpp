@@ -229,7 +229,7 @@ void reflection(string outFile){
     Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
     /**setting up objects**/
-    BaseMaterial MSphere1(sceneComp.makeMatSolidV3(1.0, 0.0, 0.0),
+    BaseMaterial MSphere1(sceneComp.makeMatSolidV3(1.0, 0.0, 0.0, true),
                           sceneComp.makeMatSolidV3(0.0, 0.1, 0.01),
 //                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
                           sceneComp.makeMatFileV3("1_test.ppm"),
@@ -243,7 +243,7 @@ void reflection(string outFile){
     currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c/*, aUv, bUv, cUv*/));
 //    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.3));
 
-    BaseMaterial MBox1(sceneComp.makeMatSolidV3(1, 0.0, 0.0),
+    BaseMaterial MBox1(sceneComp.makeMatSolidV3(1, 0.0, 0.0, true),
                          sceneComp.makeMatSolidV3(0.0, 0.2, 0.0),
                          sceneComp.makeMatSolidV3(0.3, 0.3, 0.9),
                          sceneComp.makeMatSolidV3(4, 1.5, 0));

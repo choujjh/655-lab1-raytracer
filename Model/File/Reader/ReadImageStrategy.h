@@ -10,7 +10,7 @@
 using std::string;
 class ReadImageStrategy {
 public:
-    virtual Vec3** readImage(string readFile, unsigned int& height, unsigned int& width) = 0;
+    virtual Vec3** readImage(string readFile, unsigned int& height, unsigned int& width, bool normalizeSum) = 0;
 };
 
 

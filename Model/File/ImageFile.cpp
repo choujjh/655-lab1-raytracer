@@ -2,11 +2,10 @@
 // Created by chouj on 9/8/2021.
 //
 
-#include <File/Writer/PPMFileWriter.h>
-#include "ImageFile.h"
+#include "../File/Writer/PPMFileWriter.h"
 #include <iostream>
-#include <File/Reader/ReadImageStrategy.h>
-#include <File/Reader/PPMFileReader.h>
+#include "../File/Reader/ReadImageStrategy.h"
+#include "../File/Reader/PPMFileReader.h"
 
 using std::cout;
 
@@ -23,7 +22,7 @@ void ImageFile::writeToFile(string fileName, unsigned int strategy) {
         delete write;
     }
 }
-void ImageFile::openFile(string imageFile) {
+void ImageFile::openFile(string imageFile, bool normalizeSum) {
     if(image != nullptr){
         deleteImage();
         height = 0;
@@ -44,7 +43,7 @@ void ImageFile::openFile(string imageFile) {
     ReadImageStrategy* read;
     if(extension == "ppm"){
         read = new PPMFileReader();
-        image = read->readImage(imageFile, height, width);
+        image = read->readImage(imageFile, height, width, normalizeSum);
     }
     delete read;
 

@@ -10,7 +10,7 @@
 #include "../Render/IntersectMethods/BruteForce.h"
 #include "MaterialComponent/MatComponent.h"
 #include "MaterialComponent/MatCompSolid.h"
-#include "MaterialComponent/MatCompFileVec3.h"
+#include "MaterialComponent/MatCompFileV3.h"
 
 #include "../Scene/RenderObj/Object.h"
 #include "../Scene/RenderObj/Triangle.h"
@@ -49,18 +49,18 @@ public:
         matCompDoubles.push_back(t);
         return t;
     }
-    MatComponent<Vec3>* makeMatSolidV3(double r, double g, double b){
-        MatComponent<Vec3>* tempMatComp = new MatCompSolid<Vec3>(Vec3(r, g, b));
+    MatComponent<Vec3>* makeMatSolidV3(double r, double g, double b, bool normalizeSum = false){
+        MatComponent<Vec3>* tempMatComp = new MatCompSolidV3(Vec3(r, g, b), normalizeSum);
         matCompVec3.push_back(tempMatComp);
         return tempMatComp;
     }
-    MatComponent<Vec3>* makeMatSolidV3(const Vec3 &vec){
-        MatComponent<Vec3>* tempMatComp = new MatCompSolid<Vec3>(vec);
+    MatComponent<Vec3>* makeMatSolidV3(const Vec3 &vec, bool normalizeSum = false){
+        MatComponent<Vec3>* tempMatComp = new MatCompSolidV3(vec, normalizeSum);
         matCompVec3.push_back(tempMatComp);
         return tempMatComp;
     }
-    MatComponent<Vec3>* makeMatFileV3(string file){
-        MatComponent<Vec3>* tempMatComp = new MatCompFileVec3(file);
+    MatComponent<Vec3>* makeMatFileV3(string file, bool normalizeSum = false){
+        MatComponent<Vec3>* tempMatComp = new MatCompFileV3(file, normalizeSum);
         matCompVec3.push_back(tempMatComp);
         return tempMatComp;
     }

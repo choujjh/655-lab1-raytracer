@@ -80,5 +80,5 @@ add_executable(655_lab1_raytracer
         Model/File/Reader/ReadImageStrategy.h
         Model/File/Reader/PPMFileReader.cpp
         Model/File/Reader/PPMFileReader.h
-        Materials/MaterialComponent/MatCompFileVec3.cpp
-        Materials/MaterialComponent/MatCompFileVec3.h Model/Vec/Vec2.cpp Model/Vec/Vec2.h Materials/MaterialComponent/MatCompFileDouble.cpp Materials/MaterialComponent/MatCompFileDouble.h)
+        Materials/MaterialComponent/MatCompFileV3.cpp
+        Materials/MaterialComponent/MatCompFileV3.h Model/Vec/Vec2.cpp Model/Vec/Vec2.h Materials/MaterialComponent/MatCompFileD.cpp Materials/MaterialComponent/MatCompFileD.h Materials/MaterialComponent/MatCompSolidV3.cpp Materials/MaterialComponent/MatCompSolidV3.h)

@@ -9,12 +9,12 @@
 #include <cmath>
 #include "File/ImageFile.h"
 #include "MatComponent.h"
-class MatCompFileDouble: public MatComponent<double> {
+class MatCompFileD: public MatComponent<double> {
 private:
     ImageFile imageFile;
 public:
-    MatCompFileDouble(string& textureFile) {
-        imageFile.openFile(textureFile);
+    MatCompFileD(string& textureFile, bool normalizeSum = false) {
+        imageFile.openFile(textureFile, normalizeSum);
     }
 
 public:
