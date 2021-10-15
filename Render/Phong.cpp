@@ -48,9 +48,8 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     Vec3 surfColor = calcSurfColor(colorRay, interVec, intersectObject, normalScalar, interObjectUV);
 //    return surfColor;
     //refl color
-    //TODO: redo rand thing
-    offsetX = RenderOps().randFloatValue(-0.1, 0.1);
-    offsetY = RenderOps().randFloatValue(-0.1, 0.1);
+    offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
+    offsetY = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
     Vec3 reflDir = RenderOps().reflectionDirection(n * normalScalar, ray.direction);
     reflDir = (reflDir + cs.up * offsetY + cs.right * offsetX).normalize();
     Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
@@ -60,9 +59,8 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     Vec3 refrColor = Vec3();
     double fresnelEffect;
     if(opacity > 0) {
-        //TODO: redo rand thing
-        offsetX = RenderOps().randFloatValue(-0.05, 0.05);
-        offsetY = RenderOps().randFloatValue(-0.05, 0.05);
+        offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
+        offsetY = RenderOps().randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
         Ray transRay = RenderOps().calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject, interObjectUV);
         transRay.direction = (transRay.direction + cs.up * offsetY + cs.right * offsetX).normalize();
         double iorLeft = 1.0;

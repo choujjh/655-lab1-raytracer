@@ -15,6 +15,8 @@ using std::endl;
 
 using std::cout;
 using std::endl;
+using std::fixed;
+using std::setprecision;
 
 RenderController::RenderController(ImageFile *file, const Scene &currScene, Integrator* integrator,
                                    int samples, int levReflectRecursion) :
@@ -56,6 +58,7 @@ void RenderController::render() {
                 if(threadList.at(i).joinable()){
                     threadList.at(i).join();
                     --activeCores;
+                    cout << "finished " << fixed << setprecision(3) << (row - threadList.size())/currScene.getRenderCam()->getHeight() * 100 << "%" << endl;
                     threadList.erase(threadList.begin() + i);
                     break;
                 }
@@ -63,6 +66,7 @@ void RenderController::render() {
             if(activeCores == numCores) {
                 threadList.at(0).join();
                 --activeCores;
+                cout << "finished " << fixed << setprecision(3) << (row - threadList.size())/currScene.getRenderCam()->getHeight() * 100 << "%" << endl;
                 threadList.erase(threadList.begin());
             }
         }
@@ -71,6 +75,7 @@ void RenderController::render() {
     }
     for(int i = 0; i < threadList.size(); ++i){
         threadList.at(i).join();
+        cout << "finished " << fixed << setprecision(3) << (currScene.getRenderCam()->getHeight() - threadList.size())/currScene.getRenderCam()->getHeight() * 100 << "%" << endl;
     }
     threadList.clear();
 
@@ -86,7 +91,7 @@ void RenderController::render() {
         }
         avg += i;
     }
-    cout << "min time per thread: " << std::fixed << std::setprecision(3) << min << endl;
+    cout << "min time per thread: " << fixed << setprecision(3) << min << endl;
     cout << "max time per thread: " << max << endl;
     cout << "avg time per thread: " << avg / times.size() << endl;
 }
@@ -103,7 +108,6 @@ void RenderController::renderRow(int row){
     }
     auto t2 = std::chrono::high_resolution_clock::now();
     times.at(row) = duration_cast<milliseconds>(t2 - t1).count() / 1000.0;
-    cout << "finished row " << row << endl;
 }
 
 void RenderController::initializeRays(){
@@ -118,8 +122,8 @@ void RenderController::initializeRays(){
             //sampling Density
             for (int newCol = 0; newCol < samples; ++newCol) {
                 int savedCol = col * samples + newCol;
-                double offsetX = RenderOps().tentFloatRandGen(-0.5, 0.5);
-                double offsetY = RenderOps().tentFloatRandGen(-0.5, 0.5);
+                double offsetX = RenderOps().randFloatValue(-0.5, 0.5);
+                double offsetY = RenderOps().randFloatValue(-0.5, 0.5);
 
                 rays.at(row).at(savedCol).direction = (currCol +
                                                        incrX * offsetX - incrY * offsetY -

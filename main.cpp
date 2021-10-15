@@ -11,6 +11,7 @@
  * kd trees
  * salmon goldsmith algorithm
  * sampling from sphere instead of circle (inside sphere), (outside sphere shadow)
+ * uv normal maps
  * ppm file reader (faster)
  * obj parser
  * scene parser
@@ -232,15 +233,15 @@ void reflection(string outFile){
                           sceneComp.makeMatSolidV3(0.0, 0.1, 0.01),
 //                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
                           sceneComp.makeMatFileV3("1_test.ppm"),
-                          sceneComp.makeMatSolidV3(4, 1.5, 1));
+                          sceneComp.makeMatSolidV3(4, 1.5, 2));
     Vec3 a = Vec3(-0.5, 0.05, 0.2);
     Vec3 b = Vec3(0.5, 0.05, 0.2);
     Vec3 c = Vec3(0, 0.6, -0.3);
     Vec2 aUv = Vec2(-0.2, 0);
     Vec2 bUv = Vec2(1.2, 0);
     Vec2 cUv = Vec2(0.5, 1.5);
-    currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c/*, aUv, bUv, cUv*/));
-//    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.3));
+//    currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c/*, aUv, bUv, cUv*/));
+    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.1));
 
     BaseMaterial MBox1(sceneComp.makeMatSolidV3(1, 0.0, 0.0, true),
                          sceneComp.makeMatSolidV3(0.0, 0.2, 0.0),
@@ -260,7 +261,7 @@ void reflection(string outFile){
     currScene.addObject(sceneComp.makeAxisAlignBox(&MBox2, max * -1, min));
 
 //    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1, 1, 1)), Vec3(-2.3, 2.35, 0.5), 0.7));
-    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.5, 0.5, 0.5), sceneComp.makeMatSolidV3(0, 0, 1.0)), Vec3(0, 0, 0), 3000));
+    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.1, 0.1, 0.1), sceneComp.makeMatSolidV3(0, 0, 1.0)), Vec3(0, 0, 0), 3000));
 
     /**lights**/
 

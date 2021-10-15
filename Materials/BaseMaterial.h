@@ -44,7 +44,7 @@ public:
         return KGLS_IOR_gamma->getColor(uv).y;
     }
     double gamma(Vec2 uv){
-        return Rough_Gloss_Transl->getColor(uv).y;
+        return KGLS_IOR_gamma->getColor(uv).z;
     }
     Vec3 getColor(Vec2 uv){
         return color->getColor(uv);
