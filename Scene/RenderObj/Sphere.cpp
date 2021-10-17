@@ -64,20 +64,15 @@ Vec3 Sphere::normal(Vec3 point) {
 Vec3 Sphere::shadowRay(Vec3 point, Vec3 objectNormal) {
     double nx = RenderOps().randFloatValue();
     double ny = RenderOps().randFloatValue();
+    double nz = RenderOps().randFloatValue();
     if((point - center).getMagnitude() < radius){
-        double nz = RenderOps().randFloatValue();
         CoordinateSpace cs = RenderOps().makeCoordinateSystem(objectNormal, Vec3(nx, ny, nz));
-        return (cs.right * RenderOps().tentFloatRandGen(-1, 1) + cs.up * RenderOps().tentFloatRandGen(-1, 1) + cs.direction * RenderOps().randFloatValue(0, 1)).normalize();
+        return RenderOps().randomPointOnSphere(cs, 1, point,0, 2 * M_PI, 0, M_PI / 2) - point;
     }
 
-    Vec3 dir = (this->center - point).normalize();
-    double nz = (dir.x * nx + dir.y * ny)/dir.z;
-    CoordinateSpace cs = RenderOps().makeCoordinateSystem(dir, Vec3(nx, ny, nz));
-    double randTheta = RenderOps().randFloatValue(0, 2 * M_PI);
-    double randRadius = RenderOps().randFloatValue(0, radius);
-    double y = sin(randTheta) * randRadius;
-    double x = cos(randTheta) * randRadius;
-    Vec3 randPoint = center + cs.up * y + cs.right * x;
+    Vec3 dirFromLight = (this->center - point).normalize();
+    CoordinateSpace cs = RenderOps().makeCoordinateSystem(dirFromLight, Vec3(nx, ny, nz));
+    Vec3 randPoint = RenderOps().randomPointOnSphere(cs, radius, center,0, 2 * M_PI, 0, M_PI / 2);
     return (randPoint - point).normalize();
 }
 

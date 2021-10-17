@@ -6,6 +6,7 @@
 #include<iostream>
 #include<iomanip>
 #include <thread>
+#include <unistd.h>
 
 using std::ofstream;
 using std::endl;
@@ -63,19 +64,14 @@ void RenderController::render() {
                     break;
                 }
             }
-            if(activeCores == numCores) {
-                threadList.at(0).join();
-                --activeCores;
-                cout << "finished " << fixed << setprecision(3) << (row - threadList.size())/currScene.getRenderCam()->getHeight() * 100 << "%" << endl;
-                threadList.erase(threadList.begin());
-            }
+            sleep(0.01);
         }
         threadList.push_back(std::thread(&RenderController::renderRow, this, row));
         ++activeCores;
     }
     for(int i = 0; i < threadList.size(); ++i){
         threadList.at(i).join();
-        cout << "finished " << fixed << setprecision(3) << (currScene.getRenderCam()->getHeight() - threadList.size())/currScene.getRenderCam()->getHeight() * 100 << "%" << endl;
+        cout << "finished " << fixed << setprecision(3) << (currScene.getRenderCam()->getHeight() - threadList.size() + i + 1)/currScene.getRenderCam()->getHeight() * 100 << "%" << endl;
     }
     threadList.clear();
 

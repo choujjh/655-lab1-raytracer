@@ -85,3 +85,11 @@ Vec3 RenderOps::randomPointBetweenPoints(Vec3 a, Vec3 b, bool useTent){
     return ab * t + a;
 
 }
+Vec3 RenderOps::randomPointOnSphere(CoordinateSpace cs, double radius, Vec3 center, double horMin, double horMax, double vertMin, double vertMax){
+    double theta = randFloatValue(horMin, horMax);
+    double phi = randFloatValue(vertMin, vertMax);
+    Vec3 xy = cs.up * sin(theta) + cs.right * cos(theta);
+    Vec3 newDir = (xy * cos(phi) + cs.direction * sin(phi));
+    newDir = newDir * radius;
+    return newDir + center;
+}

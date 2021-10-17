@@ -6,6 +6,7 @@
 #define RAYTRACER_RENDEROP_H
 
 
+#include <cmath>
 #include "../Vec/Vec3.h"
 #include "../Vec/Ray.h"
 #include "../../Scene/RenderObj/Object.h"
@@ -21,6 +22,7 @@ public:
     double randFloatValue(double min = 0.0, double max = 1.0);
     double tentFloatRandGen(double min = 0.0, double max = 1.0);
     Vec3 randomPointBetweenPoints(Vec3 a, Vec3 b, bool useTent = false);
+    Vec3 randomPointOnSphere(CoordinateSpace cs, double radius, Vec3 center, double horMin = 0, double horMax = 2 * M_PI, double vertMin = -1 * M_PI / 2 , double vertMax = M_PI / 2);
 };
 
 
