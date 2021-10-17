@@ -17,7 +17,7 @@ public:
     Integrator(Scene *renderScene);
 
 public:
-    virtual Vec3 radiance(Ray ray, int depth, int levReflectRecursion, int sampleDensity) = 0;
+    virtual Vec3 radiance(Ray ray, int depth, int levReflectRecursion) = 0;
 };
 
 

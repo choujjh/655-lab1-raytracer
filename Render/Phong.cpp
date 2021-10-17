@@ -10,7 +10,7 @@
 
 Phong::Phong(Scene *renderScene) : Integrator(renderScene) {}
 
-Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDensity) {
+Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion) {
     //return if recursion limit is reached
     if(depth >= levReflectRecursion){
         return renderScene->getBackColor();
@@ -55,12 +55,12 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     Vec3 reflDir = RenderOps().reflectionDirection(n, ray.direction);
     reflDir = (reflDir + cs.up * offsetY + cs.right * offsetX).normalize();
     Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * 0.001;
-    Vec3 reflColor = radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion, sampleDensity) *
+    Vec3 reflColor = radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion) *
             intersectObject->material->reflective(interObjectUV) *
                      intersectObject->material->reflective(interObjectUV);
 
 
-    double fresnelEffect = RenderOps().calcFresnelReflectAmount(1, 1.5, n, ray.direction);;
+    double fresnelEffect = RenderOps().calcFresnelReflectAmount(1, 1.5, n, ray.direction);
     if(opacity > 0) {
         offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
         offsetY = RenderOps().randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
@@ -73,7 +73,7 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
             iorEntered = 1.0;
         }
 
-        Vec3 refrColor = radiance(transRay, depth + 1, levReflectRecursion, sampleDensity);
+        Vec3 refrColor = radiance(transRay, depth + 1, levReflectRecursion);
         fresnelEffect = RenderOps().calcFresnelReflectAmount(iorLeft, iorEntered, n, ray.direction);
 
         return  surfColor * (1.0 - opacity) + intersectObject->material->getColor(interObjectUV) *

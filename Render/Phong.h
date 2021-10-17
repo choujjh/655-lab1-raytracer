@@ -13,7 +13,7 @@ public:
     Phong(Scene *renderScene);
 
 private:
-    Vec3 radiance(Ray ray, int depth, int levReflectRecursion, int sampleDensity) override;
+    Vec3 radiance(Ray ray, int depth, int levReflectRecursion) override;
 
     Vec3 calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, Vec3 normal, Vec2 ObjectUV);
 

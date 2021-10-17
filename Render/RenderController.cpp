@@ -142,5 +142,5 @@ Vec3 RenderController::calcPixel(int row, int col){
 }
 
 Vec3 RenderController::getColor(Ray ray){
-    return integrator->radiance(ray, 0, levReflectRecursion, samples);
+    return integrator->radiance(ray, 0, levReflectRecursion);
 }
