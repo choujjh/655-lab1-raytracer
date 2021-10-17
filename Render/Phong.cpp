@@ -36,7 +36,7 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     //initializing variables for light calculations
     double normalScalar = 1.0;
     Vec3 n = intersectObject->normal(interVec);
-    bool isInsideObject = (ray.direction.dot(n) > 0);
+    bool isInsideObject = (ray.direction.dot(n) >= 0);
     if(isInsideObject) normalScalar = -1.0;
     double opacity = intersectObject->material->transmission(interObjectUV);
 
@@ -53,11 +53,10 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     Vec3 reflDir = RenderOps().reflectionDirection(n * normalScalar, ray.direction);
     reflDir = (reflDir + cs.up * offsetY + cs.right * offsetX).normalize();
     Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
-    Vec3 reflColor = radiance(Ray(reflDir, epsilonPoint), depth + 1, levReflectRecursion, sampleDensity) *
+    Vec3 reflColor = radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion, sampleDensity) *
             intersectObject->material->reflective(interObjectUV) *
                      intersectObject->material->reflective(interObjectUV);
-    Vec3 refrColor = Vec3();
-    double fresnelEffect;
+    double fresnelEffect = RenderOps().calcFresnelReflectAmount(1, 1.5, n, ray.direction);;
     if(opacity > 0) {
         offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
         offsetY = RenderOps().randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
@@ -70,7 +69,7 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
             iorEntered = 1.0;
         }
 
-        refrColor = radiance(transRay, depth + 1, levReflectRecursion, sampleDensity);
+        Vec3 refrColor = radiance(transRay, depth + 1, levReflectRecursion, sampleDensity);
         fresnelEffect = RenderOps().calcFresnelReflectAmount(iorLeft, iorEntered, n, ray.direction);
 
         return  surfColor * (1.0 - opacity) + intersectObject->material->getColor(interObjectUV) *
@@ -79,7 +78,8 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
 //    else if(opacity == 0){
 //        return surfColor;
 //    }
-    return surfColor + reflColor;
+    return surfColor + intersectObject->material->getColor(interObjectUV) *
+                                         (reflColor * (1 - fresnelEffect));
 
 }
 Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, double normalScalar, Vec2 objectUV) {
@@ -119,8 +119,8 @@ Vec3 Phong::calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 r
     if(shadowIntersect.getMagnitude() != VAL_INFINITY && shadowIntersect.getMagnitude() != NEG_INFINITY){
         lightUV = light->getUV(shadowIntersect);
     }
-    Vec3 lighting = calcDiffuse(surface, light, interPoint, rayDir, normalScalar, objectUV, lightUV) +
-                    calcSpec(surface, light, interPoint, rayDir, normalScalar, objectUV, lightUV);
+    Vec3 lighting = calcDiffuse(surface, light, interPoint, rayDir, normalScalar, objectUV, lightUV); //+
+                    //calcSpec(surface, light, interPoint, rayDir, normalScalar, objectUV, lightUV);
     if(lighting.isNan()){
         return Vec3();
     }
