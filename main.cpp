@@ -228,11 +228,11 @@ void reflection(string outFile){
     Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
     /**setting up objects**/
-    BaseMaterial MSphere1(sceneComp.makeMatSolidV3(0.0, 1.0, 0.0, true),
+    BaseMaterial MSphere1(sceneComp.makeMatSolidV3(0.0, 0.0, 1.0, true),
                           sceneComp.makeMatSolidV3(0.0, 0.0, 0.0),
-//                          sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
+                          sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
 //                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
-                          sceneComp.makeMatFileV3("1_test.ppm"),
+//                          sceneComp.makeMatFileV3("1_test.ppm"),
                           sceneComp.makeMatSolidV3(4, 1.5, 0));
     Vec3 a = Vec3(-0.5, 0.05, 0.2);
     Vec3 b = Vec3(0.5, 0.05, 0.2);

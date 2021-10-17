@@ -30,32 +30,36 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
     //get uv
     Vec2 interObjectUV = intersectObject->getUV(interVec);
 
+    //if its a light
     if(intersectObject->isLight()){
         return intersectObject->material->getColor(interObjectUV) * intersectObject->material->gamma(interObjectUV);
     }
+
     //initializing variables for light calculations
-    double normalScalar = 1.0;
     Vec3 n = intersectObject->normal(interVec);
-    bool isInsideObject = (ray.direction.dot(n) >= 0);
-    if(isInsideObject) normalScalar = -1.0;
+    //if inside object
+    bool isInsideObject = ray.direction.dot(n) >= 0;
+    if(isInsideObject) n = n * -1;
     double opacity = intersectObject->material->transmission(interObjectUV);
 
     //surf color
-    CoordinateSpace cs = RenderOps().makeCoordinateSystem(ray.direction, n * normalScalar);
+    CoordinateSpace cs = RenderOps().makeCoordinateSystem(ray.direction, n);
     double offsetX = 0;
     double offsetY = 0;
     Ray colorRay = Ray(ray.direction +cs.up * offsetY + cs.right * offsetX, ray.point);
-    Vec3 surfColor = calcSurfColor(colorRay, interVec, intersectObject, normalScalar, interObjectUV);
-//    return surfColor;
+    Vec3 surfColor = calcSurfColor(colorRay, interVec, intersectObject, n, interObjectUV);
+
     //refl color
     offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
     offsetY = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
-    Vec3 reflDir = RenderOps().reflectionDirection(n * normalScalar, ray.direction);
+    Vec3 reflDir = RenderOps().reflectionDirection(n, ray.direction);
     reflDir = (reflDir + cs.up * offsetY + cs.right * offsetX).normalize();
-    Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
+    Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * 0.001;
     Vec3 reflColor = radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion, sampleDensity) *
             intersectObject->material->reflective(interObjectUV) *
                      intersectObject->material->reflective(interObjectUV);
+
+
     double fresnelEffect = RenderOps().calcFresnelReflectAmount(1, 1.5, n, ray.direction);;
     if(opacity > 0) {
         offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
@@ -75,21 +79,18 @@ Vec3 Phong::radiance(Ray ray, int depth, int levReflectRecursion, int sampleDens
         return  surfColor * (1.0 - opacity) + intersectObject->material->getColor(interObjectUV) *
         (reflColor * fresnelEffect + refrColor * (1 - fresnelEffect) * opacity);
     }
-//    else if(opacity == 0){
-//        return surfColor;
-//    }
     return surfColor + intersectObject->material->getColor(interObjectUV) *
                                          (reflColor * (1 - fresnelEffect));
 
 }
-Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, double normalScalar, Vec2 objectUV) {
+Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, Vec3 normal, Vec2 objectUV) {
     if(ray.isNan() || interVec.isNan()){
         return Vec3(0, 0, 0);
     }
     Vec3 surfColor;
-    Vec3 epsilonPoint = interVec + intersectObject->normal(interVec) * normalScalar * 0.001;
+    Vec3 epsilonPoint = interVec + normal * 0.001;
     for (int i = 0; i < renderScene->getObjTracker()->getLightList().size(); ++i){
-        Ray shadowRay = Ray(epsilonPoint, renderScene->getObjTracker()->getLightList().at(i)->shadowRay(interVec, intersectObject->normal(interVec) * normalScalar));
+        Ray shadowRay = Ray(epsilonPoint, renderScene->getObjTracker()->getLightList().at(i)->shadowRay(interVec, normal));
         Object* shadowObject = nullptr;
         Vec3 shadowIntersect = renderScene->getObjTracker()->getIntersect(shadowRay, true, shadowObject);
         bool isOccluded = true;
@@ -99,19 +100,19 @@ Vec3 Phong::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, doubl
         }
         if (!isOccluded) {
             Vec3 addColor = calcLighting(intersectObject, renderScene->getObjTracker()->getLightList().at(i), interVec,
-                                         shadowRay.direction, shadowIntersect, normalScalar, objectUV);
+                                         shadowRay.direction, shadowIntersect, normal, objectUV);
             surfColor += addColor;
         }
         else if(shadowObject->material->transmission(objectUV) > 0.0){
             Vec3 addColor = calcLighting(intersectObject, renderScene->getObjTracker()->getLightList().at(i), interVec,
-                                         shadowRay.direction, shadowIntersect, normalScalar, objectUV);
+                                         shadowRay.direction, shadowIntersect, normal, objectUV);
             surfColor += addColor * (1.0 - shadowObject->material->transmission(objectUV));
         }
     }
     return surfColor;
 }
 
-Vec3 Phong::calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, Vec3 shadowIntersect, double normalScalar, Vec2 objectUV) {
+Vec3 Phong::calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, Vec3 shadowIntersect, Vec3 normal, Vec2 objectUV) {
     if(light->ID() == light->ID_Ambient_Light){
         return calcAmbient(surface, light, objectUV);
     }
@@ -119,7 +120,7 @@ Vec3 Phong::calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 r
     if(shadowIntersect.getMagnitude() != VAL_INFINITY && shadowIntersect.getMagnitude() != NEG_INFINITY){
         lightUV = light->getUV(shadowIntersect);
     }
-    Vec3 lighting = calcDiffuse(surface, light, interPoint, rayDir, normalScalar, objectUV, lightUV); //+
+    Vec3 lighting = calcDiffuse(surface, light, interPoint, rayDir, normal, objectUV, lightUV); //+
                     //calcSpec(surface, light, interPoint, rayDir, normalScalar, objectUV, lightUV);
     if(lighting.isNan()){
         return Vec3();
@@ -127,18 +128,17 @@ Vec3 Phong::calcLighting(Object* surface, Object* light, Vec3 interPoint, Vec3 r
     return lighting;
 
 }
-Vec3 Phong::calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, Vec2 objectUV, Vec2 lightUV) {
+Vec3 Phong::calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, Vec3 normal, Vec2 objectUV, Vec2 lightUV) {
     Vec3 od = surface->material->getColor(objectUV);
     Vec3 l = rayDir;
-    Vec3 n = surface->normal(interPoint).normalize() * normalScalar;
-    double maxDiffuse = RenderOps().max(0, n.dot(l));
+    double maxDiffuse = RenderOps().max(0, normal.dot(l));
     Vec3 lightEmission = light->material->getColor(lightUV) * light->material->gamma(lightUV);
     Vec3 retVec = od * maxDiffuse * lightEmission * surface->material->diffuse(objectUV);
 
     return retVec;
 }
-Vec3 Phong::calcSpec(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, double normalScalar, Vec2 objectUV, Vec2 lightUV){
-    Vec3 r = RenderOps().reflectionDirection(surface->normal(interPoint).normalize() * normalScalar,
+Vec3 Phong::calcSpec(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, Vec3 normal, Vec2 objectUV, Vec2 lightUV){
+    Vec3 r = RenderOps().reflectionDirection(normal,
                                              (rayDir) * -1);
     double ks = surface->material->reflective(objectUV);
     double maxSpec = RenderOps().max(0, (rayDir * -1).dot(r));

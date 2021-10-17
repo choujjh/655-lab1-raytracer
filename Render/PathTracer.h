@@ -13,6 +13,8 @@ public:
 
     Vec3 radiance(Ray ray, int depth, int levReflectRecursion, int sampleDensity) override;
 
+    Vec3 calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, Vec3 normal, Vec2 objectUV, Vec2 lightUV);
+
 };
 
 
