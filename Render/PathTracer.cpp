@@ -54,7 +54,7 @@ Vec3 PathTracer::radiance(Ray ray, int depth, int levReflectRecursion) {
     }
     //send out a reflect ray
     else if(randBRDF < diffuse + reflect){
-
+        //TODO: redo fresnel
         double offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
         double offsetY = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
         Vec3 reflDir = RenderOps().reflectionDirection(n, ray.direction);
