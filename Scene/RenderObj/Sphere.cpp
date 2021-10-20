@@ -67,7 +67,7 @@ Vec3 Sphere::shadowRay(Vec3 point, Vec3 objectNormal) {
     double nz = randFloatValue();
     if((point - center).getMagnitude() < radius){
         CoordinateSpace cs = makeCoordinateSystem(objectNormal, Vec3(nx, ny, nz));
-        return randomPointOnSphere(cs, 1, point,0, 2 * M_PI, 0, M_PI / 2) - point;
+        return randomPointOnSphere(cs, 1, Vec3(),0, 2 * M_PI, 0, M_PI / 2);
     }
 
     Vec3 dirFromLight = (this->center - point).normalize();
