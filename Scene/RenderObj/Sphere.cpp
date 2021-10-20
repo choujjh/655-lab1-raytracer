@@ -62,17 +62,17 @@ Vec3 Sphere::normal(Vec3 point) {
 }
 
 Vec3 Sphere::shadowRay(Vec3 point, Vec3 objectNormal) {
-    double nx = RenderOps().randFloatValue();
-    double ny = RenderOps().randFloatValue();
-    double nz = RenderOps().randFloatValue();
+    double nx = randFloatValue();
+    double ny = randFloatValue();
+    double nz = randFloatValue();
     if((point - center).getMagnitude() < radius){
-        CoordinateSpace cs = RenderOps().makeCoordinateSystem(objectNormal, Vec3(nx, ny, nz));
-        return RenderOps().randomPointOnSphere(cs, 1, point,0, 2 * M_PI, 0, M_PI / 2) - point;
+        CoordinateSpace cs = makeCoordinateSystem(objectNormal, Vec3(nx, ny, nz));
+        return randomPointOnSphere(cs, 1, point,0, 2 * M_PI, 0, M_PI / 2) - point;
     }
 
     Vec3 dirFromLight = (this->center - point).normalize();
-    CoordinateSpace cs = RenderOps().makeCoordinateSystem(dirFromLight, Vec3(nx, ny, nz));
-    Vec3 randPoint = RenderOps().randomPointOnSphere(cs, radius, center,0, 2 * M_PI, 0, M_PI / 2);
+    CoordinateSpace cs = makeCoordinateSystem(dirFromLight, Vec3(nx, ny, nz));
+    Vec3 randPoint = randomPointOnSphere(cs, radius, center,0, 2 * M_PI, 0, M_PI / 2);
     return (randPoint - point).normalize();
 }
 

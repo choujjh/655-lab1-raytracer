@@ -6,14 +6,14 @@
 
 #include <cmath>
 
-Vec3 RenderOps::reflectionDirection(Vec3 normal, Vec3 initDir) {
+Vec3 reflectionDirection(Vec3 normal, Vec3 initDir) {
     return initDir - (normal * 2 * normal.dot(initDir));
 }
-double RenderOps::max(double a, double b) {
+double max(double a, double b) {
     return a > b ? a : b;
 }
 
-Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject, Vec2 objectUV){
+Ray calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVec, bool isInsideObject, Vec2 objectUV){
     I.normalize();
     Vec3 n = intersectObject->normal(interVec).normalize();
     double normalScalar = isInsideObject ? -1: 1;
@@ -36,7 +36,7 @@ Ray RenderOps::calcTransmissionRay(Vec3 I, Object* intersectObject, Vec3 interVe
     }
     return Ray(epsilonPoint, T);
 }
-double RenderOps::calcFresnelReflectAmount(double iorLeft, double iorEntered, Vec3 normal, Vec3 incident){
+double calcFresnelReflectAmount(double iorLeft, double iorEntered, Vec3 normal, Vec3 incident){
     // code from https://blog.demofox.org/2017/01/09/raytracing-reflection-refraction-fresnel-total-internal-reflection-and-beers-law/
     normal.normalize();
     incident.normalize();
@@ -58,20 +58,20 @@ double RenderOps::calcFresnelReflectAmount(double iorLeft, double iorEntered, Ve
     return ret;
 }
 
-CoordinateSpace RenderOps::makeCoordinateSystem(Vec3 direction, Vec3 normal){
+CoordinateSpace makeCoordinateSystem(Vec3 direction, Vec3 normal){
     Vec3 right = direction.cross(normal);
     Vec3 up = right.cross(direction);
 
     return CoordinateSpace(direction.normalize(), up.normalize(), right.normalize());
 }
 
-double RenderOps::randFloatValue(double min, double max){
+double randFloatValue(double min, double max){
 
     if(min > max) std::swap(max, min);
     double randValue = ((double)rand())/ ((double) RAND_MAX);
     return randValue * (max - min) + min;
 }
-double RenderOps::tentFloatRandGen(double min, double max){
+double tentFloatRandGen(double min, double max){
     if(min > max) std::swap(max, min);
     double randVal = randFloatValue(0.0, 2.0);
     double direction = 0.0;
@@ -79,13 +79,13 @@ double RenderOps::tentFloatRandGen(double min, double max){
     else {direction = 1.0 - sqrt(2-randVal);}
     return (direction + 1) / 2 * (max - min) + min;
 }
-Vec3 RenderOps::randomPointBetweenPoints(Vec3 a, Vec3 b, bool useTent){
+Vec3 randomPointBetweenPoints(Vec3 a, Vec3 b, bool useTent){
     Vec3 ab = b - a;
     double t = useTent? tentFloatRandGen(): randFloatValue();
     return ab * t + a;
 
 }
-Vec3 RenderOps::randomPointOnSphere(CoordinateSpace cs, double radius, Vec3 center, double horMin, double horMax, double vertMin, double vertMax){
+Vec3 randomPointOnSphere(CoordinateSpace cs, double radius, Vec3 center, double horMin, double horMax, double vertMin, double vertMax){
     double theta = randFloatValue(horMin, horMax);
     double phi = randFloatValue(vertMin, vertMax);
     Vec3 xy = cs.up * sin(theta) + cs.right * cos(theta);

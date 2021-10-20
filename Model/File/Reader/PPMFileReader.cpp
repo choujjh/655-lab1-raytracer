@@ -22,7 +22,7 @@ Vec3** PPMFileReader::readImage(string readFile, unsigned int& height, unsigned 
         width = 1;
         Vec3** image = new Vec3*[height];
         image[0] = new Vec3[width];
-        image[0][0] = Vec3(RenderOps().randFloatValue(), RenderOps().randFloatValue(), RenderOps().randFloatValue());
+        image[0][0] = Vec3(randFloatValue(), randFloatValue(), randFloatValue());
         return image;
     }
     string tempString;

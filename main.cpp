@@ -217,22 +217,22 @@ void reflection(string outFile){
     /**setting up camera**/
     Vec3 cameraLookAt(0, 0.15, 0.0);
 //    Vec3 cameraLookFrom(0, 1.5, 1.7);
-    Vec3 cameraLookFrom(0.1, 0.3, 1.3);
+    Vec3 cameraLookFrom(0.15, 0.6, 1.7);
     Vec3 up(0, 1, 0);
     double fov = 40.0;
-    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 512, 512);
+    Cam* renderCam = new Cam(cameraLookFrom, cameraLookAt, up, fov, 200, 200);
 
     /**setting up Scene**/
-    Vec3 backColor(0.1, 0.8, 0.8);
+    Vec3 backColor(0.1, 0.1, 0.1);
 //    Scene currScene(renderCam, backColor, sceneComp.makeMediumSplitTracker(6, 3));
     Scene currScene(renderCam, backColor, sceneComp.makeBruteForceTracker());
 
     /**setting up objects**/
-    BaseMaterial MSphere1(sceneComp.makeMatSolidV3(0.0, 1.0, 0.0, true),
+    BaseMaterial MSphere1(sceneComp.makeMatSolidV3(0.0, 0.0, 1.0, true),
                           sceneComp.makeMatSolidV3(0.0, 0.0, 0.0),
-//                          sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
+                          sceneComp.makeMatSolidV3(1.0, 1.0, 1.0),
 //                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
-                          sceneComp.makeMatFileV3("1_test.ppm"),
+//                          sceneComp.makeMatFileV3("1_test.ppm"),
                           sceneComp.makeMatSolidV3(4, 1.5, 0));
     Vec3 a = Vec3(-0.5, 0.05, 0.2);
     Vec3 b = Vec3(0.5, 0.05, 0.2);
@@ -241,15 +241,30 @@ void reflection(string outFile){
     Vec2 bUv = Vec2(1.2, 0);
     Vec2 cUv = Vec2(0.5, 1.5);
 //    currScene.addObject(sceneComp.makeTriangle(&MSphere1, a, b, c/*, aUv, bUv, cUv*/));
-    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.35, 0), 0.3));
+    currScene.addObject(sceneComp.makeSphere(&MSphere1, Vec3(0, 0.3, -0.1), 0.3));
+
+    BaseMaterial MSphere2(sceneComp.makeMatSolidV3(1.0, 0.0, 0.0, true),
+                          sceneComp.makeMatSolidV3(0.0, 0.0, 0.0),
+                          sceneComp.makeMatSolidV3(0.4941, 0.97647, 1.0),
+                          sceneComp.makeMatSolidV3(4, 1.5, 0));
+
+    currScene.addObject(sceneComp.makeSphere(&MSphere2, Vec3(-0.9, 0.3, -0.1), 0.3));
+
+    BaseMaterial MSphere3(sceneComp.makeMatSolidV3(0.01, 1.0, 0.0, true),
+                          sceneComp.makeMatSolidV3(0.0, 0.0, 0.0),
+                          sceneComp.makeMatSolidV3(1, 1, 1),
+                          sceneComp.makeMatSolidV3(4, 1.5, 0));
+
+    currScene.addObject(sceneComp.makeSphere(&MSphere3, Vec3(0.9, 0.3, -0.1), 0.3));
 
     BaseMaterial MBox1(sceneComp.makeMatSolidV3(1, 0.0, 0.0, true),
-                         sceneComp.makeMatSolidV3(0.0, 0.2, 0.0),
-                         sceneComp.makeMatSolidV3(0.3, 0.3, 0.9),
+                         sceneComp.makeMatSolidV3(0.0, 0.0, 0.0),
+//                         sceneComp.makeMatSolidV3(0.3, 0.3, 0.9),
+                         sceneComp.makeMatSolidV3(1, 1, 1),
                          sceneComp.makeMatSolidV3(4, 1.5, 0));
     BaseMaterial MBox2(sceneComp.makeMatSolidV3(1.0, 0.0, 0.0),
-                       sceneComp.makeMatSolidV3(0.0, 0.2, 0.0),
-                       sceneComp.makeMatSolidV3(1, 1, 1),
+                       sceneComp.makeMatSolidV3(0.0, 0.0, 0.0),
+                       sceneComp.makeMatSolidV3(0.3, 0.3, 0.8),
                        sceneComp.makeMatSolidV3(4, 1.5, 0));
     Vec3 max = Vec3(3, 0, 3);
     Vec3 min = Vec3(0, -3, 0);
@@ -260,15 +275,22 @@ void reflection(string outFile){
     currScene.addObject(sceneComp.makeAxisAlignBox(&MBox2, max, min));
     currScene.addObject(sceneComp.makeAxisAlignBox(&MBox2, max * -1, min));
 
-    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(1, 1, 1),sceneComp.makeMatSolidV3(0, 0, 1.0)), Vec3(-2.3, 2.35, 2.5), 0.3));
-    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.1, 0.1, 0.1), sceneComp.makeMatSolidV3(0, 0, 1.0)), Vec3(0, 0, 0), 3000));
+    max = Vec3(3, 1, -3);
+    min = Vec3(-3, 0, -4);
+    currScene.addObject(sceneComp.makeAxisAlignBox(&MBox1, max * -1, min));
+
+//    currScene.addObject(sceneComp.makeAxisAlignBox(&MBox1, Vec3(3, 0, 3), Vec3(-3, -3, -3)));
+    currScene.addObject(sceneComp.makeAxisAlignBox(&MBox1, Vec3(3, 1, -4), Vec3(-3, -3, -10)));
+
+    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.8, 0.8, 0.8),sceneComp.makeMatSolidV3(0, 0, 1.0)), Vec3(-2.3, 2.35, 2.5) * 3, 3));
+    currScene.addObject(sceneComp.makeSphere(sceneComp.makeLightMaterial(sceneComp.makeMatSolidV3(0.3, 0.3, 0.3), sceneComp.makeMatSolidV3(0, 0, 1.0)), Vec3(0, 0, 0), 3000));
 
     /**lights**/
 
     /**File**/
     ImageFile* imageFile = sceneComp.makeImageFile(renderCam->getHeight(), renderCam->getWidth());
 
-    RenderController controller(imageFile, currScene, sceneComp.makePathTracerIntegrator(&currScene), 35, 7);
+    RenderController controller(imageFile, currScene, sceneComp.makePathTracerIntegrator(&currScene), 10, 7);
     controller.render();
     imageFile->writeToFile(outFile, WRITE_PPM);
 

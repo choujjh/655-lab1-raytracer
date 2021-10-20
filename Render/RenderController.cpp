@@ -64,7 +64,7 @@ void RenderController::render() {
                     break;
                 }
             }
-            sleep(0.01);
+            sleep(0.1);
         }
         threadList.push_back(std::thread(&RenderController::renderRow, this, row));
         ++activeCores;
@@ -118,8 +118,8 @@ void RenderController::initializeRays(){
             //sampling Density
             for (int newCol = 0; newCol < samples; ++newCol) {
                 int savedCol = col * samples + newCol;
-                double offsetX = RenderOps().randFloatValue(-0.5, 0.5);
-                double offsetY = RenderOps().randFloatValue(-0.5, 0.5);
+                double offsetX = randFloatValue(-0.5, 0.5);
+                double offsetY = randFloatValue(-0.5, 0.5);
 
                 rays.at(row).at(savedCol).direction = (currCol +
                                                        incrX * offsetX - incrY * offsetY -

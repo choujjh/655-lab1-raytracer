@@ -19,7 +19,7 @@ Vec3 PathTracer::radiance(Ray ray, int depth, int levReflectRecursion) {
         if(depth == 0) {
             return renderScene->getBackColor();
         }
-        return Vec3();
+        return renderScene->getBackColor();
     }
 
     //get uv
@@ -35,41 +35,122 @@ Vec3 PathTracer::radiance(Ray ray, int depth, int levReflectRecursion) {
     bool isInsideObject = ray.direction.dot(n) >= 0;
     if(isInsideObject) n = n * -1;
 
-    Vec3 color = calcSurfColor(ray, interVec, intersectObject, n, interObjectUV);
+    Vec3 surfColor = calcSurfColor(ray, interVec, intersectObject, n, interObjectUV);
 
     double diffuse = intersectObject->material->diffuse(interObjectUV);
     double reflect = intersectObject->material->reflective(interObjectUV);
     double transmission = intersectObject->material->transmission(interObjectUV);
-    double randBRDF = RenderOps().randFloatValue(0, diffuse + reflect + transmission);
-    Vec3 randDir = Vec3(RenderOps().randFloatValue(), RenderOps().randFloatValue(), RenderOps().randFloatValue());
+    double randBRDF = randFloatValue(0, diffuse + reflect + transmission);
+    Vec3 randDir = Vec3(randFloatValue(), randFloatValue(), randFloatValue());
 
     Vec3 epsilonPoint = interVec + n * 0.001;
     //send out a diffuse ray
     Vec3 pathColor = Vec3();
-    double fresnelEffect = RenderOps().calcFresnelReflectAmount(1, 1.5, n, ray.direction);
+    double fresnelEffect = calcFresnelReflectAmount(1, 1.5, n, ray.direction);
+
+    //reflection ray
+    double offsetX = randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
+    double offsetY = randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
+    Vec3 reflDir = reflectionDirection(n, ray.direction);
+    CoordinateSpace cs = makeCoordinateSystem(reflDir, n);
+    reflDir = (reflDir + cs.up * offsetY + cs.right * offsetX).normalize();
+    Vec3 reflColor = radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion) * intersectObject->material->getColor(interObjectUV);
     if(randBRDF < diffuse){
-        CoordinateSpace cs = RenderOps().makeCoordinateSystem(n, randDir);
-        Vec3 dir = RenderOps().randomPointOnSphere(cs, 1, interVec, 0, 2 * M_PI, 0, M_PI / 2);
+        CoordinateSpace cs = makeCoordinateSystem(n, randDir);
+        Vec3 dir = randomPointOnSphere(cs, 1, interVec, 0, 2 * M_PI, 0, M_PI / 2);
         pathColor = radiance(Ray(epsilonPoint, dir), depth + 1, levReflectRecursion);
     }
     //send out a reflect ray
     else if(randBRDF < diffuse + reflect){
-        //TODO: redo fresnel
-        double offsetX = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
-        double offsetY = RenderOps().randFloatValue(-1 * intersectObject->material->gloss(interObjectUV), intersectObject->material->gloss(interObjectUV));
-        Vec3 reflDir = RenderOps().reflectionDirection(n, ray.direction);
-        CoordinateSpace cs = RenderOps().makeCoordinateSystem(reflDir, n);
-        reflDir = (reflDir + cs.up * offsetY + cs.right * offsetX).normalize();
-        pathColor = radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion);
-
-        pathColor =
-        (pathColor * (1 - fresnelEffect));
+        pathColor = reflColor; //radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion) * intersectObject->material->getColor(interObjectUV);;
     }
     //send out a transmission ray
     else{
+        offsetX = randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
+        offsetY = randFloatValue(-1 * intersectObject->material->translucency(interObjectUV), intersectObject->material->translucency(interObjectUV));
 
+        double normDirAngle = ray.direction.dot(n);
+        //total internal reflection
+        double iorValue = !isInsideObject? (1/ intersectObject->material->ior(interObjectUV)) : intersectObject->material->ior(interObjectUV);
+        double interiorAngle = 1 - (iorValue * iorValue) * (1 - normDirAngle * normDirAngle);
+
+        if (interiorAngle < 0) {
+            pathColor = reflColor;
+        }
+        //using matts code
+//        double normDirAngle = ray.direction.dot(n);
+//            //total internal reflection
+//        double iorValue = !isInsideObject? (1/ intersectObject->material->ior(interObjectUV)) : intersectObject->material->ior(interObjectUV);
+//        double interiorAngle = 1 - (iorValue * iorValue) * (1 - normDirAngle * normDirAngle);
+//
+//        if (interiorAngle < 0) {
+//            pathColor = reflColor;
+//        }
+        /*
+        Vec3 transmissionRay = Vec3();
+        Vec3 epsilonPoint = interVec - n * 0.001;
+        double theta = 0;
+
+
+        if (!isInsideObject) {
+            transmissionRay = ray.direction * iorValue - n * (normDirAngle * iorValue + sqrt(interiorAngle));
+            transmissionRay.normalize();
+            theta = -normDirAngle;
+        }
+        else{
+            transmissionRay = ray.direction * iorValue - n * ((normDirAngle * iorValue + sqrt(interiorAngle)) * -1);
+            transmissionRay.normalize();
+            epsilonPoint = interVec + n * 0.001;
+            theta = transmissionRay.dot(n);
+        }
+        cs = makeCoordinateSystem(transmissionRay, n);
+        transmissionRay = transmissionRay + cs.up * offsetY + cs.right * offsetX;
+
+        //calculate incidence of reflection (f0) and the fresnel equation
+        double f0 = ((iorValue - 1) * (iorValue - 1)) / ((iorValue + 1) * (iorValue + 1));
+        double fresnel = f0 + (1 - f0) * ((1 - theta) * (1 - theta) * (1 - theta) * (1 - theta) * (1 - theta));
+
+        if(depth > 2) {
+            double fresnelThreshold = fresnel * 0.5 + 0.25;
+            if (randFloatValue(0, RAND_MAX) < fresnelThreshold) {
+                //mat->emissionColor + mat->color * trace(Ray(normalOrigin, reflDirection), depth, true) * (fresnel / fresnelThreshold) * mat->gamma;
+                pathColor = intersectObject->material->getColor(interObjectUV) *
+                            intersectObject->material->getColor(interObjectUV) *
+                            radiance(Ray(epsilonPoint, reflDir), depth + 1, levReflectRecursion) *
+                            (fresnel / fresnelThreshold);
+            } else {
+                // mat->emissionColor + mat->color * trace(Ray(refractOrigin, transmissionRay), depth, true) * ((1 - fresnel) / (1 - fresnelThreshold)) * mat->gamma;
+                pathColor = intersectObject->material->getColor(interObjectUV) *
+                            intersectObject->material->getColor(interObjectUV) *
+                            radiance(Ray(epsilonPoint, transmissionRay), depth + 1, levReflectRecursion) *
+                            ((1 - fresnel) / (1 - fresnelThreshold));
+
+            }
+        }
+        else{
+            Vec3 refl = reflColor * fresnel;
+            Vec3 refr = radiance(Ray(epsilonPoint, transmissionRay), depth + 1, levReflectRecursion) * (1 - fresnel);
+            pathColor = intersectObject->material->getColor(interObjectUV) * (refl + refr) *
+                    intersectObject->material->gamma(interObjectUV);
+        }*/
+        else {
+
+            Ray transRay = calcTransmissionRay(ray.direction, intersectObject, interVec, isInsideObject,
+                                                           interObjectUV);
+            CoordinateSpace cs = makeCoordinateSystem(transRay.direction, Vec3(randFloatValue(), randFloatValue(), randFloatValue()));
+            transRay.direction = (transRay.direction + cs.up * offsetY + cs.right * offsetX).normalize();
+            double iorLeft = 1.0;
+            double iorEntered = intersectObject->material->ior(interObjectUV);
+            if (isInsideObject) {
+                iorLeft = intersectObject->material->ior(interObjectUV);
+                iorEntered = 1.0;
+            }
+
+            pathColor = radiance(transRay, depth + 1, levReflectRecursion);
+                fresnelEffect = calcFresnelReflectAmount(iorLeft, iorEntered, n, ray.direction);
+        }
     }
-    return color + pathColor;
+    return (surfColor + pathColor) * (1 - fresnelEffect) + reflColor * (fresnelEffect);
 }
 
 Vec3 PathTracer::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, Vec3 normal, Vec2 objectUV) {
@@ -93,13 +174,13 @@ Vec3 PathTracer::calcSurfColor(Ray ray, Vec3 interVec, Object* intersectObject, 
             surfColor += addColor;
         }
     }
-    return surfColor/renderScene->getObjTracker()->getLightList().size();
+    return surfColor; // / renderScene->getObjTracker()->getLightList().size();
 }
 
 Vec3 PathTracer::calcDiffuse(Object* surface, Object* light, Vec3 interPoint, Vec3 rayDir, Vec3 normal, Vec2 objectUV, Vec2 lightUV) {
     Vec3 od = surface->material->getColor(objectUV);
     Vec3 l = rayDir;
-    double maxDiffuse = RenderOps().max(0, normal.dot(l));
+    double maxDiffuse = max(0, normal.dot(l));
     Vec3 lightEmission = light->material->getColor(lightUV) * light->material->gamma(lightUV);
     Vec3 retVec = od * maxDiffuse * lightEmission * surface->material->diffuse(objectUV);
 

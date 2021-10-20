@@ -73,8 +73,8 @@ Vec3 Triangle::normal(Vec3 point) {
     return n;
 }
 Vec3 Triangle::shadowRay(Vec3 point, Vec3 objectNormal) {
-    double triAMult = RenderOps().randFloatValue(0, 1);
-    double triBMult = RenderOps().randFloatValue(0, 1 - triAMult);
+    double triAMult = randFloatValue(0, 1);
+    double triBMult = randFloatValue(0, 1 - triAMult);
     double triCMult = 1 - triAMult - triBMult;
 //    Vec3 aPrime = RenderOps().randomPointBetweenPoints(a, b);
 //    Vec3 bPrime = RenderOps().randomPointBetweenPoints(a, c);
